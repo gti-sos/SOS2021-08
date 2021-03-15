@@ -1,8 +1,13 @@
 # SOS2021-08
-Esto es un cambio 
+Team
 
-Esto es otro cambio por chiquiiti bombva
+Juan Vega Seco
+Antonio Carranza Barroso
+Antonio Silva Gordillo
+Project description: Proyecto con datos y estadísticas del COVID-19 a nivel mundial.
 
-Esto es un cambio que paso estamos en la cupula
+Repository: gti-sos/SOS2021-08
 
-Probando la edición desde la terminal de vscode
+URL:
+
+APIs:
