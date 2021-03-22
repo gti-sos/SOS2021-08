@@ -17,5 +17,5 @@ app.listen(port, () =>{
 }); //para arrancar el servidor
 
 app.post("/hello", (req,res) => {
-    res.send("<html><body><h1>Hello from this tiny server </h1> </body> </html>");
+    res.send("<html><body><h1>Hello from this tiny server with post </h1> </body> </html>");
     }); //Esto no se puede ver en en el navegador, pero se puede ver en en el postman
