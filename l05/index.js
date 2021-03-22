@@ -1,20 +1,25 @@
 var express = require("express");
+
 var path = require("path");
 
 var app = express();
 
-var port = 80;
+var port = (process.env.PORT || 10000);
 
-app.use("/", express.static(path.join( __dirname + "/public"))); //busca en public y ejecuta, el metodo path.join unifica el formato de la url entre sistemas operativos. Dirname coge la carpera donde se ejecuta el npm start y la encadena con /public
+//app.use("/", express.static("./public")); //Valido en linux
+//app.use("/", express.static( __dirname + "\public")); //Recomendado para windows
+app.use("/", express.static(path.join(__dirname,"public"))); //Recomendado para todos los sistemas (usar este)
+app.get("/info/owid-covid-data", (req, res) =>{
+res.send("<html><header> <style> table, th, td { border: 1px solid black; } </style></header> <body> <h2>Fuente de datos:</h2> <p>https://data.world/vale123/covid-19-complete-dataset/workspace/file?filename=owid-covid-data.csv</p> <h2>Descripción</h2> <p>Our complete COVID-19 dataset is a collection of the COVID-19 data maintained by Our World in Data. It is updated daily and includes data on confirmed cases, deaths, hospitalizations, testing, and vaccinations as well as other variables of potential interest.</p> <h2>Tabla con datos de muestra:</h2><table> <thead> <tr> <th>iso-code</th> <th>continent</th> <th>location</th> <th>date</th> <th>total-cases</th> <th>new-cases</th> <th>total-deaths</th> <th>new-deaths</th> </tr> </thead> <tbody> <tr> <td>isr</td> <td>asia</td> <td>israel</td> <td>2021-02-24</td> <td>763756,0</td> <td>4184,0</td> <td>5660,0</td> <td>26,0</td> </tr> <tr> <td>col</td> <td>south america</td> <td>colombia</td> <td>2020-06-01</td> <td>30493,0</td> <td>1110,0</td> <td>969,0</td> <td>30,0</td> </tr> <tr> <td>arg</td> <td>south america</td> <td>argentina</td> <td>2021-03-02</td> <td>2118676,0</td> <td>6653,0</td> <td>52192,0</td> <td>115,0</td> </tr> <tr> <td>arm</td> <td>asia</td> <td>armenia</td> <td>2021-03-14</td> <td>178385,0</td> <td>486,0</td> <td>3255,0</td> <td>2,0</td> </tr> <tr> <td>esp</td> <td>europe</td> <td>spain</td> <td>2021-02-17</td> <td>3107172,0</td> <td>10829,0</td> <td>66316,0</td> <td>337,0</td> </tr> </tbody> </table> <h6>Por Antonio Silva Gordillo</h6></body> </html>")
+});
 
-app.get("/hello", (req,res) => {
-res.send("<html><body><h1>Hello from this tiny server </h1> </body> </html>");
-}); //configuramos la ruta y la respuesta a esa ruta 
+app.get("/hello", (req, res) =>{
+res.send("<html><body><h1>Hello from this tiny server</h1></body></html>")
+});
 
+app.listen(port);
 
-app.listen(port, () =>{
-    console.log(`server ready listening on port ${port}`);
-}); //para arrancar el servidor
+console.log('Server listening on port: '+port);
 
 app.post("/hello", (req,res) => {
     res.send("<html><body><h1>Hello from this tiny server with post </h1> </body> </html>");
