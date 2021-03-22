@@ -3,7 +3,7 @@ var express = require("express");
 var path = require("path");
 
 var app = express();
-<<<<<<< HEAD
+
  
 var port = process.env.PORT || 10000 ;
 
@@ -12,7 +12,7 @@ app.use("/", express.static(path.join( __dirname + "/public"))); //busca en publ
 app.get("/hello", (req,res) => {
 res.send("<html><body><h1> GET Hello from this tiny server </h1> </body> </html>");
 }); //configuramos la ruta y la respuesta a esa ruta 
-=======
+
 
 var port = (process.env.PORT || 10000);
 
@@ -30,11 +30,10 @@ app.get("/info/seguimiento-respuesta-gubernamental-coronavirus", (req, res) =>{
 app.get("/hello", (req, res) =>{
 res.send("<html><body><h1>Hello from this tiny server</h1></body></html>")
 });
->>>>>>> 9bd939f8a768105ccc2a7a58d452a203110ec5ed
+
 
 app.listen(port);
 
-<<<<<<< HEAD
 app.listen(port, () =>{
     console.log(`server ready listening on port ${port} `);
 }); //para arrancar el servidor
@@ -42,10 +41,8 @@ app.listen(port, () =>{
 app.post("/hello", (req,res) => {
     res.send("<html><body><h1>POST Hello from this tiny server </h1> </body> </html>");
     }); //Esto no se puede ver en en el navegador, pero se puede ver en en el postman
-=======
 console.log('Server listening on port: '+port);
 
 app.post("/hello", (req,res) => {
     res.send("<html><body><h1>Hello from this tiny server with post </h1> </body> </html>");
     }); //Esto no se puede ver en en el navegador, pero se puede ver en en el postman
->>>>>>> 9bd939f8a768105ccc2a7a58d452a203110ec5ed
