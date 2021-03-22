@@ -3,7 +3,7 @@ var path = require("path");
 
 var app = express();
  
-var port = 10000;
+var port = process.env.PORT || 10000 ;
 
 app.use("/", express.static(path.join( __dirname + "/public"))); //busca en public y ejecuta, el metodo path.join unifica el formato de la url entre sistemas operativos
 
