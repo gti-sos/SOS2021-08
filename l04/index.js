@@ -12,7 +12,7 @@ app.get('/cool', (request, response) => {
 });
 
 app.listen(port, () =>{
-    console.log("server ready listening on port"+port);
+    console.log("server ready listening on port "+port);
 });
 
 //line
