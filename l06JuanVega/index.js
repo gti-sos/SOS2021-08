@@ -81,7 +81,7 @@ app.post(BASE_API_PATH+ "/stats", (req,res)=>{
     console.log(`new City added: <${JSON.stringify(newCity,null,2)}>`);
 
     statewisetestingdetailsArray.push(newCity);
-    statewisetestingdetails.push(newCity);
+    
 
     res.sendStatus(201);
 
@@ -101,7 +101,7 @@ app.delete(BASE_API_PATH+"/stats/:state", function(req, res) {
 
 //Put modificar elemento
 
-app.put(BASE_API_PATH+"/statewisetestingdetails/:state", function(req, res) { 
+app.put(BASE_API_PATH+"/stats/:state", function(req, res) { 
 
     //Recorremos el array en busca del elemento a modificar
     for(var e in statewisetestingdetailsArray){
@@ -126,21 +126,21 @@ app.put(BASE_API_PATH+"/statewisetestingdetails/:state", function(req, res) {
 });//6.5
     
 
-app.post(BASE_API_PATH+"/statewisetestingdetails/:totalsamples", function(req, res) { 
+app.post(BASE_API_PATH+"/stats/:totalsamples", function(req, res) { 
 
     res.status(405).send("Metodo no permitido"); //Method not allowed
 });//6.6
 
 //Put ERRONEO array de elementos
 
-app.put(BASE_API_PATH+"/statewisetestingdetails", function(req, res) { 
+app.put(BASE_API_PATH+"/stats", function(req, res) { 
 
     res.status(405).send("Metodo no permitido"); //Method not allowed
 });//6.7
 
 //Delete del array completo
 
-app.delete(BASE_API_PATH+"/statewisetestingdetails", (req,res)=>{
+app.delete(BASE_API_PATH+"/stats", (req,res)=>{
 		
     statewisetestingdetailsArray = []; // vaciamos el array
     res.status(200).send("Eliminacion correcta");
