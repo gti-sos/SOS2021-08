@@ -1,9 +1,10 @@
 {
-  "name": "SOS2021-08",
+  "name": "sos2021-08",
   "version": "1.0.0",
   "description": "Team",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cool-ascii-faces": "^1.3.4",
     "express": "^4.17.1"
   },
