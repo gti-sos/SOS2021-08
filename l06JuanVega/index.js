@@ -59,7 +59,7 @@ app.get(BASE_API_PATH+ "/stats", (req,res)=>{ //cuando aquí llamen a /api/v1/co
 
 	//Get para tomar elementos por pais
 	
-	app.get(BASE_API_PATH+'/statewisetestingdetails/:state', (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
+	app.get(BASE_API_PATH+'/stats/:state', (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
 		
 		//Crearemos un nuevo array resultado de filtrar el array completo
 		var filtraState = statewisetestingdetailsArray.filter(function(e){ 
@@ -89,7 +89,7 @@ app.post(BASE_API_PATH+ "/stats", (req,res)=>{
 
 //Delete de elementos por state
 
-app.delete(BASE_API_PATH+"/statewisetestingdetails/:state", function(req, res) { 
+app.delete(BASE_API_PATH+"/stats/:state", function(req, res) { 
 
     //Se hace un filtrado por pais, eliminando aquellos que coinciden con el pais dado
     statewisetestingdetailsArray = statewisetestingdetailsArray.filter(function(e){ 
@@ -146,11 +146,6 @@ app.delete(BASE_API_PATH+"/statewisetestingdetails", (req,res)=>{
     res.status(200).send("Eliminacion correcta");
 
 });//6.8
-
-
-
-
-
 
 
 
