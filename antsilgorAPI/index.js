@@ -19,7 +19,7 @@ module.exports.register = (app) => {
         var covid19_tracking_germanyArrayInitial = [
             {
                 "state": "Bayern",
-                "county": "SK Hof",
+                "county": "SK-Hof",
                 "age-group": "05-14",
                 "gender": "F",
                 "date": "03/04/2021",
@@ -29,7 +29,7 @@ module.exports.register = (app) => {
               },
               {
                 "state": "Berlin",
-                "county": "SK Berlin Mitte",
+                "county": "SK-Berlin-Mitte",
                 "age-group": "35-59",
                 "gender": "M",
                 "date": "03/04/2021",
@@ -39,7 +39,7 @@ module.exports.register = (app) => {
               },
               {
                 "state": "Nordrhein-Westfalen",
-                "county": "SK Solingen",
+                "county": "SK-Solingen",
                 "age-group": "80-99",
                 "gender": "F",
                 "date": "03/04/2021",
@@ -49,7 +49,7 @@ module.exports.register = (app) => {
               },
               {
                 "state": "Sachsen",
-                "county": "SK Dresden",
+                "county": "SK-Dresden",
                 "age-group": "15-34",
                 "gender": "M",
                 "date": "09/11/2020",
@@ -59,7 +59,7 @@ module.exports.register = (app) => {
               },
               {
                 "state": "Berlin",
-                "county": "SK Berlin Reinickendorf",
+                "county": "SK-Berlin-Reinickendorf",
                 "age-group": "35-59",
                 "gender": "M",
                 "date": "24/10/2020",
@@ -93,7 +93,7 @@ module.exports.register = (app) => {
         var reqcounty = req.params.county;
         var sendData = [];
         for(var i=0; i<covid19_tracking_germanyArray.length; i++) {
-            if((String(covid19_tracking_germanyArray[i].state) === reqstate) && (covid19_tracking_germanyArray[i].county === parseInt(reqcounty))){
+            if((String(covid19_tracking_germanyArray[i].state) === reqstate) && (covid19_tracking_germanyArray[i].county === (reqcounty))){
                 sendData.push(covid19_tracking_germanyArray[i]);
             }
         }
@@ -112,7 +112,7 @@ module.exports.register = (app) => {
     app.delete(BASE_ANTSILGOR_API_PATH+"covid19-tracking-germany/:state/:county", (req,res)=>{
         console.log("NEW DELETE ...../covid19-tracking-germany/state/county");
         var reqstate = req.params.state;
-        var reqcounty = parseInt(req.params.county);
+        var reqcounty = req.params.county;
         var found = covid19_tracking_germanyArray.find(e => (e.state === reqstate) && (e.county === reqcounty));
         if(!found){
             console.log("DATA NOT FOUND");
