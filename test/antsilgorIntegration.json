@@ -1,18 +1,18 @@
 {
-	"id": "d4f04e91-ebfe-4566-8997-59437910131d",
+	"id": "429fac92-85a1-4325-be2e-e701cc09c897",
 	"name": "api antsilgor",
-	"timestamp": "2021-04-12T23:43:34.926Z",
+	"timestamp": "2021-04-12T23:52:12.246Z",
 	"collection_id": "0788b9e8-9beb-468c-9512-a227ce820be9",
 	"folder_id": 0,
 	"environment_id": "0",
-	"totalPass": 5,
+	"totalPass": 6,
 	"totalFail": 0,
 	"results": [
 		{
 			"id": "853226e9-2eef-4cf7-b6f0-9c094ce900ff",
 			"name": "GET lista API",
 			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 729,
+			"time": 579,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -27,7 +27,7 @@
 				}
 			},
 			"times": [
-				729
+				579
 			],
 			"allTests": [
 				{
@@ -39,7 +39,7 @@
 			"id": "c847f994-f0d0-451b-8787-b4e7072419fa",
 			"name": "GET loadInitialdata",
 			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/loadInitialData",
-			"time": 134,
+			"time": 198,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -54,7 +54,7 @@
 				}
 			},
 			"times": [
-				134
+				198
 			],
 			"allTests": [
 				{
@@ -64,9 +64,9 @@
 		},
 		{
 			"id": "8f6397d6-5029-4965-a61a-8723d9e27567",
-			"name": "POST a API",
+			"name": "Añadir petete",
 			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 315,
+			"time": 242,
 			"responseCode": {
 				"code": 201,
 				"name": "Created"
@@ -81,7 +81,7 @@
 				}
 			},
 			"times": [
-				315
+				242
 			],
 			"allTests": [
 				{
@@ -93,7 +93,7 @@
 			"id": "95033906-bd53-4815-a923-c12f0773bceb",
 			"name": "GET recurso",
 			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Berlin/SK-Berlin-Mitte",
-			"time": 116,
+			"time": 123,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -108,7 +108,7 @@
 				}
 			},
 			"times": [
-				116
+				123
 			],
 			"allTests": [
 				{
@@ -120,7 +120,7 @@
 			"id": "829d4332-0f48-48f2-ac68-e6d87dfbdb26",
 			"name": "modificar Bayern sk hof",
 			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Bayern/SK-Hof",
-			"time": 114,
+			"time": 149,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -135,7 +135,34 @@
 				}
 			},
 			"times": [
-				114
+				149
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "5ec09701-3d49-4680-9acd-3f141bf32370",
+			"name": "eliminar petete",
+			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Petete/SK-Hof",
+			"time": 135,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				135
 			],
 			"allTests": [
 				{
@@ -145,7 +172,7 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 1408,
+	"totalTime": 1426,
 	"collection": {
 		"requests": [
 			{
@@ -167,6 +194,10 @@
 			{
 				"id": "829d4332-0f48-48f2-ac68-e6d87dfbdb26",
 				"method": "PUT"
+			},
+			{
+				"id": "5ec09701-3d49-4680-9acd-3f141bf32370",
+				"method": "DELETE"
 			}
 		]
 	}
