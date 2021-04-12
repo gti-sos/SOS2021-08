@@ -24,8 +24,8 @@ antsilgorAPI.register(app);
 
 
 //=========================================== JUAVECSEG =========================================================
-//var juavecsecAPI =  require("./juavecsecAPI");
-//juanveecsecAPI.register(app);
+var juavecsecAPI =  require("./juavecsecAPI");
+juanveecsecAPI.register(app);
 //=========================================== ANTBARCAR =========================================================
 //var antbarcarAPI =  require("./antbarcarAPI");
 //antbarcarAPI.register(app);

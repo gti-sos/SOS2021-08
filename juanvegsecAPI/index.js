@@ -1,15 +1,14 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var port = process.env.port || 1607;  // port va a valer lo que valga la variable de entorno y sino lo pone en el puero 1607
 var BASE_API_PATH = "/api/v1"; //tipo de recurso
-var app = express(); //generamos aplicacion que va a hacer uso de express
-
-app.use("/", express.static("./public"));
-app.use(bodyParser.json()); //todos los json que lleguen en la peticion los transformara en objects
-
 
 ////////////////////////JUAN VEGA SECO///////////////////////////////////////
 var statewisetestingdetailsArray= [];
+
+module.exports.register = (app) => {
+
+app.get("/info/seguimiento-respuesta-gubernamental-coronavirus", (req, res) =>{
+    res.send("<html> <body> <table><thead><tr><th>countryname</th><th>countrycode</th><th>date</th><th>c1-school-closing</th><th>c2-workplace-closing</th><th>c3-cancel-public-events</th><th>c4-restricitions-on-gatherings</th><th></th></tr></thead><tbody><tr><td>Aruba</td><td>ABW</td><td>2020-01-01</td><td>0,00</td><td>0,00</td><td>0,00</td><td>0,00</td><td></td></tr><tr><td>Afghanistan</td><td>AFG</td><td>2020-01-29</td><td>1,00</td><td>1,00</td><td>0,00</td><td>0,00</td><td></td></tr><tr><td>Angola</td><td>AGO</td><td>2020-02-01</td><td>3,00</td><td>2,00</td><td>0,00</td><td>1,00</td><td></td></tr><tr><td>Albania</td><td>ALB</td><td>2020-01-03</td><td>0,00</td><td>0,00</td><td>0,00</td><td>2,00</td><td></td></tr><tr><td>Andorra</td><td>AND</td><td>2020-05-25</td><td>0,00</td><td>1,00</td><td>3,00</td><td>5,00</td><td></td></tr><tr><td>United Arab Emirates</td><td>ARE</td><td>2020-05-09</td><td>0,00</td><td>0,00</td><td>0,00</td><td>1,00</td><td></td></tr></tbody></table> <h6>Por Juan Vega Seco</h6> </body> </html>")
+    });
+
 var statewisetestingdetails = [
     {
         "date": "2020-04-17",
@@ -146,10 +145,6 @@ app.delete(BASE_API_PATH+"/stats", (req,res)=>{
     res.status(200).send("Eliminacion correcta");
 
 });//6.8
+}
 
 
-
-
-app.listen(port, () => { console.log(`Server ready at ${port}`); 
-
-});
