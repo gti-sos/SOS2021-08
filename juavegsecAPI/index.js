@@ -52,13 +52,13 @@ app.get(BASE_API_PATH+ "/statewisetestingdetails/loadInitialData", (req,res)=>{
     res.send(JSON.stringify(statewisetestingdetails,null,2)); 
 }) //5
 
-app.get(BASE_API_PATH+ "/stats", (req,res)=>{ //cuando aquí llamen a /api/v1/contacts voy a devolver el json
+app.get(BASE_API_PATH+ "/statewisetestingdetails", (req,res)=>{ //cuando aquí llamen a /api/v1/contacts voy a devolver el json
     res.send(JSON.stringify(statewisetestingdetailsArray,null,2)); //hay que pasar el objeto a json con stringfy pasandole el array creado, con 2 le das formato bonito
 }) //6.1
 
 	//Get para tomar elementos por pais
 	
-	app.get(BASE_API_PATH+'/stats/:state', (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
+	app.get(BASE_API_PATH+'/statewisetestingdetails/:state', (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
 		
 		//Crearemos un nuevo array resultado de filtrar el array completo
 		var filtraState = statewisetestingdetailsArray.filter(function(e){ 
@@ -75,7 +75,7 @@ app.get(BASE_API_PATH+ "/stats", (req,res)=>{ //cuando aquí llamen a /api/v1/co
         }
     });//6.2
 
-app.post(BASE_API_PATH+ "/stats", (req,res)=>{  
+app.post(BASE_API_PATH+ "/statewisetestingdetails", (req,res)=>{  
     var newCity = req.body;  
     console.log(`new City added: <${JSON.stringify(newCity,null,2)}>`);
 
@@ -88,7 +88,7 @@ app.post(BASE_API_PATH+ "/stats", (req,res)=>{
 
 //Delete de elementos por state
 
-app.delete(BASE_API_PATH+"/stats/:state", function(req, res) { 
+app.delete(BASE_API_PATH+"/statewisetestingdetails/:state", function(req, res) { 
 
     //Se hace un filtrado por pais, eliminando aquellos que coinciden con el pais dado
     statewisetestingdetailsArray = statewisetestingdetailsArray.filter(function(e){ 
@@ -100,7 +100,7 @@ app.delete(BASE_API_PATH+"/stats/:state", function(req, res) {
 
 //Put modificar elemento
 
-app.put(BASE_API_PATH+"/stats/:state", function(req, res) { 
+app.put(BASE_API_PATH+"/statewisetestingdetails/:state", function(req, res) { 
 
     //Recorremos el array en busca del elemento a modificar
     for(var e in statewisetestingdetailsArray){
@@ -125,21 +125,21 @@ app.put(BASE_API_PATH+"/stats/:state", function(req, res) {
 });//6.5
     
 
-app.post(BASE_API_PATH+"/stats/:totalsamples", function(req, res) { 
+app.post(BASE_API_PATH+"/statewisetestingdetails/:totalsamples", function(req, res) { 
 
     res.status(405).send("Metodo no permitido"); //Method not allowed
 });//6.6
 
 //Put ERRONEO array de elementos
 
-app.put(BASE_API_PATH+"/stats", function(req, res) { 
+app.put(BASE_API_PATH+"/statewisetestingdetails", function(req, res) { 
 
     res.status(405).send("Metodo no permitido"); //Method not allowed
 });//6.7
 
 //Delete del array completo
 
-app.delete(BASE_API_PATH+"/stats", (req,res)=>{
+app.delete(BASE_API_PATH+"/statewisetestingdetails", (req,res)=>{
 		
     statewisetestingdetailsArray = []; // vaciamos el array
     res.status(200).send("Eliminacion correcta");
