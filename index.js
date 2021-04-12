@@ -1,3 +1,47 @@
+var cool = require("cool-ascii-faces");
+var express = require("express");
+var path = require("path");
+var bodyParser = require("body-parser");
+var app = express();
+var port = (process.env.PORT || 10000);
+var BASE_API_PATH = "/api/v1/";
+
+
+/*
+app.get("/cool", (request,response) => {//request son los datos que me mandan a mi y response es para devolver datos al cliente
+	response.send(cool());
+	console.log("New request to /cool has arrived");
+});
+*/
+app.use("/", express.static(path.join(__dirname,"public")));
+app.use(bodyParser.urlencoded());
+
+app.use(bodyParser.json());
+//=========================================== ANTSILGOR =========================================================
+
+var antsilgorAPI =  require("./antsilgorAPI");
+antsilgorAPI.register(app);
+
+
+//=========================================== JUAVECSEG =========================================================
+//var juavecsecAPI =  require("./juavecsecAPI");
+//juanveecsecAPI.register(app);
+//=========================================== ANTBARCAR =========================================================
+//var antbarcarAPI =  require("./antbarcarAPI");
+//antbarcarAPI.register(app);
+
+// =======================================Codigo de grupo===========================
+app.listen(port, () => {//la segunda parte del listen se ejecuta cuando el servidor esta listo
+	console.log("Server ready. Listening on port " + port);
+});
+
+
+
+
+/* CODIGO NUESTRO ORIGINAL
+
+
+
 var express = require("express");
 
 var path = require("path");
@@ -6,8 +50,9 @@ var app = express();
  
 var port = process.env.PORT || 10000 ;
 
-//app.use("/", express.static("./public")); //Valido en linux
-//app.use("/", express.static( __dirname + "\public")); //Recomendado para windows
+var BASE_API_PATH = "/api/v1";
+
+
 app.use("/", express.static(path.join(__dirname,"public"))); //Recomendado para todos los sistemas (usar este)
 
 app.get("/info/covid19-tracking-germany-cases-and-deaths", (req, res) =>{
@@ -33,3 +78,5 @@ app.post("/hello", (req,res) => {
     res.send("<html><body><h1>POST Hello from this tiny server </h1> </body> </html>");
     }); //Esto no se puede ver en en el navegador, pero se puede ver en en el postman
 
+
+*/
