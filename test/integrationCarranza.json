@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "212f3356-f707-4c03-9354-3d394f9e08da",
+		"name": "LLamadas a postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get a la api /nombre recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10000/api/v1/us_counties_covid19_daily/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"api",
+						"v1",
+						"us_counties_covid19_daily",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a la api /state",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:10000/api/v1/us_counties_covid19_daily/California",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"api",
+						"v1",
+						"us_counties_covid19_daily",
+						"California"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post a la api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"date\": \"2021-01-25\",\r\n    \"county\": \"Trabsuas\",\r\n    \"state\": \"Mallorca\",\r\n    \"fips\": 6059,\r\n    \"cases\": 1,\r\n    \"deaths\": 0\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:10000/api/v1/us_counties_covid19_daily/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10000",
+					"path": [
+						"api",
+						"v1",
+						"us_counties_covid19_daily",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
