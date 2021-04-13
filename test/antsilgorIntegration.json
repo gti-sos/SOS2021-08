@@ -1,204 +1,245 @@
 {
-	"id": "429fac92-85a1-4325-be2e-e701cc09c897",
-	"name": "api antsilgor",
-	"timestamp": "2021-04-12T23:52:12.246Z",
-	"collection_id": "0788b9e8-9beb-468c-9512-a227ce820be9",
-	"folder_id": 0,
-	"environment_id": "0",
-	"totalPass": 6,
-	"totalFail": 0,
-	"results": [
+	"info": {
+		"_postman_id": "0788b9e8-9beb-468c-9512-a227ce820be9",
+		"name": "api antsilgor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "853226e9-2eef-4cf7-b6f0-9c094ce900ff",
 			"name": "GET lista API",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 579,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				579
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "c847f994-f0d0-451b-8787-b4e7072419fa",
 			"name": "GET loadInitialdata",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/loadInitialData",
-			"time": 198,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				198
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/loadInitialData",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "8f6397d6-5029-4965-a61a-8723d9e27567",
 			"name": "Añadir petete",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 242,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Successful POST request": true
-			},
-			"testPassFailCounts": {
-				"Successful POST request": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				242
-			],
-			"allTests": [
+			"event": [
 				{
-					"Successful POST request": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"state\": \"Petete\",\r\n        \"county\": \"SK-Hof\",\r\n        \"age-group\": \"05-14\",\r\n        \"gender\": \"F\",\r\n        \"date\": \"03/04/2021\",\r\n        \"case\": 20231,\r\n        \"death\": 0,\r\n        \"recovered\": 0\r\n}\r\n              ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "95033906-bd53-4815-a923-c12f0773bceb",
 			"name": "GET recurso",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Berlin/SK-Berlin-Mitte",
-			"time": 123,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				123
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Berlin/SK-Berlin-Mitte",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"Berlin",
+						"SK-Berlin-Mitte"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "829d4332-0f48-48f2-ac68-e6d87dfbdb26",
 			"name": "modificar Bayern sk hof",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Bayern/SK-Hof",
-			"time": 149,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				149
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"Bayern\",\r\n    \"county\": \"SK-Hof\",\r\n    \"age-group\": \"05-14\",\r\n    \"gender\": \"F\",\r\n    \"date\": \"03/04/2021\",\r\n    \"case\": 2,\r\n    \"death\": 1099,\r\n    \"recovered\": 0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Bayern/SK-Hof",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"Bayern",
+						"SK-Hof"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "5ec09701-3d49-4680-9acd-3f141bf32370",
 			"name": "eliminar petete",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Petete/SK-Hof",
-			"time": 135,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				135
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Petete/SK-Hof",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"Petete",
+						"SK-Hof"
+					]
+				}
+			},
+			"response": []
 		}
-	],
-	"count": 1,
-	"totalTime": 1426,
-	"collection": {
-		"requests": [
-			{
-				"id": "853226e9-2eef-4cf7-b6f0-9c094ce900ff",
-				"method": "GET"
-			},
-			{
-				"id": "c847f994-f0d0-451b-8787-b4e7072419fa",
-				"method": "GET"
-			},
-			{
-				"id": "8f6397d6-5029-4965-a61a-8723d9e27567",
-				"method": "POST"
-			},
-			{
-				"id": "95033906-bd53-4815-a923-c12f0773bceb",
-				"method": "GET"
-			},
-			{
-				"id": "829d4332-0f48-48f2-ac68-e6d87dfbdb26",
-				"method": "PUT"
-			},
-			{
-				"id": "5ec09701-3d49-4680-9acd-3f141bf32370",
-				"method": "DELETE"
-			}
-		]
-	}
+	]
 }
