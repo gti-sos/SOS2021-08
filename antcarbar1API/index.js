@@ -2,60 +2,90 @@ var BASE_API_PATH = "/api/v1"; //tipo de recurso
 module.exports.register = (app) => {
 
     app.get("/info/us_counties_covid19_daily", (req, res) =>{
-        res.send("<html> <body> <table><thead><tr><th>countryname</th><th>countrycode</th><th>date</th><th>c1-school-closing</th><th>c2-workplace-closing</th><th>c3-cancel-public-events</th><th>c4-restricitions-on-gatherings</th><th></th></tr></thead><tbody><tr><td>Aruba</td><td>ABW</td><td>2020-01-01</td><td>0,00</td><td>0,00</td><td>0,00</td><td>0,00</td><td></td></tr><tr><td>Afghanistan</td><td>AFG</td><td>2020-01-29</td><td>1,00</td><td>1,00</td><td>0,00</td><td>0,00</td><td></td></tr><tr><td>Angola</td><td>AGO</td><td>2020-02-01</td><td>3,00</td><td>2,00</td><td>0,00</td><td>1,00</td><td></td></tr><tr><td>Albania</td><td>ALB</td><td>2020-01-03</td><td>0,00</td><td>0,00</td><td>0,00</td><td>2,00</td><td></td></tr><tr><td>Andorra</td><td>AND</td><td>2020-05-25</td><td>0,00</td><td>1,00</td><td>3,00</td><td>5,00</td><td></td></tr><tr><td>United Arab Emirates</td><td>ARE</td><td>2020-05-09</td><td>0,00</td><td>0,00</td><td>0,00</td><td>1,00</td><td></td></tr></tbody></table> <h6>Por Antonio Carranza</h6> </body> </html>")
+        res.send("<html> <body> <table><thead><tr><th>date</th><th>county</th><th>state</th><th>fips</th><th>cases</th><th>deaths</th></tr></thead><tbody><tr><td>2020-01-21</td><td>Snohomish</td><td>Washington</td><td>53061</td><td>1</td><td>0</td></tr><tr><td>2020-01-22</td><td>Snohomish</td><td>Washington</td><td>53061</td><td>1</td><td>0</td></tr><tr><td>2020-01-23</td><td>Snohomish</td><td>Washington</td><td>53061</td><td>1</td><td>0</td></tr><tr><td>2020-01-24</td><td>Cook</td><td>Illinois</td><td>17031</td><td>1</td><td>0</td></tr><tr><td>2020-01-25</td><td>Snohomish</td><td>Washington</td><td>53061</td><td>1</td><td>0</td></tr></tbody></table> <h6>Por Antonio Carranza</h6> </body> </html>")
         });
 
-////////////////////////JUAN VEGA SECO///////////////////////////////////////
+////////////////////////Antonio Carranza Barroso///////////////////////////////////////
 var us_counties_covid19_dailyArray= [];
-var us_counties_covid19_daily = [
-    {
-        "date": "2020-01-21",
-        "county": "Snoomish",
-        "state": "Washington",
-        "fips": 56061.0,
-        "cases":1,
-        "deaths":0
-        },
-        {
-        "date": "2020-01-25",
-        "county": "Orange",
-        "state": "California",
-        "fips": 6059.0,
-        "cases":1,
-        "deaths":0
-            }
 
-];
 		// Incluimos los datos en el array 
 
-		for(var e in us_counties_covid19_daily){
-			us_counties_covid19_dailyArray.push(us_counties_covid19_daily[e]);
-		}
+/*for(var e in us_counties_covid19_daily){
+	us_counties_covid19_dailyArray.push(us_counties_covid19_daily[e]);
+	}
 
-		//Eliminamos repetidos en caso de que se hayan cargado previamente
+	//Eliminamos repetidos en caso de que se hayan cargado previamente
 
-		us_counties_covid19_dailyArray = us_counties_covid19_dailyArray.map(e => JSON.stringify(e)); //Lo pasamos a JSON para poder compararlos
+	us_counties_covid19_dailyArray = us_counties_covid19_dailyArray.map(e => JSON.stringify(e)); //Lo pasamos a JSON para poder compararlos
 
-		us_counties_covid19_dailyArray = new Set(us_counties_covid19_dailyArray); //Lo convertimos a conjunto para eliminar repetidos
+	us_counties_covid19_dailyArray = new Set(us_counties_covid19_dailyArray); //Lo convertimos a conjunto para eliminar repetidos
 
-		us_counties_covid19_dailyArray = [...us_counties_covid19_dailyArray] //Lo convertimos de nuevo a array
+	us_counties_covid19_dailyArray = [...us_counties_covid19_dailyArray] //Lo convertimos de nuevo a array
 
-		us_counties_covid19_dailyArray = us_counties_covid19_dailyArray.map(e => JSON.parse(e)) //Lo pasamos de nuevo a objetos
+	us_counties_covid19_dailyArray = us_counties_covid19_dailyArray.map(e => JSON.parse(e)) //Lo pasamos de nuevo a objetos
 
-	
+	*/
 		
 
 app.get(BASE_API_PATH+ "/us_counties_covid19_daily/loadInitialData", (req,res)=>{ 
-    res.send(JSON.stringify(us_counties_covid19_daily,null,2)); 
-}) //5
+    console.log("NEW GET ...cargando datos en el array");
+    var us_counties_covid19_daily = [
+        {
+            "date": "2020-01-21",
+            "county": "Snoomish",
+            "state": "Washington",
+            "fips": 56061.0,
+            "cases":1,
+            "deaths":0
+            },
+            {
+            "date": "2020-01-25",
+            "county": "Orange",
+            "state": "California",
+            "fips": 6059.0,
+            "cases":1,
+            "deaths":0
+        },
+        {
+            "date": "2020-01-26",
+            "county": "Maricopa",
+            "state": "Arizona",
+            "fips": 4013.0,
+            "cases":1,
+            "deaths":0
+        } ,  
+    
+        {
+            "date": "2020-01-28",
+            "county": "Los Angeles",
+            "state": "California",
+            "fips": 6037.0,
+            "cases":1,
+            "deaths":0
+        }
+    
+    ];
 
-app.get(BASE_API_PATH+ "/us_counties_covid19_daily", (req,res)=>{ //cuando aquí llamen a /api/v1/contacts voy a devolver el json
+    if(us_counties_covid19_dailyArray.length>0){
+        for(var j=0;j<us_counties_covid19_dailyArray.length;j++){
+            us_counties_covid19_dailyArray.splice(j);
+        }
+    }
+    for(var i=0;i<us_counties_covid19_daily.length;i++){
+        us_counties_covid19_dailyArray.push(us_counties_covid19_daily[i]);
+    }
+    res.send(JSON.stringify(us_counties_covid19_dailyArray, null, 2));
+});
+    
+
+app.get(BASE_API_PATH+ "/us_counties_covid19_daily", (req,res)=>{
+    console.log("NEW GET .../us_counties_covid19_daily");           //cuando aquí llamen a /api/v1/contacts voy a devolver el json
     res.send(JSON.stringify(us_counties_covid19_dailyArray,null,2)); //hay que pasar el objeto a json con stringfy pasandole el array creado, con 2 le das formato bonito
 }) //6.1
 
-	//Get para tomar elementos por pais
+	//Get para tomar elementos por estado
 	
-	app.get(BASE_API_PATH+'/us_counties_covid19_daily/:state', (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
+	app.get(BASE_API_PATH+'/us_counties_covid19_daily/:state', (req,res)=>{ 
 		
 		//Crearemos un nuevo array resultado de filtrar el array completo
 		var filtraState = us_counties_covid19_dailyArray.filter(function(e){ 
@@ -70,7 +100,29 @@ app.get(BASE_API_PATH+ "/us_counties_covid19_daily", (req,res)=>{ //cuando aquí
         else{
             res.status(404).send("Error no se ha encontrado el elemento");
         }
-    });//6.2
+    });
+
+    //Get para tomar elementos por condado
+	
+	app.get(BASE_API_PATH+'/us_counties_covid19_daily/:county', (req,res)=>{ 
+		
+		//Crearemos un nuevo array resultado de filtrar el array completo
+		var filtraCounty = us_counties_covid19_dailyArray.filter(function(x){ 
+			return x.county==String(req.params.county);
+		});
+		
+		//Debemos enviar el objeto pero pasandolo a JSON
+        if (filtraCounty != 0){
+		 res.status(200).send(JSON.stringify(filtraCounty,null,2));
+        }	
+        
+        else{
+            res.status(404).send("Error no se ha encontrado el elemento");
+        }
+    });
+
+
+
 
 app.post(BASE_API_PATH+ "/us_counties_covid19_daily", (req,res)=>{  
     var newState = req.body;  
@@ -139,7 +191,7 @@ app.put(BASE_API_PATH+"/us_counties_covid19_daily", function(req, res) {
 app.delete(BASE_API_PATH+"/us_counties_covid19_daily", (req,res)=>{
 		
     us_counties_covid19_dailyArray = []; // vaciamos el array
-    res.status(200).send("Eliminacion correcta");
+    res.status(200).send("Se han eliminado todos los registros contenidos en el array");
 
 });//6.8
 }
