@@ -102,7 +102,7 @@ app.get(BASE_API_PATH+ "/us_counties_covid19_daily", (req,res)=>{
         }
     });
 
-    //Get para tomar elementos por condado
+ /*   //Get para tomar elementos por condado
 	
 	app.get(BASE_API_PATH+'/us_counties_covid19_daily/:county', (req,res)=>{ 
 		
@@ -121,7 +121,7 @@ app.get(BASE_API_PATH+ "/us_counties_covid19_daily", (req,res)=>{
         }
     });
 
-
+*/
 
 
 app.post(BASE_API_PATH+ "/us_counties_covid19_daily", (req,res)=>{  
