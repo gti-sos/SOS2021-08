@@ -74,7 +74,7 @@ app.get(BASE_API_PATH+ "/us_counties_covid19_daily/loadInitialData", (req,res)=>
     for(var i=0;i<us_counties_covid19_daily.length;i++){
         us_counties_covid19_dailyArray.push(us_counties_covid19_daily[i]);
     }
-    res.send(JSON.stringify(us_counties_covid19_dailyArray, null, 2));
+    res.send(JSON.stringify(us_counties_covid19, null, 2));
 });
     
 
