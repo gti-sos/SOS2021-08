@@ -140,25 +140,25 @@ app.get(BASE_API_PATH+"/statewisetestingdetails", (req, res) =>{
         console.error("BAD REQUEST");
         res.sendStatus(400).send("Incorrect fields");
     });
-/*
+
 //POST para crear un nuevo recurso en nuestra lista
     app.post(BASE_API_PATH+"/statewisetestingdetails", (req, res) => {
-        console.log("New POST .../nuts-production-stats");
+        console.log("New POST .../statewisetestingdetails");
         var newData = req.body;
-        var country = req.body.country;
-        var year = parseInt(req.body.year);
-        db.find({"country":country, "year":year}).exec((err, data)=>{
+        var date = req.body.date;
+        var state =req.body.state;
+        db.find({"date":date, "state":state}).exec((err, data)=>{
             if(err){
                 console.error("ERROR in GET");
                 res.sendStatus(500);
             }else {
                 if(data.length == 0){
-                    if (!newData.country 
-                        || !newData.year 
-                        || !newData['almond'] 
-                        || !newData['walnut'] 
-                        || !newData['pistachio']
-                        || Object.keys(newData).length != 5){
+                    if (/*!newData.date 
+                        || !newData.state 
+                        || !newData['totalsamples'] 
+                        || !newData['negative'] 
+                        || !newData['positve']
+                        || */Object.keys(newData).length != 5){
                         console.log("The data is not correct");
                         return res.sendStatus(400);
                     }else{
@@ -175,6 +175,96 @@ app.get(BASE_API_PATH+"/statewisetestingdetails", (req, res) =>{
         });
     });
     
+     //DELETE a /country/year
+     app.delete(BASE_API_PATH+"/statewisetestingdetails/:date/:state", (req,res)=>{
+		console.log("NEW DELETE .....statewisetestingdetails/:date/:state");
+			var reqDate = req.params.date;
+			var reqState = req.params.state;
+			db.remove({date:reqDate,state:reqState},{multi:true}, (err, salida) => {
+				if(salida==1){
+					console.log("DATA REMOVED");
+					res.sendStatus(200);
+				}else{
+					console.log("DATA NOT FOUND");
+					res.sendStatus(404);
+				}
+			});
+	});
+
+        // PUT a date/state
+        app.put(BASE_API_PATH+"/statewisetestingdetails/:date/:state", (req,res) => {
+				
+            var date = req.params.date;
+            var state = req.params.state;
+            var body = req.body;
+            
+            db.find({"date":date, "state":state}, (err, dataFound) => {
+                
+                if(dataFound.length == 0) {
+                    res.sendStatus(404, "DATA NOT FOUND");
+                    console.log("Data not found");
+                } else if(body.date != date || body.state != state || !body.date || !body.state || !body["totalsamples"] || !body["negative"] || !body["positive"] || Object.keys(body).length != 5){
+                    res.sendStatus(400, "FORMAT NOT VALID");
+                    console.log("The format is not valid");
+                } else {
+                    db.update({"date":date,"state":state}, {$set:body});
+                    res.sendStatus(200);
+                    console.log("Data updated");
+                }
+            });
+            
+        });
+
+         // POST a country/year error
+    app.post(BASE_API_PATH+"/statewisetestingdetails/:date", (req,res)=>{
+        console.log("NEW POST ...../statewisetestingdetails/date/state");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/statewisetestingdetails/:state", (req,res)=>{
+        console.log("NEW POST ...../statewisetestingdetails/state/date");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/statewisetestingdetails/:totalsamples", (req,res)=>{
+        console.log("NEW POST ...../statewisetestingdetails/state/date");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/statewisetestingdetails/:negative", (req,res)=>{
+        console.log("NEW POST ...../statewisetestingdetails/state/date");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/statewisetestingdetails/:positive", (req,res)=>{
+        console.log("NEW POST ...../statewisetestingdetails/state/date");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/statewisetestingdetails/:date/:state", (req,res)=>{
+        console.log("NEW POST ...../statewisetestingdetails/state/date");
+        res.status(405).send("NOT ALLOWED");
+    });
+
+      //PUT a lista error
+      app.put(BASE_API_PATH+"/statewisetestingdetails", (req,res)=>{
+        console.log("NEW PUT ...../statewisetestingdetails");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+        // DELETE a lista
+        app.delete(BASE_API_PATH+"/statewisetestingdetails", (req,res)=>{
+            db.remove({}, {multi:true}, function (err,numRemoved) {
+                if (err) {
+                    console.error("ERROR deleting DB statesInDB");
+                    res.sendStatus(500);
+                }else{
+                    if(numRemoved == 0){
+                        console.error("ERROR statesInDB not found");
+                        res.sendStatus(404);
+                    } else {
+                        res.sendStatus(200);
+                    }
+                }
+            });
+            
+        });
+    /*
 	//Get para tomar elementos por pais
 	
 	app.get(BASE_API_PATH+'/statewisetestingdetails/:state', (req,res)=>{ //Cuando llamen a /api/v1/education_expenditures/(pais)
