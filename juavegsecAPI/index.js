@@ -23,7 +23,30 @@ var statewisetestingdetails = [
         "totalsamples": 1800,
         "negative": 1175,
         "positive":132
-            }
+            },
+            {
+            "date": "2021-04-09",
+            "state": "Arunachal Pradesh",
+            "totalsamples": 206,
+            "negative": 185,
+            "positive":1
+                },
+                  {
+            "date": "2021-04-02",
+            "state": "Assam",
+            "totalsamples": 962,
+            "negative": 819,
+            "positive":16
+                },
+                 {
+            "date": "2021-04-05",
+            "state": "Bihar",
+            "totalsamples": 3037,
+            "negative": 2299,
+            "positive":32
+                }
+
+
 
 ];
 		// Incluimos los datos en el array 
