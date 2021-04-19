@@ -166,7 +166,7 @@ module.exports.register = (app) => {
                 if(data.length == 0){
                     if (Object.keys(newData).length != 6){
                         console.log("El dato no es correcto");
-                        return res.sendStatus(400).send("El dato no es correcto");
+                        return res.sendStatus(400);
                     }else{
                         console.log("Data imput:"+JSON.stringify(newData, null, 2));
                         db.insert(newData);
