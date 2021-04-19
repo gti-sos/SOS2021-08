@@ -172,13 +172,7 @@ module.exports.register = (app) => {
                 res.sendStatus(500);
             }else {
                 if(data.length == 0){
-                    if (!newData['date'] 
-                        ||!newData.county 
-                        || !newData['state'] 
-                        || !newData.fips 
-                        || !newData['cases'] 
-                        || !newData['deaths']
-                        || Object.keys(newData).length != 6){
+                    if (Object.keys(newData).length != 6){
                         console.log("El dato no es correcto");
                         return res.sendStatus(400);
                     }else{
@@ -313,6 +307,3 @@ app.delete(BASE_API_PATH+"/us_counties_covid19_daily/:county/:fips", (req,res)=>
 
 
 }
-
-
-
