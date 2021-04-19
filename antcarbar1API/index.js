@@ -159,7 +159,6 @@ module.exports.register = (app) => {
     });
 
 
-
      //POST para crear un nuevo recurso en nuestra lista
 
      app.post(BASE_API_PATH+"/us_counties_covid19_daily", (req, res) => {
@@ -173,12 +172,12 @@ module.exports.register = (app) => {
                 res.sendStatus(500);
             }else {
                 if(data.length == 0){
-                    if (!newData.county 
-                        || !newData.fips 
+                    if (!newData['date'] 
+                        ||!newData.county 
                         || !newData['state'] 
+                        || !newData.fips 
                         || !newData['cases'] 
                         || !newData['deaths']
-                        || !newData['date']
                         || Object.keys(newData).length != 6){
                         console.log("El dato no es correcto");
                         return res.sendStatus(400);
@@ -195,80 +194,125 @@ module.exports.register = (app) => {
             }
         });
 
+    });
+//Delete de elementos por county y fips
+
+app.delete(BASE_API_PATH+"/us_counties_covid19_daily/:county/:fips", (req,res)=>{
+		console.log("NEW DELETE .....us_counties_covid19_daily/:county/:fips");
+			var reqCounty = req.params.county;
+            var reqFips = parseFloat(req.params.fips);
+		
+			db.remove({county:reqCounty, fips:reqFips },{multi:true}, (err, salida) => {
+				if(salida==1){
+					console.log("Recurso eliminado");
+					res.sendStatus(200);
+				}else{
+					console.log("Recurso no encontrado");
+					res.sendStatus(404);
+				}
+			});
+	});
+
+
+    
+    // PUT a county/fips
+    app.put( BASE_API_PATH+"/us_counties_covid19_daily/:county/:fips",(req,res)=>{
+        console.log("New PUT ...//us_counties_covid19_daily/:county/:fips");
+
+        var county = req.params.county;
+	    var fips = parseFloat(req.params.fips);
+	    var newData = req.body;
+	    var query = {"county":county, "fips":parseFloat(fips)};
+            if (!newData['date'] 
+            ||!newData.county 
+            || !newData['state'] 
+            || !newData.fips 
+            || !newData['cases'] 
+            || !newData['deaths']
+            || Object.keys(newData).length != 6){
+            console.log("The data is not correct");
+            return res.sendStatus(400);
+        }
+    
+        else {
+            db.update(query,newData,(err,numReplaced) =>{
+                if(err){
+                    console.error("ERROR in PUT");
+                    res.sendStatus(500);
+                }
+                else{
+                    if(numReplaced == 0){
+                        res.sendStatus(404);
+                        console.log("The data dont exist in the Database");
+    
+                    }
+                    else{
+                        res.sendStatus(200);
+                        console.log("Database updated!");
+                    }
+                }
+            });
+        }
+    });
+    
+    // POST a country/year error
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:date", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/date");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:county", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/county");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:state", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/state");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:fips", (req,res)=>{
+        console.log("NEW POST ...../oil-production-stats/fips");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:cases", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/cases");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:deaths", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/deaths");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:county/:fips", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/county/fips");
+        res.status(405).send("NOT ALLOWED");
+    });
+
+    app.put(BASE_API_PATH+"/us_counties_covid19_daily", (req,res)=>{
+        console.log("NEW PUT ...../us_counties_covid19_daily");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+
+
+       // DELETE a lista
+       app.delete(BASE_API_PATH+"/us_counties_covid19_daily", (req,res)=>{
+        db.remove({}, {multi:true}, function (err,numRemoved) {
+            if (err) {
+                console.error("ERROR deleting DB usCovidDB in DELETE");
+                res.sendStatus(500);
+            }else{
+                if(numRemoved == 0){
+                    console.error("ERROR usCovidDB not found");
+                    res.sendStatus(404);
+                } else {
+                    res.sendStatus(200);
+                }
+            }
+        });
         
     });
 
 
-
-
-app.post(BASE_API_PATH+ "/us_counties_covid19_daily", (req,res)=>{  
-    var newState = req.body;  
-    console.log(`new state added: <${JSON.stringify(newState,null,2)}>`);
-
-    us_counties_covid19_dailyArray.push(newState);
-    us_counties_covid19_daily.push(newState);
-
-    res.sendStatus(201);
-
-})//6.3
-
-//Delete de elementos por state
-
-app.delete(BASE_API_PATH+"/us_counties_covid19_daily/:state", function(req, res) { 
-
-    //Se hace un filtrado por pais, eliminando aquellos que coinciden con el pais dado
-    us_counties_covid19_dailyArray = us_counties_covid19_dailyArray.filter(function(e){ 
-        return e.state!==String(req.params.state);
-    });
-    res.status(200).send("Eliminacion correcta");
-});//6.4
-
-
-//Put modificar elemento
-
-app.put(BASE_API_PATH+"/us_counties_covid19_daily/:state", function(req, res) { 
-
-    //Recorremos el array en busca del elemento a modificar
-    for(var e in us_counties_covid19_dailyArray){
-        if(us_counties_covid19_dailyArray[e].state == String(req.params.state)){
-                var newData = req.body;
-                us_counties_covid19_dailyArray[e] = newData;
-                break;
-        }
-    }
-
-    //Eliminamos repetidos en caso de que se haya realizado un cambio para añadirlo
-
-    us_counties_covid19_dailyArray = us_counties_covid19_dailyArray.map(e => JSON.stringify(e)); //Lo pasamos a JSON para poder compararlos
-
-    us_counties_covid19_dailyArray = new Set(us_counties_covid19_dailyArray); //Lo convertimos a conjunto para eliminar repetidos
-
-    us_counties_covid19_dailyArray = [...us_counties_covid19_dailyArray] //Lo convertimos de nuevo a array
-
-    us_counties_covid19_dailyArray = us_counties_covid19_dailyArray.map(e => JSON.parse(e)) //Lo pasamos de nuevo a objetos
-
-    res.status(200).send("Modificacion correcta");
-});//6.5
-    
-
-app.post(BASE_API_PATH+"/us_counties_covid19_daily/:totalsamples", function(req, res) { 
-
-    res.status(405).send("Metodo no permitido"); //Method not allowed
-});//6.6
-
-//Put ERRONEO array de elementos
-
-app.put(BASE_API_PATH+"/us_counties_covid19_daily", function(req, res) { 
-
-    res.status(405).send("Metodo no permitido"); //Method not allowed
-});//6.7
-
-//Delete del array completo
-
-app.delete(BASE_API_PATH+"/us_counties_covid19_daily", (req,res)=>{
-		
-    us_counties_covid19_dailyArray = []; // vaciamos el array
-    res.status(200).send("Se han eliminado todos los registros contenidos en el array");
-
-});//6.8
 }
+
+
+
