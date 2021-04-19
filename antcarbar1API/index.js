@@ -78,15 +78,7 @@ module.exports.register = (app) => {
         delete query.limit;
 
         //Pasamos los atributos de la query a Int
-        if(query.hasOwnProperty("date")){
-            query.date = query.date;
-        }
-        if(query.hasOwnProperty("county")){
-            query.county = query.county;
-        }
-        if(query.hasOwnProperty("state")){
-            query.state = query.state;
-        }
+     
         if(query.hasOwnProperty("fips")){
             query.fips = parseFloat(query.fips);
         }
