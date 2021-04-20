@@ -1,985 +1,1239 @@
 {
-	"id": "a6dddf17-a5d0-4c7d-ad4f-81ff32855e92",
-	"name": "api antsilgor",
-	"timestamp": "2021-04-20T01:11:16.618Z",
-	"collection_id": "0788b9e8-9beb-468c-9512-a227ce820be9",
-	"folder_id": 0,
-	"environment_id": "0",
-	"totalPass": 32,
-	"totalFail": 0,
-	"results": [
+	"info": {
+		"_postman_id": "0788b9e8-9beb-468c-9512-a227ce820be9",
+		"name": "api antsilgor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
 		{
-			"id": "c847f994-f0d0-451b-8787-b4e7072419fa",
 			"name": "GET loadInitialdata",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/loadInitialData",
-			"time": 156,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				156
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/loadInitialData",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "853226e9-2eef-4cf7-b6f0-9c094ce900ff",
 			"name": "GET lista API",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 113,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				113
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "a36f06d6-4fb3-4de4-a0d6-06407ff05f7d",
 			"name": "paginacion",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?limit=2&offset=0",
-			"time": 122,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				122
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?limit=2&offset=0",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "95033906-bd53-4815-a923-c12f0773bceb",
 			"name": "GET recurso",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Berlin/SK-Berlin-Mitte",
-			"time": 114,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				114
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Berlin/SK-Berlin-Mitte",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"Berlin",
+						"SK-Berlin-Mitte"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "f8b52e2e-3f5d-4051-babd-f8aaf0b07dec",
 			"name": "busqueda por estado",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?state=Berlin",
-			"time": 112,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				112
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?state=Berlin",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "Berlin"
+						}
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "739afc6e-c26d-444f-bbb4-3fbff1e7996e",
 			"name": "busqueda por condado",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?county=SK-Hof",
-			"time": 113,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				113
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?county=SK-Hof",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "county",
+							"value": "SK-Hof"
+						}
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "698633f6-5f31-404f-893f-6104a09562ce",
 			"name": "busqueda por grupo de edad",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?agegroup=35-59",
-			"time": 131,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				131
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?agegroup=35-59",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "agegroup",
+							"value": "35-59"
+						}
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "5969c346-3164-4999-ac39-b83fc7dd21ef",
 			"name": "busqueda por genero masculino",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?gender=M",
-			"time": 136,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				136
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?gender=M",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "M"
+						}
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "d502d652-f13a-4399-9f8c-f792f8e6cf65",
 			"name": "busqueda por fecha",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?date=03/04/2021",
-			"time": 122,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				122
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?date=03/04/2021",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "03/04/2021"
+						}
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "7587ff6d-516e-4833-9891-6825106904e9",
 			"name": "busqueda por casos",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?cases=18",
-			"time": 122,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				122
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?cases=18",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "cases",
+							"value": "18"
+						}
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "c3ea4d4b-2dd9-4854-a244-340095e926c9",
 			"name": "busqueda por muertes",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?death=0",
-			"time": 124,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				124
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?death=0",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "death",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "95d6f112-d040-4e31-8b65-8621f508e3f1",
 			"name": "busqueda por recuperados",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?recovered=18",
-			"time": 123,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				123
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?recovered=18",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "recovered",
+							"value": "18"
+						}
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "a75d08d4-3578-4a69-9732-3a8bb405600a",
 			"name": "post: nuevo recurso Munich",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 129,
-			"responseCode": {
-				"code": 201,
-				"name": "Created"
-			},
-			"tests": {
-				"Status code is 201": true
-			},
-			"testPassFailCounts": {
-				"Status code is 201": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				129
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 201": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
-		},
-		{
-			"id": "f929b858-7494-42a4-bceb-f1dd46fe8e35",
-			"name": "recurso conflicto duplicado",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 112,
-			"responseCode": {
-				"code": 409,
-				"name": "Conflict"
-			},
-			"tests": {
-				"Status code is 409 data already exists": true
-			},
-			"testPassFailCounts": {
-				"Status code is 409 data already exists": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				112
 			],
-			"allTests": [
-				{
-					"Status code is 409 data already exists": true
-				}
-			]
-		},
-		{
-			"id": "525813b4-4388-42f7-a8c5-b94306e6a48f",
-			"name": "formato erroneo para post",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 121,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status code 400. Format error": true
-			},
-			"testPassFailCounts": {
-				"Status code 400. Format error": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				121
-			],
-			"allTests": [
-				{
-					"Status code 400. Format error": true
-				}
-			]
-		},
-		{
-			"id": "58390af0-35a5-4dbe-a381-42bf2708218a",
-			"name": "a un state error",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/Bayern",
-			"time": 114,
-			"responseCode": {
-				"code": 405,
-				"name": "Method Not Allowed"
-			},
-			"tests": {
-				"Status code is 405 miss param in the request": true
-			},
-			"testPassFailCounts": {
-				"Status code is 405 miss param in the request": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				114
-			],
-			"allTests": [
-				{
-					"Status code is 405 miss param in the request": true
-				}
-			]
-		},
-		{
-			"id": "f0a846c8-93eb-445b-8d89-a97095d16a57",
-			"name": "a county error",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/SK-Dresden",
-			"time": 145,
-			"responseCode": {
-				"code": 405,
-				"name": "Method Not Allowed"
-			},
-			"tests": {
-				"Status code is 405 miss param in the request": true
-			},
-			"testPassFailCounts": {
-				"Status code is 405 miss param in the request": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				145
-			],
-			"allTests": [
-				{
-					"Status code is 405 miss param in the request": true
-				}
-			]
-		},
-		{
-			"id": "fed1f81b-82ef-4a9b-ba52-631d32749dfd",
-			"name": "a agegroup error",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/35-59",
-			"time": 132,
-			"responseCode": {
-				"code": 405,
-				"name": "Method Not Allowed"
-			},
-			"tests": {
-				"Status code is 405 format error in the request": true
-			},
-			"testPassFailCounts": {
-				"Status code is 405 format error in the request": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				132
-			],
-			"allTests": [
-				{
-					"Status code is 405 format error in the request": true
-				}
-			]
-		},
-		{
-			"id": "89280ae6-1ac8-49b0-8b8f-41c898f92255",
-			"name": "a state y county error",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Berlin/SK-Berlin-Reinickendorf",
-			"time": 112,
-			"responseCode": {
-				"code": 405,
-				"name": "Method Not Allowed"
-			},
-			"tests": {
-				"Status code is 405 format error in the request": true
-			},
-			"testPassFailCounts": {
-				"Status code is 405 format error in the request": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				112
-			],
-			"allTests": [
-				{
-					"Status code is 405 format error in the request": true
-				}
-			]
-		},
-		{
-			"id": "1d40126f-5d16-4caa-b2a7-58d347af5adc",
-			"name": "a cases error",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/18",
-			"time": 116,
-			"responseCode": {
-				"code": 405,
-				"name": "Method Not Allowed"
-			},
-			"tests": {
-				"Status code is 405 format error request": true
-			},
-			"testPassFailCounts": {
-				"Status code is 405 format error request": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				116
-			],
-			"allTests": [
-				{
-					"Status code is 405 format error request": true
-				}
-			]
-		},
-		{
-			"id": "829d4332-0f48-48f2-ac68-e6d87dfbdb26",
-			"name": "modificar Bayern sk hof",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Bayern/SK-Hof",
-			"time": 126,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				126
-			],
-			"allTests": [
-				{
-					"Status code is 200": true
-				}
-			]
-		},
-		{
-			"id": "a6616b3e-ffd8-4ab2-ad41-02101fbfec8a",
-			"name": "a lista error",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 127,
-			"responseCode": {
-				"code": 405,
-				"name": "Method Not Allowed"
-			},
-			"tests": {
-				"Status code is 405": true
-			},
-			"testPassFailCounts": {
-				"Status code is 405": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				127
-			],
-			"allTests": [
-				{
-					"Status code is 405": true
-				}
-			]
-		},
-		{
-			"id": "c7787294-0a7d-4c96-90e1-42b978fe70b1",
-			"name": "formato erroneo put",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Bayern/SK-Hof",
-			"time": 129,
-			"responseCode": {
-				"code": 400,
-				"name": "Bad Request"
-			},
-			"tests": {
-				"Status code is 400. Format error": true
-			},
-			"testPassFailCounts": {
-				"Status code is 400. Format error": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				129
-			],
-			"allTests": [
-				{
-					"Status code is 400. Format error": true
-				}
-			]
-		},
-		{
-			"id": "3f49ada8-f5ba-4b61-a661-fa6d4631ed54",
-			"name": "un dato que no existe",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Sachsen/London",
-			"time": 121,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404. Data not found": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404. Data not found": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				121
-			],
-			"allTests": [
-				{
-					"Status code is 404. Data not found": true
-				}
-			]
-		},
-		{
-			"id": "02d7ad1f-8403-4cf8-ab86-4b9fece875aa",
-			"name": "busqueda por state",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany?state=Bayern",
-			"time": 121,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true,
-				"There is only 1 country with that state": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"Munich\",\n    \"county\": \"SK-Hof\",\n    \"agegroup\": \"05-14\",\n    \"gender\": \"F\",\n    \"date\": \"03/04/2020\",\n    \"cases\": 2,\n    \"death\": 10,\n    \"recovered\": 20\n    }\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
-				"There is only 1 country with that state": {
-					"pass": 1,
-					"fail": 0
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
 				}
 			},
-			"times": [
-				121
-			],
-			"allTests": [
-				{
-					"Status code is 200": true,
-					"There is only 1 country with that state": true
-				}
-			]
+			"response": []
 		},
 		{
-			"id": "89c96ca0-a663-4884-a687-90910cde9daa",
+			"name": "recurso conflicto duplicado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 409 data already exists\", function () {",
+							"    pm.response.to.have.status(409);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"Bayern\",\n    \"county\": \"SK-Hof\",\n    \"agegroup\": \"05-14\",\n    \"gender\": \"F\",\n    \"date\": \"03/04/2021\",\n    \"cases\": 2,\n    \"death\": 0,\n    \"recovered\": 0\n    }\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "formato erroneo para post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code 400. Format error\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"state\": \"Nordrhein-Westfalen\",\n    \"agegroup\": \"80-99\",\n    \"gender\": 13,\n    \"date\": \"03/04/2021\",\n    \"cases\": 1,\n    \"recovered\": 0\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a un state error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405 miss param in the request\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"Bayern\",\n    \"county\": \"SK-Berlin-Reinickendorf\",\n    \"agegroup\": \"35-59\",\n    \"gender\": \"M\",\n    \"date\": \"24/10/2020\",\n    \"cases\": 18,\n    \"death\": 0,\n    \"recovered\": 18\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/Bayern",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"us_counties_covid19_daily",
+						"Bayern"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a county error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405 miss param in the request\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"Berlin\",\n    \"county\": \"SK-Desden\",\n    \"agegroup\": \"35-59\",\n    \"gender\": \"M\",\n    \"date\": \"24/10/2020\",\n    \"cases\": 18,\n    \"death\": 0,\n    \"recovered\": 18\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/SK-Dresden",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"us_counties_covid19_daily",
+						"SK-Dresden"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a agegroup error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405 format error in the request\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"state\": \"Berlin\",\n    \"county\": \"SK-Berlin-Reinickendorf\",\n    \"agegroup\": \"35-59\",\n    \"gender\": \"M\",\n    \"date\": \"24/10/2020\",\n    \"cases\": 300,\n    \"death\": 47980,\n    \"recovered\": 187\n    }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany/35-59",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"35-59"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a state y county error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405 format error in the request\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"state\": \"Berlin\",\n\"county\": \"SK-Berlin-Reinickendorf\",\n\"agegroup\": \"35-59\",\n\"gender\": \"M\",\n\"date\": \"24/10/2020\",\n\"cases\": 18,\n\"death\": 340,\n\"recovered\": 18\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany/Berlin/SK-Berlin-Reinickendorf",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"Berlin",
+						"SK-Berlin-Reinickendorf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a cases error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405 format error request\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"state\": \"Berlin\",\n            \"county\": \"SK-Berlin-Reinickendorf\",\n            \"agegroup\": \"35-59\",\n            \"gender\": \"M\",\n            \"date\": \"24/10/2020\",\n            \"cases\": 1199,\n            \"death\": 0,\n            \"recovered\": 18\n          }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany/18",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"18"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modificar Bayern sk hof",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"Bayern\",\r\n    \"county\": \"SK-Hof\",\r\n    \"age-group\": \"05-14\",\r\n    \"gender\": \"F\",\r\n    \"date\": \"03/04/2021\",\r\n    \"case\": 2,\r\n    \"death\": 1099,\r\n    \"recovered\": 0\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Bayern/SK-Hof",
+					"protocol": "https",
+					"host": [
+						"sos2021-08",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"Bayern",
+						"SK-Hof"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "a lista error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"state\": \"Noruega\",\r\n            \"county\": \"SK-Berlin-Reinickendorf\",\r\n            \"agegroup\": \"35-59\",\r\n            \"gender\": \"M\",\r\n            \"date\": \"24/10/2020\",\r\n            \"cases\": 18,\r\n            \"death\": 0,\r\n            \"recovered\": 18\r\n          }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "formato erroneo put",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400. Format error\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"state\": \"Assam\",\n        \"totalsamples\": 1,\n        \"negative\": 1,\n        \"sopale\":2\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany/Bayern/SK-Hof",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"Bayern",
+						"SK-Hof"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "un dato que no existe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404. Data not found\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n    \"state\": \"Sachsen\",\n    \"county\": \"SK-Dresden\",\n    \"agegroup\": \"15-34\",\n    \"gender\": \"M\",\n    \"date\": \"09/11/2020\",\n    \"cases\": 19,\n    \"death\": 0,\n    \"recovered\": 19\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany/Sachsen/London",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"Sachsen",
+						"London"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "busqueda por state",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There is only 1 country with that state\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.state).to.eql(\"Bayern\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?state=Bayern",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "Bayern"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "dato que no existe",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/2021-04-05/Biharr",
-			"time": 117,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				117
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 404": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany/2021-04-05/Biharr",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"2021-04-05",
+						"Biharr"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "eacdd82e-1f03-4e65-8520-ed78c8530cf8",
 			"name": "delete un dato que no existe",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/2021-04-05/Bihar",
-			"time": 113,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				113
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 404": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany/2021-04-05/Bihar",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"2021-04-05",
+						"Bihar"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "9536708f-f019-4662-8c63-0bd451d1ecf1",
 			"name": "delete un dato",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/Sachsen/SK-Dresden",
-			"time": 112,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				112
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany/Sachsen/SK-Dresden",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany",
+						"Sachsen",
+						"SK-Dresden"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "2accc1a8-1514-44f3-a780-ae64dfaf4ae8",
 			"name": "delete a lista",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 116,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {
-				"Status code is 200": true
-			},
-			"testPassFailCounts": {
-				"Status code is 200": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				116
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 200": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "395b9925-643a-4c66-8c99-631687bfd322",
 			"name": "delete a lista que no existe",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 112,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				112
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 404": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
+				}
+			},
+			"response": []
 		},
 		{
-			"id": "183705ae-a900-4998-94cf-007ca19649ce",
 			"name": "get a todos los datos despues de borrado",
-			"url": "https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany",
-			"time": 112,
-			"responseCode": {
-				"code": 404,
-				"name": "Not Found"
-			},
-			"tests": {
-				"Status code is 404": true
-			},
-			"testPassFailCounts": {
-				"Status code is 404": {
-					"pass": 1,
-					"fail": 0
-				}
-			},
-			"times": [
-				112
-			],
-			"allTests": [
+			"event": [
 				{
-					"Status code is 404": true
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
 				}
-			]
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					]
+				}
+			},
+			"response": []
 		}
 	],
-	"count": 1,
-	"totalTime": 3775,
-	"collection": {
-		"requests": [
-			{
-				"id": "c847f994-f0d0-451b-8787-b4e7072419fa",
-				"method": "GET"
-			},
-			{
-				"id": "853226e9-2eef-4cf7-b6f0-9c094ce900ff",
-				"method": "GET"
-			},
-			{
-				"id": "a36f06d6-4fb3-4de4-a0d6-06407ff05f7d",
-				"method": "GET"
-			},
-			{
-				"id": "95033906-bd53-4815-a923-c12f0773bceb",
-				"method": "GET"
-			},
-			{
-				"id": "f8b52e2e-3f5d-4051-babd-f8aaf0b07dec",
-				"method": "GET"
-			},
-			{
-				"id": "739afc6e-c26d-444f-bbb4-3fbff1e7996e",
-				"method": "GET"
-			},
-			{
-				"id": "698633f6-5f31-404f-893f-6104a09562ce",
-				"method": "GET"
-			},
-			{
-				"id": "5969c346-3164-4999-ac39-b83fc7dd21ef",
-				"method": "GET"
-			},
-			{
-				"id": "d502d652-f13a-4399-9f8c-f792f8e6cf65",
-				"method": "GET"
-			},
-			{
-				"id": "7587ff6d-516e-4833-9891-6825106904e9",
-				"method": "GET"
-			},
-			{
-				"id": "c3ea4d4b-2dd9-4854-a244-340095e926c9",
-				"method": "GET"
-			},
-			{
-				"id": "95d6f112-d040-4e31-8b65-8621f508e3f1",
-				"method": "GET"
-			},
-			{
-				"id": "a75d08d4-3578-4a69-9732-3a8bb405600a",
-				"method": "POST"
-			},
-			{
-				"id": "f929b858-7494-42a4-bceb-f1dd46fe8e35",
-				"method": "POST"
-			},
-			{
-				"id": "525813b4-4388-42f7-a8c5-b94306e6a48f",
-				"method": "POST"
-			},
-			{
-				"id": "58390af0-35a5-4dbe-a381-42bf2708218a",
-				"method": "POST"
-			},
-			{
-				"id": "f0a846c8-93eb-445b-8d89-a97095d16a57",
-				"method": "POST"
-			},
-			{
-				"id": "fed1f81b-82ef-4a9b-ba52-631d32749dfd",
-				"method": "POST"
-			},
-			{
-				"id": "89280ae6-1ac8-49b0-8b8f-41c898f92255",
-				"method": "POST"
-			},
-			{
-				"id": "1d40126f-5d16-4caa-b2a7-58d347af5adc",
-				"method": "POST"
-			},
-			{
-				"id": "829d4332-0f48-48f2-ac68-e6d87dfbdb26",
-				"method": "PUT"
-			},
-			{
-				"id": "a6616b3e-ffd8-4ab2-ad41-02101fbfec8a",
-				"method": "PUT"
-			},
-			{
-				"id": "c7787294-0a7d-4c96-90e1-42b978fe70b1",
-				"method": "PUT"
-			},
-			{
-				"id": "3f49ada8-f5ba-4b61-a661-fa6d4631ed54",
-				"method": "PUT"
-			},
-			{
-				"id": "02d7ad1f-8403-4cf8-ab86-4b9fece875aa",
-				"method": "GET"
-			},
-			{
-				"id": "89c96ca0-a663-4884-a687-90910cde9daa",
-				"method": "GET"
-			},
-			{
-				"id": "eacdd82e-1f03-4e65-8520-ed78c8530cf8",
-				"method": "DELETE"
-			},
-			{
-				"id": "9536708f-f019-4662-8c63-0bd451d1ecf1",
-				"method": "DELETE"
-			},
-			{
-				"id": "2accc1a8-1514-44f3-a780-ae64dfaf4ae8",
-				"method": "DELETE"
-			},
-			{
-				"id": "395b9925-643a-4c66-8c99-631687bfd322",
-				"method": "DELETE"
-			},
-			{
-				"id": "183705ae-a900-4998-94cf-007ca19649ce",
-				"method": "GET"
-			}
-		]
-	}
+	"variable": [
+		{
+			"key": "HEROKU",
+			"value": "https://sos2021-08.herokuapp.com"
+		}
+	]
 }
