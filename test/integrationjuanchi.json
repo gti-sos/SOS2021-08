@@ -47,6 +47,10 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"There are  5 values\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length).to.eql(5);",
 							"});"
 						],
 						"type": "text/javascript"
@@ -122,7 +126,11 @@
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
 							"});",
-							""
+							"",
+							"pm.test(\"The data type of the request is a string\", function() {",
+							"    const jsonData = JSON.parse(pm.request.body.raw);",
+							"    pm.expect(jsonData.date).to.be.a(\"string\");",
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -164,6 +172,7 @@
 							"pm.test(\"Status code is 409 data already exists\", function () {",
 							"    pm.response.to.have.status(409);",
 							"});",
+							"",
 							""
 						],
 						"type": "text/javascript"
@@ -509,6 +518,10 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Bihar has date of\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.date).to.eql(\"2021-04-05\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -610,6 +623,11 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"The data type of the request is a string\", function() {",
+							"    const jsonData = JSON.parse(pm.request.body.raw);",
+							"    pm.expect(jsonData.state).to.be.a(\"string\");",
 							"});"
 						],
 						"type": "text/javascript"
@@ -739,7 +757,8 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
-							"});"
+							"});",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -1243,7 +1262,8 @@
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
-							"});"
+							"});",
+							""
 						],
 						"type": "text/javascript"
 					}
