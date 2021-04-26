@@ -56,6 +56,7 @@
 		margin: 0 auto;
 	}
 
+
 	h1 {
 		color: #51ff0056;
 		text-transform: uppercase;
