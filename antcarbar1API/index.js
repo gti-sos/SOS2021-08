@@ -3,9 +3,7 @@ var BASE_API_PATH = "/api/v1"; //tipo de recurso
 var DataStore = require("nedb");
 var db = new DataStore();
 
-var us_counties_covid19_dailyArray= [];
-
-
+var us_counties_covid19_dailyInitial= [];
 
 
 
@@ -143,6 +141,13 @@ module.exports.register = (app) => {
             }
         });
     });
+
+
+ 
+
+
+
+
 
     //GET a un recurso concreto ERROR 1
      app.get(BASE_API_PATH+"/us_counties_covid19_daily/:data", (req, res) => {
