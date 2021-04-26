@@ -12,10 +12,10 @@
 
 <p>URL:</p><a href="https://github.com/gti-sos/SOS2021-08">https://github.com/gti-sos/SOS2021-08</a>
 
-<p>URL:</p> <a href="
-http://sos2021-08.herokuapp.com
+<p>URL Heroku:</p> <a href="
+https://sos2021-08.herokuapp.com
 ">
-http://sos2021-08.herokuapp.com</a>
+https://sos2021-08.herokuapp.com</a>
 
 
 <p>APIs:</p>
