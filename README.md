@@ -1,7 +1,7 @@
 <html>
 <body>   
 <h1># SOS2021-08</h1>
-<p><font size=4>EQUIPO : </font></p>
+<p><font size=8>TEAM : </font></p>
 
 <p>Juan Vega Seco</p>
 <p>Antonio Carranza Barroso</p>
