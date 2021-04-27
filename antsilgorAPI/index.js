@@ -95,7 +95,7 @@ module.exports.register = (app) => {
         delete query.offset;
         delete query.limit;
 
-        //Pasamos los atributos de la query a Int
+        
      
         if(query.hasOwnProperty("cases")){
             query.cases = parseInt(query.cases);

@@ -37,7 +37,7 @@
 </script>
 
 <main>
-    <Table bordered>
+    <Table class="table-hover table-striped table-dark">
         <thead>
             <tr>
                 <th>date</th>
