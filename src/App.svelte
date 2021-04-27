@@ -29,7 +29,7 @@
 						<script>
 						async function loadInitialDataUS(){
 							console.log("Load Initial data us...");
-							const res1 = await fetch("/api/v1/us_counties_covid19_daily/loadInitialData");
+							const res1 = await fetch("https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/loadInitialData");
 							if(res1.ok){
 								getData();
 							};
@@ -65,7 +65,7 @@
 					<script>
 					async function loadInitialDataIND(){
 						console.log("Load Initial data India...");
-						const res1 = await fetch("/api/v1/statewisetestingdetails/loadInitialData");
+						const res1 = await fetch("https://sos2021-08.herokuapp.com/api/v1/statewisetestingdetails/loadInitialData");
 						if(res1.ok){
 							getData();
 						};
