@@ -42,20 +42,17 @@
 						<button type="button" class="btn btn-danger">Datos covid alemania</button></a>
 					<a href="https://documenter.getpostman.com/view/14969395/TzJoE1Zm">
 						<button type="button" class="btn btn-warning">Documentación de Postman</button></a>
-						<button type="button" class="btn btn-success" id="BotonGer" onclick="loadInitialDataGER()">
-						<script>
-							async function loadInitialDataGER(){
-								console.log("Load Initial data alemania...");
-								const res1 = await fetch("https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/loadInitialData");
-								if(res1.ok){
-									getData();
-								};
-							}
-						</script>
-						
-						LOAD INITIAL DATA Alemania</button>
+						<button type="button" class="btn btn-success" id="BotonGer" onclick="loadInitialDataGER()">LOAD INITIAL DATA Alemania</button>
 				
-						
+						<script>
+						async function loadInitialDataGER(){
+							console.log("Load Initial data alemania...");
+							const res1 = await fetch("https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/loadInitialData");
+							if(res1.ok){
+								getData();
+							};
+						}
+						</script>
 				</div>
 				<div class="col">
 					<h3>API CASOS COVID INDIA</h3>
