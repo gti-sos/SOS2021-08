@@ -47,7 +47,7 @@
 						<script>
 						async function loadInitialDataGER(){
 							console.log("Load Initial data alemania...");
-							const res1 = await fetch("api/v1/covid19-tracking-germany/loadInitialData");
+							const res1 = await fetch("https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany/loadInitialData");
 							if(res1.ok){
 								getData();
 							};
