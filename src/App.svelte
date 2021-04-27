@@ -24,7 +24,7 @@
 						<button type="button"  class="btn btn-danger">Datos covid estados unidos</button></a>
 					<a href="https://documenter.getpostman.com/view/14969056/TzJshe8k">
 						<button type="button" class="btn btn-warning">Documentación de Postman</button></a>
-						<button type="button" class="btn btn-success" id="BotonUS" onclick="loadInitialDataUS()">LOAD INITIAL DATA US</button>
+						<!--<button type="button" class="btn btn-success" id="BotonUS" onclick="loadInitialDataUS()">LOAD INITIAL DATA US</button>-->
 
 						<script>
 						async function loadInitialDataUS(){
@@ -42,7 +42,7 @@
 						<button type="button" class="btn btn-danger">Datos covid alemania</button></a>
 					<a href="https://documenter.getpostman.com/view/14969395/TzJoE1Zm">
 						<button type="button" class="btn btn-warning">Documentación de Postman</button></a>
-						<button type="button" class="btn btn-success" id="BotonGer" onclick="loadInitialDataGER()">LOAD INITIAL DATA Alemania</button>
+						<!--<button type="button" class="btn btn-success" id="BotonGer" onclick="loadInitialDataGER()">LOAD INITIAL DATA Alemania</button>-->
 				
 						<script>
 						async function loadInitialDataGER(){
@@ -60,7 +60,7 @@
 						<button type="button" class="btn btn-danger">Datos covid india</button></a>
 					<a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1">
 						<button type="button"  class="btn btn-warning">Documentación de Postman</button></a>
-					<button type="button" class="btn btn-success" id="BotonIND" onclick="loadInitialDataIND()">LOAD INITIAL DATA India</button>
+					<!--<button type="button" class="btn btn-success" id="BotonIND" onclick="loadInitialDataIND()">LOAD INITIAL DATA India</button>-->
 				
 					<script>
 					async function loadInitialDataIND(){
