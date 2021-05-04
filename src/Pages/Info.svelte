@@ -25,26 +25,20 @@
       </NavItem>
     </Nav>
   
-    <h1>SOS2021-01</h1>
+    <h1>SOS2021-08</h1>
   
-    <h2>Equipo (y fuente de datos)</h2>
+    <h2>Grupo sos2021-08 y fuente de datos</h2>
     <Container>
       <Col>
-        <a href="http://github.com/19juaniyo99">Juan Buitrago Ruiz</a> (divorce-stats)
-      </Col>
-      <Col>
-        <a href="http://github.com/Lucia2712">Lucia Castro Perez</a> (life-stats)
-      </Col>
-      <Col>
-        <a href="http://github.com/AbramsM1A2">Abraham Corta Ramirez</a> (natality-stats)
+        <a href="http://github.com/antoniosilva096">Antonio Silva Gordillo</a> 
       </Col>
     </Container>
     <p />
     <Container>
       <Row>
         <Col>
-          <a href="http://github.com/gti-sos/SOS2021-01">
-            <Button color="primary">GitHub</Button></a
+          <a href="http://github.com/gti-sos/SOS2021-08">
+            <Button color="primary">Repositorio GitHub</Button></a
           >
         </Col>
       </Row>
@@ -55,82 +49,26 @@
       <Col xs="auto">
         <Card class="mb-3">
           <CardHeader>
-            <CardTitle><h5>divorce-stats</h5></CardTitle>
+            <CardTitle><h5>covid19-tracking-germany</h5></CardTitle>
           </CardHeader>
           <CardBody>
             <CardSubtitle />
             <CardText
-              >Fuente de datos sobre el divorcio. Tasa de matrimonios y divorcios, relación entre
-              matrimonios y divorcios.</CardText
+              >Estadisticas sobre casos, muertes, recuperados, grupos de edad y género de la evolución de la COVID-19 EN Alemania.</CardText
             >
-            <a href="https://sos2021-01.herokuapp.com/api/v1/divorce-stats">
+            <a href="https://sos2021-01.herokuapp.com/api/v1/covid19-tracking-germany">
               <Button color="primary">API v1</Button></a
             >
             <a href="/#/divorce-stats">
               <Button color="primary">Interfaz</Button>
             </a>
-            <a href="https://documenter.getpostman.com/view/14948045/TzJoDg1Q"
+            <a href="https://documenter.getpostman.com/view/14969395/TzJoE1Zm"
               ><Button color="info">Documentación v1</Button></a
             >
           </CardBody>
           <CardFooter
             >desarrollado por
-            <a href="https://github.com/19juaniyo99">Juan Buitrago Ruiz</a
-            ></CardFooter
-          >
-        </Card>
-      </Col>
-      <Col xs="auto">
-        <Card class="mb-3">
-          <CardHeader>
-            <CardTitle><h5>life-stats</h5></CardTitle>
-          </CardHeader>
-          <CardBody>
-            <CardSubtitle />
-            <CardText
-              >Fuente de datos del índice de calidad de vida por país, que está vinculado a
-              el índice de poder adquisitivo y el índice de seguridad.</CardText
-            >
-            <a href="https://sos2021-01.herokuapp.com/api/v1/life-stats">
-              <Button color="primary">API v1</Button>
-            </a>
-            <a href="/#/life-stats">
-              <Button color="primary">Interfaz</Button>
-            </a>
-            <a href="https://documenter.getpostman.com/view/14961437/TzJoDg1P">
-              <Button color="info">Documentación v1</Button>
-            </a>
-          </CardBody>
-          <CardFooter
-            >desarrollado por
-            <a href="https://github.com/Lucia2712">Lucia Castro Perez</a>
-          </CardFooter>
-        </Card>
-      </Col>
-      <Col xs="auto">
-        <Card class="mb-3">
-          <CardHeader>
-            <CardTitle><h5>natality-stats</h5></CardTitle>
-          </CardHeader>
-          <CardBody>
-            <CardSubtitle />
-            <CardText>
-              Ratios de natalidad y fertlidad de hombres y mujeres nacidos por año y
-              país.
-            </CardText>
-            <a href="/api/v1/natality-stats"
-              ><Button color="primary">API v1</Button></a
-            >
-            <a href="/#/natality-stats"
-              ><Button color="primary">Interfaz</Button></a
-            >
-            <a href="https://documenter.getpostman.com/view/14932491/TzJrCzRM"
-              ><Button color="info">Documentación v1</Button></a
-            >
-          </CardBody>
-          <CardFooter
-            >desarrollado por
-            <a href="https://github.com/AbramsM1A2">Abraham Corta Ramírez</a
+            <a href="https://github.com/antoniosilva096">Antonio Silva Gordillo</a
             ></CardFooter
           >
         </Card>
