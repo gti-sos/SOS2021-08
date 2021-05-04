@@ -30,7 +30,7 @@ juavegsecAPI.register(app);
 var antcarbar1API =  require("./src/back/antcarbar1API");
 antcarbar1API.register(app);
 
-// =======================================Codigo de grupo===========================
+// =======================================Codigo de grupo==========================
 app.listen(port, () => {//la segunda parte del listen se ejecuta cuando el servidor esta listo
 	console.log("Server ready. Listening on port " + port);
 });
