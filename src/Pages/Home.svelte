@@ -66,7 +66,7 @@
             <CardText
               >Estadisticas sobre casos, muertes, recuperados, grupos de edad y género de la evolución de la COVID-19 EN Alemania.</CardText
             >
-            <a href="https://sos2021-01.herokuapp.com/api/v1/covid19-tracking-germany">
+            <a href="https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany">
               <Button color="primary">API v1</Button></a
             >
             <a href="/#/covid19-tracking-germany">
@@ -82,6 +82,56 @@
             ></CardFooter
           >
         </Card>
+        <Card class="mb-3">
+            <CardHeader>
+              <CardTitle><h5>us_counties_covid19_daily</h5></CardTitle>
+            </CardHeader>
+            <CardBody>
+              <CardSubtitle />
+              <CardText
+                >Estadisticas covid en EEUU.</CardText
+              >
+              <a href="https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily">
+                <Button color="primary">API v1</Button></a
+              >
+              <a href="/#/us_counties_covid19_daily">
+                <Button color="primary">Interfaz</Button>
+              </a>
+              <a href="https://documenter.getpostman.com/view/14969395/TzJoE1Zm"
+                ><Button color="info">Documentación v1</Button></a
+              >
+            </CardBody>
+            <CardFooter
+              >desarrollado por
+              <a href="https://github.com/">Antonio Carranza Barroso</a
+              ></CardFooter
+            >
+          </Card>
+        <Card class="mb-3">
+            <CardHeader>
+              <CardTitle><h5>statewisetestingdetails</h5></CardTitle>
+            </CardHeader>
+            <CardBody>
+              <CardSubtitle />
+              <CardText
+                >Estadisticas covid en India.</CardText
+              >
+              <a href="https://sos2021-08.herokuapp.com/api/v1/statewisetestingdetails">
+                <Button color="primary">API v1</Button></a
+              >
+              <a href="/#/us_counties_covid19_daily">
+                <Button color="primary">Interfaz</Button>
+              </a>
+              <a href="https://documenter.getpostman.com/view/14969395/TzJoE1Zm"
+                ><Button color="info">Documentación v1</Button></a
+              >
+            </CardBody>
+            <CardFooter
+              >desarrollado por
+              <a href="https://github.com/">Juan Vega Seco</a
+              ></CardFooter
+            >
+          </Card>
       </Col>
     </Container>
     </div>

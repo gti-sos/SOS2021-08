@@ -30,7 +30,7 @@
     <h2>Grupo sos2021-08 y fuente de datos</h2>
     <Container>
       <Col>
-        <a href="http://github.com/antoniosilva096">Antonio Silva Gordillo</a> 
+        <a href="http://github.com/antoniosilva096">Antonio Silva Gordillo. Fuente de datos: covid19-tracking-germany</a> 
       </Col>
     </Container>
     <p />
@@ -56,7 +56,7 @@
             <CardText
               >Estadisticas sobre casos, muertes, recuperados, grupos de edad y género de la evolución de la COVID-19 EN Alemania.</CardText
             >
-            <a href="https://sos2021-01.herokuapp.com/api/v1/covid19-tracking-germany">
+            <a href="https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany">
               <Button color="primary">API v1</Button></a
             >
             <a href="/#/divorce-stats">
@@ -84,7 +84,7 @@
       margin: 0 auto;
     }
     h1 {
-      color: #ff3e00;
+      color: #9509c0;
       text-transform: uppercase;
       font-size: 4em;
       font-weight: 100;
