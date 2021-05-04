@@ -24,11 +24,11 @@ antsilgorAPI.register(app);
 
 
 //=========================================== JUAVECSEG =========================================================
-//var juavegsecAPI =  require("./juavegsecAPI");
-//juavegsecAPI.register(app);
+var juavegsecAPI =  require("./src/back/juavegsecAPI");
+juavegsecAPI.register(app);
 //=========================================== ANTBARCAR =========================================================
-//var antcarbar1API =  require("./antcarbar1API");
-//antcarbar1API.register(app);
+var antcarbar1API =  require("./src/back/antcarbar1API");
+antcarbar1API.register(app);
 
 // =======================================Codigo de grupo===========================
 app.listen(port, () => {//la segunda parte del listen se ejecuta cuando el servidor esta listo
