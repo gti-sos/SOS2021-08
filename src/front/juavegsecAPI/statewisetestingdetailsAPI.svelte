@@ -279,7 +279,7 @@
         {/if}
       </NavItem>
     </Nav>
-    <h2>API Sobre estadísticas de la COVID-19 en Alemania</h2>
+    <h2>API Sobre estadísticas de la COVID-19 en India</h2>
     <p />
   
     <!-- Alerts -->
