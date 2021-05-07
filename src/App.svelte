@@ -7,11 +7,17 @@
 	  import Info from "./Pages/Info.svelte";
 	  import covid19TrackingGermanyAPI from "./front/antsilgorAPI/covid19TrackingGermanyAPI.svelte";
 	  import EditCovid19TrackingGermanyAPI from "./front/antsilgorAPI/EditCovid19TrackingGermanyAPI.svelte";
+	 
+	  import statewisetestingdetailsAPI from "./front/juavegsecAPI/statewisetestingdetailsAPI.svelte";
+	  import Editstatewisetestingdetails from "./front/juavegsecAPI/Editstatewisetestingdetails.svelte";
+
 	  const routes = {
 		  "/":Home,
 		  "/info":Info,
 		  "/covid19-tracking-germany": covid19TrackingGermanyAPI,
 		  "/covid19-tracking-germany/:state/:county":EditCovid19TrackingGermanyAPI,
+		  "/statewisetestingdetails": statewisetestingdetailsAPI,
+		  "/statewisetestingdetails/:date/:state":Editstatewisetestingdetails,
 		  '*': NotFound};
   </script>
   

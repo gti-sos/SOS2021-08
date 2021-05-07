@@ -25,6 +25,7 @@
     "degit": "^2.8.4",
     "express": "^4.17.1",
     "nedb": "^1.8.0",
+    "node": "^16.0.0",
     "svelte-spa-router": "^3.1.0",
     "sveltestrap": "^3.14.1"
   },
@@ -38,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/gti-sos/SOS2021-08/issues"
   },
-  "homepage": "https://github.com/gti-sos/SOS2021-08#readme"
+  "homepage": "https://github.com/gti-sos/SOS2021-08#readme",
+  "directories": {
+    "test": "test"
+  }
 }

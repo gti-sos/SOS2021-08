@@ -119,7 +119,7 @@
               <a href="https://sos2021-08.herokuapp.com/api/v1/statewisetestingdetails">
                 <Button color="primary">API v1</Button></a
               >
-              <a href="/#/us_counties_covid19_daily">
+              <a href="/#/statewisetestingdetails">
                 <Button color="primary">Interfaz</Button>
               </a>
               <a href="https://documenter.getpostman.com/view/14969395/TzJoE1Zm"
