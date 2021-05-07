@@ -11,6 +11,9 @@
 	  import statewisetestingdetailsAPI from "./front/juavegsecAPI/statewisetestingdetailsAPI.svelte";
 	  import Editstatewisetestingdetails from "./front/juavegsecAPI/Editstatewisetestingdetails.svelte";
 
+	  import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
+	  import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
+
 	  const routes = {
 		  "/":Home,
 		  "/info":Info,
@@ -18,9 +21,10 @@
 		  "/covid19-tracking-germany/:state/:county":EditCovid19TrackingGermanyAPI,
 		  "/statewisetestingdetails": statewisetestingdetailsAPI,
 		  "/statewisetestingdetails/:date/:state":Editstatewisetestingdetails,
+		  "/us_counties_covid19_daily":  us_counties_covid19API,
+		  "/us_counties_covid19_daily/:county/:fips":EditUs_counties_covid19,
 		  '*': NotFound};
   </script>
-  
   <main>
 	  <Router {routes}> </Router>
   </main>
