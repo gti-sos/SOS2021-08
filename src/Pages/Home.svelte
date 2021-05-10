@@ -97,7 +97,7 @@
               <a href="/#/us_counties_covid19_daily">
                 <Button color="primary">Interfaz</Button>
               </a>
-              <a href="https://documenter.getpostman.com/view/14969056/TzJoE1VQ"
+              <a href="https://documenter.getpostman.com/view/14969056/TzJshe8k"
                 ><Button color="info">Documentación v1</Button></a
               >
             </CardBody>
@@ -122,7 +122,7 @@
               <a href="/#/statewisetestingdetails">
                 <Button color="primary">Interfaz</Button>
               </a>
-              <a href="https://documenter.getpostman.com/view/14947979/TzJoE1VP"
+              <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a
               >
             </CardBody>
