@@ -133,7 +133,6 @@
           errorMsg = res.status + ": " + res.statusText;
           console.log("ERROR! 404");
         }
-        init = false;
       }
     }
     //contador de stats de BD
@@ -187,7 +186,7 @@
       });
     }
     async function deleteStat(date, state) {
-      console.log(`Deleting data with name ${date} and county ${state}`);
+      console.log(`Deleting data with date ${date} and state ${state}`);
       const res = await fetch(
         BASE_API_PATH + "/statewisetestingdetails/" + date + "/" + state,
         {
@@ -196,7 +195,7 @@
       ).then(function (res) {
         if (res.ok) {
           console.log("OK");
-          if (statewisetestingdetails.length === 1) {
+          if (statewisetestingdetails.length === 0) {
             statewisetestingdetails = [];
             currentPage = 1;
           }
@@ -205,7 +204,7 @@
           getStats();
         } else {
           if(res.status===404){
-            errorMsg = `No existe el dato ${date} con fecha ${state} para borrar`;
+            errorMsg = `No existe el dato con fecha ${date} y estado ${state} para borrar`;
           }else if(res.status ===500){
             errorMsg = "No se han podido acceder a la base de datos";
           }        
@@ -253,7 +252,7 @@
         <Modal isOpen={open1} {toggle1}>
           <ModalHeader {toggle1}>¿Cargar los datos iniciales?</ModalHeader>
           <ModalBody>
-            Esta acción cargará los datos siempre y cuando no existan previamente.
+            Esta acción cargará los datos siempre y cuando no existan anteriormente.
           </ModalBody>
           <ModalFooter>
             <Button color="primary" on:click={toggle1P}>Cargar</Button>
