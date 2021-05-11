@@ -1,3 +1,362 @@
+var Datastore = require("nedb");
+var db = new Datastore({ filename: "./src/back/juavegsecAPI/statewisetestingdetails.db", autoload: true });
+var BASE_API_PATH= "/api/v1";
+
+module.exports.register = (app, BASE_API_PATH) => {
+	 
+	
+
+var statewisetestingdetails = [];
+
+
+//GET para cargar (o meter) los datos iniciales (todo en JSON)
+//(de modo que cree 2 o más elementos)
+
+app.get(BASE_API_PATH+"/statewisetestingdetails/loadInitialData", (req,res)=>{ 
+
+	
+	var statewisetestingdetails_initial_data = [
+        {
+            "date": "2020-04-17",
+            "state": "Andaman and Nicobar Islands",
+            "totalsamples": 1403,
+            "negative": 1250,
+            "positive":12
+            },
+            {
+            "date": "2021-04-02",
+            "state": "Andhra Pradesh",
+            "totalsamples": 1800,
+            "negative": 1175,
+            "positive":132
+                },
+                {
+                "date": "2021-04-09",
+                "state": "Arunachal Pradesh",
+                "totalsamples": 206,
+                "negative": 185,
+                "positive":1
+                    },
+                      {
+                "date": "2021-04-02",
+                "state": "Assam",
+                "totalsamples": 962,
+                "negative": 819,
+                "positive":16
+                    },
+                     {
+                "date": "2021-04-05",
+                "state": "Bihar",
+                "totalsamples": 3037,
+                "negative": 2299,
+                "positive":32
+                    }
+    
+    
+    
+    ];
+
+	
+	db.insert(statewisetestingdetails_initial_data);
+	
+	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria
+	//(Lo indicamos con el 200 por consola, y con un pequeño html para el usuario de forma gráfica)
+
+	res.sendStatus(200);
+
+});
+
+
+
+//1)GET a la lista de recursos devuelve una lista con todos los recursos
+//(GET para cargar el array completo)
+
+app.get(BASE_API_PATH + "/statewisetestingdetails", (req,res) => {
+	
+	let query = {};
+        let offset = 0;
+        let limit = Number.MAX_SAFE_INTEGER;
+
+        // Pagination
+        if (req.query.limit) {
+            limit = parseInt(req.query.limit);
+            delete req.query.limit;
+        }
+
+        if (req.query.offset) {
+            offset = parseInt(req.query.offset);
+            delete req.query.offset;
+        }
+
+        // Search
+        if (req.query.date) query["date"] = req.query.date;
+        if (req.query.state) query["state"] = req.query.state;
+        if (req.query.totalsamples) query["totalsamples"] = req.query.totalsamples;
+        if (req.query.negative) query["negative"] =req.query.negative;
+        if (req.query.positive) query["positive"] = req.query.positive;
+	
+	 db.find(query).sort({ date: 1, state: -1}).skip(offset).limit(limit).exec(function (err, resources) {
+            if (err) {
+                console.error(DATABASE_ERR_MSSG + err);
+                res.sendStatus(500);
+            } else {
+                if (resources.length != 0) {
+                   
+					var aux = resources.map((c)=>{
+				return {date : c.date, state: c.state, totalsamples: c.totalsamples, negative: c.negative, positive: c.positive  }
+			
+					res.status(200).send(aux);
+					
+					
+                    });
+
+                    // res.status(200).send(JSON.stringify(resourcesToSend, null, 2));
+                    res.status(200).send(aux);
+                } else {
+					var array = [];
+                    res.status(200).send(array);
+                }
+
+            }
+
+        });
+    });
+	
+	
+	
+	
+		
+	
+
+
+
+
+//2)POST  a la lista de recursos (para introducir nuevos arrays de datos)
+
+app.post(BASE_API_PATH+"/statewisetestingdetails", (req,res)=>{
+	
+	var data = req.body;
+	
+	var esta =false;
+	var bodyok= true;
+	
+	
+	
+	
+	db.find({date:String(req.body.date), state:String(req.body.state)  }, function(err, record) {
+    	
+		
+		if (record.length!=0) {
+       	 esta=true;
+			
+			res.sendStatus(409);
+    
+		}else{
+			
+			// -----------------Comprueba body------------------------ 
+				var cantidadDeClaves = Object.keys(data).length;
+			
+				if(cantidadDeClaves!=5){
+					bodyok = false;
+				}
+	
+		
+				var aux = Object.keys(data);
+	
+				if(aux[0]!="date"|| aux[1]!= "state" || aux[2]!= "totalsamples"|| aux[3]!= "negative" || aux[4] != "positive"){
+					bodyok =false;
+				}
+			// ------------------------------------------------------- 
+			
+			if( bodyok){
+		
+				db.insert(data);
+				//"Metemos" en el array de datos para este recurso lo recibido en el POST
+				res.sendStatus(201);
+		
+			}else if(!bodyok){
+			 
+				res.sendStatus(400);
+			}
+			
+			}
+		
+    
+	
+	});
+	
+});
+
+
+	
+//3) GET a un recurso (en concreto), devuelve ese recurso
+//En nuestro caso, accedemos a los elementos por estado y año (p ej.)
+
+app.get(BASE_API_PATH+"/statewisetestingdetails/:date/:state", (req,res)=>{ 
+		
+		
+	db.find({date:String(req.params.date), state:String(req.params.state)  }, function(err, record) {
+		
+		console.log(record);
+		
+		if (record.length==0) {
+       	
+			res.sendStatus(404);
+    
+		}else{
+		
+			var aux = record.map((c)=>{
+				return {date : c.date, state: c.state, totalsamples: c.totalsamples, negative: c.negative, positive: c.positive  }
+			});
+			res.status(200).send(aux[0]);
+		}
+		
+		});
+	
+	
+	
+	
+});
+
+
+//4) DELETE a un recurso, borra ese recurso (en concreto)
+//En nuestro caso, borramos el recurso por estado y año
+
+app.delete(BASE_API_PATH+"/statewisetestingdetails/:date/:state", function(req, res) { 
+	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
+	
+	
+	db.remove({date:String(req.params.date), state:String(req.params.state)},(err, numEvictionsRemoved)=>{
+			
+		console.log(err);
+		
+		if(err!=null){
+				console.error("ERROR deleting DB evictions in DELETE: "+err);
+				res.sendStatus(500);
+			}else{
+				if(numEvictionsRemoved==0){
+					res.sendStatus(404);
+				}else{
+					res.sendStatus(200);
+				}
+			}
+		})
+	
+});
+
+
+//5) PUT a un recurso (en concreto), actualiza ese recurso
+//actualizamos los que coincidan con 'state' y 'year'
+
+
+app.put(BASE_API_PATH+"/statewisetestingdetails/:date/:state", function(req,res) { 
+
+	var data = req.body;
+	
+	var esta = false;
+	var bodyok = true;
+	
+	var aux = Object.keys(data);
+	
+		if(aux[0]!="date"|| aux[1]!= "state" || aux[2]!= "totalsamples"|| aux[3]!= "negative" || aux[4] != "positive"){
+			bodyok =false;
+		}
+	
+	db.find({date:String(req.params.date), state:String(req.params.state)  }, function(err, record) {
+		
+		//console.log(record);
+		if(err!=null){
+				console.error("ERROR deleting DB evictions in DELETE: "+err);
+				res.sendStatus(500);
+		}else{
+			
+			
+			if (record.length==0) {
+       	
+				res.sendStatus(404);
+    
+			}else{
+			
+				if(!bodyok){
+					
+					 res.sendStatus(400);
+					
+				}else{
+					
+					if(String(req.params.date) !=  req.body.date || String(req.params.state) !=  req.body.state  ){
+					   
+						
+						res.sendStatus(409);
+						
+					   }else{
+					   
+						   
+						   db.update({date:String(req.params.date), state:String(req.params.state)}, 
+							  {date:String(req.params.date), state:String(req.params.state),totalsamples: req.body.totalsamples, negative:  req.body.negative, 
+							 	positive: req.body.positive}, {}, function (err, numReplaced) {
+										
+						if(err) {
+							console.error(err);
+							res.sendStatus(500);
+						}else{
+							res.sendStatus(200);
+							
+						}
+								
+					
+					});
+						   
+						   
+						   
+					   }
+					
+					
+					
+				}
+				
+			}
+			
+		}
+		
+		
+		});
+	
+});
+
+
+
+
+
+//6)POST a un recurso (en concreto), debe de dar un error de método no permitido 
+
+app.post(BASE_API_PATH+"/statewisetestingdetails/:date/:state", function(req, res) { 
+
+	res.sendStatus(405); 
+});
+
+
+//7)PUT a la lista de recursos (completa) debe dar un error de no permitido
+
+app.put(BASE_API_PATH+"/statewisetestingdetails", function(req, res) { 
+
+	res.sendStatus(405); 
+});
+
+//8)DELETE a la lista de recursos (completa) borra todos los recursos
+//En otras palabras, borramos todos los elementos existentes en el array inicial
+
+app.delete(BASE_API_PATH+"/statewisetestingdetails", (req,res)=>{
+		
+	db.remove({}, { multi: true }, function(err, numDeleted) {
+     console.log('Deleted', numDeleted, 'user(s)');
+}); 
+	res.sendStatus(200);
+
+});
+	 
+	 
+ }
+/*
 var DataStore = require("nedb");
 var db = new DataStore();
 var BASE_API_PATH = "/api/v1"; //tipo de recurso
@@ -263,7 +622,9 @@ app.get(BASE_API_PATH+"/statewisetestingdetails", (req, res) =>{
    
 }
 
+/*
 
 
 
+/* */
   
