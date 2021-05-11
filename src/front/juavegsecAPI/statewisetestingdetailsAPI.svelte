@@ -1,411 +1,544 @@
-<script>
-    import {
-      Nav,
-      Modal,
-      ModalBody,
-      ModalFooter,
-      ModalHeader,
-      NavItem,
-      NavLink,
-      Button,
-      Table,
-      Pagination,
-      PaginationItem,
-      PaginationLink,
-    } from "sveltestrap";
-    import { onMount } from "svelte";
-    // Nav
-    //Load stats
-    let open1 = false;
-    const toggle1 = () => (open1 = !open1);
-    const toggle1P = () => {
-      open1 = !open1;
-      loadStats();
-    };
-    //Delete stats
-    let open2 = false;
-    const toggle2 = () => (open2 = !open2);
-    const toggle2P = () => {
-      open2 = !open2;
-      deleteAllStats();
-    };
-    //API
-    //Alerts
-    let visible = true;
-    let errorMsg = "";
-    let okMsg = "";
-    let fullQuery = "";
-    const BASE_API_PATH = "/api/v1";
-    let statewisetestingdetails = [];
-    let error = null;
-    let newStat = {
-        date: "",
-        state: "",
-        "totalsamples": "",
-        "negative": "",
-        "positive": "",
-       
-    };
-    //Pagination
-    let current_offset = 0;
-    let limit = 10;
-    let current_page = 1;
-    let last_page = 1;
-    let total = 0;
-    //Functions
-    async function loadStats() {
-      console.log("Loading data...");
-      const res = await fetch(
-        BASE_API_PATH + "/statewisetestingdetails/loadInitialData"
-      ).then(function (res) {
-        if (res.ok) {
-          console.log("OK");
-          getStats();
-          errorMsg = "";
-          okMsg = "Operación realizada con éxito";
-        } else {
-          if(res.status===404){
-            errorMsg = "No existen datos que borrar";
-          }else if(res.status ===500){
-            errorMsg = "No se han podido acceder a la base de datos";
-          }        
-          okMsg = "";
-          console.log("ERROR!" + errorMsg);
-        }
-      });
-    }
-    async function searchStat() {
-      console.log("Searching data...");
-      var campos = new Map(
-        Object.entries(newStat).filter((o) => {
-          return o[1] != "";
-        })
-      );
-      let querySymbol = "?";
-      for (var [clave, valor] of campos.entries()) {
-        querySymbol += clave + "=" + valor + "&";
-      }
-      fullQuery = querySymbol.slice(0, -1);
-      if (fullQuery != "") {
-        const res = await fetch(
-          BASE_API_PATH + "/statewisetestingdetails/" + fullQuery
-        );
-        if (res.ok) {
-          console.log("OK");
-          const json = await res.json();
-          statewisetestingdetails = json;
-          okMsg = "Búsqueda realizada con éxito";
-        } else {
-          statewisetestingdetails = [];
-          if (res.status === 404) {
-            errorMsg = "No se encuentra el dato solicitado";
-          } else if (res.status === 500) {
-            errorMsg = "No se han podido acceder a la base de datos";
-          }
-          okMsg = "";
-          console.log("ERROR!" + errorMsg);
-        }
-      } else {
-        errorMsg = "";
-        okMsg = "Búsqueda realizada con éxito";
-        getStats();
-      }
-    }
-    async function getStats() {
-      console.log("Fetching data...");
-      const res = await fetch(
-        BASE_API_PATH +
-          "/statewisetestingdetails?limit=" +
-          limit +
-          "&offset=" +
-          current_offset
-      );
-      if (res.ok) {
-        console.log("Ok");
-        const json = await res.json();
-        statewisetestingdetails = json;
-        console.log(`We have received ${statewisetestingdetails.length} stats.`);
-        errorMsg = "";
-        //getNumStats()
-      } else {
-        if (statewisetestingdetails.length != 0) {
-          okMsg = "";
-          errorMsg = res.status + ": " + res.statusText;
-          console.log("ERROR! 404");
-        }
-      }
-    }
-    //contador de stats de BD
-    async function getNumStats() {
-      const res = await fetch(BASE_API_PATH + "/statewisetestingdetails");
-      if (res.ok) {
-        const json = await res.json();
-        total = json.length;
-        console.log("Number of stats : " + total);
-        changePage(current_page, current_offset);
-      } else {
-        errorMsg = "No se han encontrado datos.";
-      }
-    }
-    //Calcula el rango entre dos valores
-    function range(size, startAt = 0) {
-      return [...Array(size).keys()].map((i) => i + startAt);
-    }
-    //Cambio de pagina
-    function changePage(page, offset) {
-      console.log("------Change page------");
-      console.log("Params page: " + page + " offset: " + offset);
-      last_page = Math.ceil(total / 10);
-      console.log("new last page: " + last_page);
-      if (page !== current_page) {
-        console.log("enter if");
-        current_offset = offset;
-        current_page = page;
-        console.log("page: " + page);
-        console.log("current_offset: " + current_offset);
-        console.log("current_page: " + current_page);
-        getStats();
-      }
-      console.log("---------Exit change page-------");
-    }
-    async function deleteAllStats() {
-      console.log("Deleting data...");
-      const res = await fetch(BASE_API_PATH + "/statewisetestingdetails/", {
-        method: "DELETE",
-      }).then(function (res) {
-        if (res.ok) {
-          console.log("OK");
-          statewisetestingdetails = [];
-          errorMsg = "";
-          okMsg = "Operación realizada con éxito";
-        } else {
-          errorMsg = res.status + ": " + res.statusText;
-          okMsg = "";
-          console.log("ERROR!" + errorMsg);
-        }
-      });
-    }
-    async function deleteStat(date, state) {
-      console.log(`Deleting data with date ${date} and state ${state}`);
-      const res = await fetch(
-        BASE_API_PATH + "/statewisetestingdetails/" + date + "/" + state,
-        {
-          method: "DELETE",
-        }
-      ).then(function (res) {
-        if (res.ok) {
-          console.log("OK");
-          if (statewisetestingdetails.length === 0) {
-            statewisetestingdetails = [];
-            currentPage = 1;
-          }
-          errorMsg = "";
-          okMsg = "Operación realizada con éxito";
-          getStats();
-        } else {
-          if(res.status===404){
-            errorMsg = `No existe el dato con fecha ${date} y estado ${state} para borrar`;
-          }else if(res.status ===500){
-            errorMsg = "No se han podido acceder a la base de datos";
-          }        
-          okMsg = "";
-          console.log("ERROR!" + errorMsg);
-        }
-      });
-    }
-    async function insertStat() {
-      console.log("Inserting stat: " + JSON.stringify(newStat));
+<script lang="ts">
+   
+  import {
+       Nav,
+       Modal,
+       ModalBody,
+       ModalFooter,
+       ModalHeader,
+       NavItem,
+       NavLink,
+       Button,
+       Table,
+       UncontrolledAlert,
+       Card,
+       CardBody,
+       CardFooter,
+       CardHeader,
+       CardSubtitle,
+       CardText,
+       CardTitle,
+   } from "sveltestrap";
+   
+   import {
+      pop
+   } from "svelte-spa-router";
 
-      newStat["totalsamples"] = parseInt(newStat["totalsamples"]);
-      newStat["negative"] = parseInt(newStat["negative"]);
-      newStat["positive"] = parseInt(newStat["positive"]);
-      const res = await fetch(BASE_API_PATH + "/statewisetestingdetails/", {
-        method: "POST",
-        body: JSON.stringify(newStat),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then(function (res) {
-        if (res.ok) {
-          console.log("OK");
-          getStats();
-          errorMsg = "";
-          okMsg = "Operación realizada con éxito";
-        } else {
-          errorMsg = res.status + ": " + res.statusText;
-          console.log("ERROR!" + errorMsg);
-          okMsg = "";
-        }
-      });
-    }
-    onMount(getStats);
-    getNumStats();
-  </script>
-  
-  <main>
-    <Nav>
-      <NavItem>
-        <NavLink href="/">Volver</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink href="#" on:click={toggle1}>Cargar datos inciales</NavLink>
-        <Modal isOpen={open1} {toggle1}>
-          <ModalHeader {toggle1}>¿Cargar los datos iniciales?</ModalHeader>
-          <ModalBody>
-            Esta acción cargará los datos siempre y cuando no existan anteriormente.
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" on:click={toggle1P}>Cargar</Button>
-            <Button color="secondary" on:click={toggle1}>Cancelar</Button>
-          </ModalFooter>
-        </Modal>
-      </NavItem>
-      <NavItem>
-        {#if statewisetestingdetails.length === 0}
-          <NavLink disabled href="#" on:click={toggle2}
-            >Borrar todos los datos</NavLink
-          >
-        {:else}
-          <NavLink href="#" on:click={toggle2}>Borrar todos los datos</NavLink>
-          <Modal isOpen={open2} {toggle2}>
-            <ModalHeader {toggle2}>¿Borrar todos los datos?</ModalHeader>
-            <ModalBody>Esta acción no se puede deshacer.</ModalBody>
-            <ModalFooter>
-              <Button color="danger" on:click={toggle2P}>Borrar</Button>
-              <Button color="secondary" on:click={toggle2}>Cancelar</Button>
-            </ModalFooter>
-          </Modal>
-        {/if}
-      </NavItem>
-    </Nav>
-    <h2>API Sobre estadísticas de la COVID-19 en India</h2>
-    <p />
-  
-    <!-- Alerts -->
-    {#if errorMsg}
-      <p style="color: red">ERROR: {errorMsg}</p>
-    {/if}
-    {#if okMsg}
-      <p style="color: green">{okMsg}</p>
-    {/if}
-  
-    <!-- Table -->
-    <Table>
-      <thead>
-        <tr>
-          <th>Fecha</th>
-          <th>Estado</th>
-          <th>Casos totales</th>
-          <th>Negativos</th>
-          <th>Positivos</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-          <tr>
-            <td
-              ><input
-                type="text"
-                bind:value={newStat.date}
-              /></td
-            >
-            <td
-              ><input
-                type="text"
-                bind:value={newStat.state}
-              /></td
-            >
-            <td
-              ><input
-                type="text"
-                bind:value={newStat["totalsamples"]}
-              /></td
-            >
-            <td
-              ><input
-                type="text"
-                bind:value={newStat["negative"]}
-              /></td
-            >
-            <td
-              ><input
-                type="text"
-                bind:value={newStat["positive"]}
-              /></td
-            >
+   
+   const BASE_API_URL = "/api/v1/statewisetestingdetails"; //tiene que llamar a la API para tratar los datos
+ 
+   let cargados = false;
+   let data = [];
+
+   let isOpen = false;
+
+   let limit =10;
+   let ofset =0;
+   let pagina = (ofset/10)+1;
+   let num_paginas=0;
+   let flags ="";
+   let filtros_act= false;
+
+   getData();
+
+   let newData = {
+           date:"",
+           state:"",
+           totalsamples:"",
+           negative:"",
+        positive:"",
+      
+       }
+  let databusqueda = {
+          date:"",
+           state:"",
+           totalsamples:"",
+           negative:"",
+           positive:"",
+       }
+       
+    //funcion asincrona para cargar (get) los recursos existentes
+    async function getNumPaginas() {
+           console.log("Fetching covid resourcers...");
+           const res = await fetch(BASE_API_URL);
+           let datos=[]
+           if(res.ok){
+               const json = await res.json();
+               datos = json;
+               num_paginas=(datos.length/10)+1|0;
+               if(datos.length%10==0&&num_paginas!==1){
+                   num_paginas--;
+               }
+
+           }else{
+               console.log("ERROR!");
+           }
+
+       }
+
+
+    async function getData() {
+           getNumPaginas()
+           console.log(num_paginas)
+           console.log("Fetching covid resourcers...");
+         
+           const res = await fetch(BASE_API_URL+"?limit="+limit+"&offset="+ofset+flags);
+           if(res.status==200){
+               const json = await res.json();
+               data = json;
+               console.log(`Received ${data.length} resources`);
+               pagina = (ofset/10)+1
+
+               let mes="Hemos encontrado "+ data.length +" elementos que concuerden con la busqueda";
+               if(filtros_act) lanzamensaje(res.status,res.statusText,"Advertencia",mes,null)
+           }else{
+               console.log("ERROR!");
+               lanzamensaje(res.status,res.statusText,"Error al obtener los elementos","Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema.",true)
+           }
+
+       }
+
+       async function insertData() { //insertar un recurso en concreto
+           console.log("Inserting new resource " + JSON.stringify(newData));
+           newData.state=newData.state.replace(" ","_")
+           const res = await fetch(BASE_API_URL, {
+               method: "POST",
+               
+               body: JSON.stringify(newData),
+               headers: {
+                   "Content-Type": "application/json",
+               }
+           }
+           ).then( (res) => {
+               getData();
+               switch (res.status){
+                   case 409:
+                   lanzamensaje(res.status,res.statusText,"Se ha producido un error en el Insert","Ya existe un dato que con los mismos creedenciales",true)
+                   break
+
+                   case 400:
+                   lanzamensaje(res.status,res.statusText,"Se ha producido un error en el Insert","Ha habido un problema con el cuerpo de la petición",true)
+                   break
+
+                   case 201:
+                       let mensajeaux= "El dato: "+newData.date+"/"+newData.state+" ya forma parte de la base de datos." 
+                   lanzamensaje(res.status,res.statusText,"El dato se ha insertado satisfactoriamente",mensajeaux,null)
+                   break
+
+                   default:
+                   lanzamensaje(res.status,res.statusText,"Se ha producido un error en el Insert","Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante",true)
+                   break
+               }
+           })
            
-            <td
-              ><Button color="secondary" on:click={insertStat}>Insertar</Button
-              ></td
-            >
-            <td>
-              <Button color="primary" on:click={searchStat}>Buscar</Button>
-            </td>
-          </tr>
+       }
+
+       async function deleteData(a, b) { //elimina un recurso en concreto
+           
+           console.log("Deleting resource " + JSON.stringify(data));
+           const res = await fetch(BASE_API_URL+"/"+a+"/"+b, {
+               method: "DELETE",
+             
+           })
+           switch(res.status){
+           case 200:
+           let mensajeaux= "El dato: "+a+"/"+b+" ya forma no parte de la base de datos." 
+                   lanzamensaje(res.status,res.statusText,"El dato se ha eliminado satisfactoriamente",mensajeaux,null)
+                   if(data.length==1&&num_paginas>1){
+                       ofset-=10; getData()
+                    }else{
+                       getData();
+                   }
+           break;
+           case 404:
+           let mensajeaux2= "El dato: "+a+"/"+b+" no se ha encontrado"    
+           lanzamensaje(res.status,res.statusText,"Se ha producido un error al intentar borrar el elemento",mensajeaux2,true)
+
+           break;
+           default:
+           lanzamensaje(res.status,res.statusText,"Se ha producido un error al intentar borrar el elemento","Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante",true)
+           break;
+           
+       }
+       }
+
+       async function loadStats(){
+       deleteStats();
+       console.log("Loading data...");
+       const carga =  await fetch(BASE_API_URL + "/loadInitialData");
+       cargados = true;
+       if (carga.ok){
+           console.log("Ok.");
+           const res = await fetch(BASE_API_URL);
+           if(res.ok){
+               console.log("Ok. Obtaining data...")
+               const json = await res.json();
+               data = json;
+               console.log('Received ${data.length}  stats.');
+               let mensajeaux = " Se han cargado un total de " + data.length+ " elementos."
+               getData()
+               lanzamensaje(res.status,res.statusText,"Los datos se han cargado satisfactoriamente",mensajeaux,null)
+           }else{
+               lanzamensaje(res.status,res.statusText,"Se ha producido un error al intentar cargar los datos",
+               "Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante",
+               true)
+                  
+               console.log("Error, there is no data.")
+           }
+       }else{
+           lanzamensaje(carga.status,carga.statusText,"Se ha producido un error al intentar cargar los datos","Vaya... Algo ha salido mal al inicializar los datos",true)
+                  
+           console.log("Error loading data.");
+       }
+   }
+  
+   async function deleteStats() {
+   console.log("Deleting life stats...");
+       cargados=false;
+   const res = await fetch(BASE_API_URL, {
+     method: "DELETE"
+   }).then(function (res) {
+     if (res.status==200){
+       console.log("Ok.");
+               let mensajeespecifico ="Se han eliminado "+data.length+" elementos."
+               data = [];
+               lanzamensaje(res.status,res.statusText,"Los datos se han eliminado satisfactoriamente",mensajeespecifico ,null)
+     } else if (res.status==404){ //no data found
+               console.log("No data found");
+               lanzamensaje(res.status,res.statusText,"Fallo al eliminar los datos","No existen datos que eliminar" ,true)
+     } else  { 
+       console.log("Error deleting DB stats");
+               lanzamensaje(res.status,res.statusText,"Fallo al eliminar los datos",
+               "Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema. Vuelva a intentarlo mas adelante" 
+               ,true)
+     }
+     
+   });
         
-        {#each statewisetestingdetails as stat}
-          <tr>
-            <td>{stat.date}</td>
-            <td>{stat.state}</td>
-            <td>{stat["totalsamples"]}</td>
-            <td>{stat["negative"]}</td>
-            <td>{stat["positive"]}</td>
     
+ }
+
+    //Insert
+   let open1 = false;
+   const toggle1 = () => (open1 = !open1);
+   const toggle1P = () => {
+       open1 = !open1;
+       console.log("Imprimo: "+newData.state.length)
+       if(newData.date.replace(' ', '').length!=0 
+       && newData.state.replace(' ', '').length!=0 
+       && newData.totalsamples.replace(' ', '').length!=0 
+       && newData.negative.replace(' ', '').length!=0 
+   && newData.positive.replace(' ', '').length!=0  ){
+
+       insertData()
+       getData();
+       }
+       else{
+
+           console.log("Nada añadido")
+           popinsert=true;
+       }
+
+   };
+
+   let popinsert = false;
+   const togglepop = () => (popinsert = !popinsert);
+   const togglepopok = () => {
+       popinsert = !popinsert;
+       open1=true}
+   
+   function gotoupdate(a,b) {
+   location.href = '#/statewisetestingdetails/'+a+'/'+b;
+}
+//paginacion
+
+const siguiente= () => {ofset+=10; getData()}
+const anterior= () => {ofset-=10; getData()}
+
+//Busqueda especifica
+
+
+
+   let popbusqueda = false;
+   const cancelarbusqueda = () => (popbusqueda = !popbusqueda);
+   const buscar = () => {
+       popbusqueda = !popbusqueda
+      
+       if(databusqueda.date.replace(" ","").length!=0){
+           flags= flags+"&date="+databusqueda.date;
+       }
+       if(databusqueda.state.replace(" ","").length!=0){
+           flags= flags+"&state="+databusqueda.state;
+       }
+       if(databusqueda.totalsamples.replace(" ","").length!=0){
+           flags= flags+"&totalsamples="+databusqueda.totalsamples;
+       }
+       if(databusqueda.negative.replace(" ","").length!=0){
+           flags= flags+"&negative="+databusqueda.negative;
+       }
+      if(databusqueda.positive.replace(" ","").length!=0){
+           flags= flags+"&positive="+databusqueda.positive;
+       }
+       
+       filtros_act=true
+       getData()
+   }
+
+       const quitafiltros =() => {
+           flags="";
+           filtros_act=false;
+           getData();
+       }
+
+//Modal alerta
+let rescodigo=0;
+let mensaje= "";
+let resstatus="";
+let mensajeespecifico="";
+let error=false;
+
+let alerta=false;
+const lanzamensaje=(rc,rs,m,me,err)=>{
+
+   rescodigo=rc;
+   resstatus=rs;
+   mensaje=m;
+   mensajeespecifico=me;
+   error=err;//booleano
+
+   alerta=true;
+}
+const togglealerta=()=>{
+   alerta=!alerta;
+}
+
+</script>
+ 
+
+<!-- svelte-ignore missing-declaration -->
+<main>
+   <div>
+       {#if cargados}  
+       <Button style="background-color: #F39C12;" disabled> Cargar datos</Button>
+       {:else}
+       <Button style="background-color: #F39C12;" on:click={loadStats}> Cargar datos</Button>
+       {/if}
+       <Button style="background-color: #F08080" on:click={deleteStats}> Eliminar datos</Button>
+       <Button style="background-color: #28B463" on:click={toggle1}> Insertar</Button>
+       <p></p>
+       {#if !filtros_act} 
+       <Button style="background-color: #B833FF" on:click={cancelarbusqueda}> Buscar específica </Button>
+       {:else}
+       <Button style="background-color: #B833FF" on:click={quitafiltros}> Quitar filtros </Button>
+       <p style="text-align: rigth; background-color: antiquewhite;">↑(!) Existen filtros activos, para realizar otro filtrado desactivelos primero.</p>
+       {/if}
+
+
+             <!-- Modal para insertar -->
+           <div id="modal">
+           <Modal isOpen={open1} toggle={toggle1} transitionOptions>
+               <ModalHeader {toggle1}>¿Quieres insertar un nuevo dato?</ModalHeader>
+               <ModalBody >
+                   Por favor, rellene el formulario. Todos los campos tienen que tener un valor. De lo contrario no se añadirá nada.
+                   <tr>
+                       <Table >
+                           
+                           <tbody>
+                                    <tr>
+                                       <td>Fecha</td>
+                                       <td><input bind:value="{newData.date}"></td>
+                                       </tr>
+                                       <tr>
+                                       <td>Estado</td>
+                                       <td><input bind:value="{newData.state}"> </td>
+                                        </tr>
+                                        <tr>
+                                       <td>Casos totales</td>
+                                       <td><input bind:value="{newData.totalsamples}"> </td>
+                                        </tr>
+                                      <tr>
+                                       <td>Negativos</td>
+                                       <td><input bind:value="{newData.negative}"> </td>
+                                       </tr>
+                                       <tr>
+                                       <td>Postivos</td>
+                                       <td><input bind:value="{newData.positive}"> </td>
+                                        </tr>
+
+                           </tbody>
+                       </Table >
+                   </tr>
+               </ModalBody>
+               <ModalFooter>
+                   <Button color="primary" on:click={toggle1P}>Insertar</Button>
+                   <Button color="secondary" on:click={toggle1}
+                       >Cancelar</Button
+                   >
+               </ModalFooter>
+           </Modal>
+
+           <!-- Modal para la busqueda -->
+
+           <Modal isOpen={popbusqueda} toggle={cancelarbusqueda} transitionOptions>
+               <ModalHeader {cancelarbusqueda}>¿Desea hacer una busqueda especifica?</ModalHeader>
+               <ModalBody >
+                  Por favor introduzca los valores exactos que desea que contengan los objetos filtrados.
+                   <tr>
+                       <Table >
+                           
+                           <tbody>
+                                       
+                                       
+                                  <tr>
+                                       <td>Fecha</td>
+                                       <td><input bind:value="{databusqueda.date}"></td>
+                                       
+                                       
+                                   </tr><tr>
+                                       <td>Estado</td>
+                                       <td><input bind:value="{databusqueda.state}"> </td>
+                                  
+                                       
+                                   </tr><tr>
+                                       <td>Casos totales</td>
+                                       <td><input bind:value="{databusqueda.totalsamples}"> </td>
+                                      
+                                   </tr><tr>
+                                       <td>Negativos</td>
+                                       <td><input bind:value="{databusqueda.negative}"> </td>
+                                       
+                                       
+                                   </tr><tr>
+                                       <td>Positivos</td>
+                                       <td><input bind:value="{databusqueda.positive}"> </td>
+
+                                    </tr>
+
+
+                           </tbody>
+                       </Table >
+                   </tr>
+               </ModalBody>
+               <ModalFooter>
+                   <Button color="primary" on:click={buscar}>Buscar</Button>
+                   <Button color="secondary" on:click={cancelarbusqueda}
+                       >Cancelar</Button
+                   >
+               </ModalFooter>
+           </Modal>
+
+           <Modal isOpen={popinsert} toggle={togglepop} transitionOptions>
+               <ModalHeader {togglepop}>Se ha producido un error</ModalHeader>
+               <ModalBody >
+                   No se ha podido insertar el dato. Existe(n) algun(os) campo(s) vacío(s).
+                  
+               </ModalBody>
+               <ModalFooter>
+                   <Button color="primary" on:click={togglepopok}>Probaré de nuevo!</Button>
+                   <Button color="secondary" on:click={togglepop}>Cancelar</Button>
+               </ModalFooter>
+           </Modal>
+
+           <Modal isOpen={alerta} toggle={togglealerta} transitionOptions>
+               <ModalHeader toggle={togglealerta} style="text-align: center;">{mensaje}
+               
+                   
+               </ModalHeader>
+               <ModalBody style="text-align: center;">
+                   {#if error!=null}
+                       {#if error}
+                       Tras realizar la operación hemos obtenido un codigo de error:
+                       <p></p>
+                       <a href="https://docs.google.com/presentation/d/1i79Yihxsynbjtar05xFXLXHChqEbsO44oaxg8mXWL6g/edit#slide=id.g10ecd5ec32_1_14"> 
+                           {rescodigo} ({resstatus}).
+                       </a>
+                       <p>Causa posible:</p>
+                        
+                       <p>{mensajeespecifico}</p>
+                       
+                       {/if}
+                   {:else}
+                   <p>{mensajeespecifico}</p>
+                   {/if}
+
+                   <div>
+                       <p></p>
+                   <Button color="secondary" on:click={togglealerta}>Volver</Button>
+               </div>
+               </ModalBody>
+               
+           </Modal>
+       </div>
+
+
+   </div>
+   
+ 
+   {#if data.length != 0}
+       <br/>
+       <Table bordered  style="background-color: #F5EEF8 ; width:75% ; text-align: center; ">
+       <thead style="background-color: #E8DAEF; color:black">
+           <tr>
+               <td>Fecha</td>
+                <td>Estado</td>
+               <td>Casos totales </td>
+               <td>Negativos</td>
+               <td> Positivos</td>
+               <td>Acciones</td>
+           </tr>
+       </thead>
+       <tbody>
+           {#each data as data}
+               <tr>
+                   <td><a href="#/statewisetestingdetails/{data.date}/{data.state}">{data.date}</a></td>
+                   <td>{data.state}</td>
+                   <td>{data.totalsamples}</td>
+                   <td>{data.negative}</td>
+                   <td>{data.positive}</td>
+                   
+           
+                   
+                  <td>
+                       <Button style="background-color: #F08080" on:click={() =>deleteData(data.date,data.state)}> Eliminar</Button>
+                       <Button style="background-color: #28B463" on:click={() =>gotoupdate(data.date,data.state) }> Actualizar</Button>
+                   </td>
+                 
+
+
+
+               </tr>
+           {/each}
+       </tbody>
+   </Table >
+
+       
+   <div style="text-align: center; " >
+       {#if pagina != 1}
+       <Button style="background-color: #7A05B5 " on:click={anterior}>Anterior</Button>
+       {/if}
+       <Button color="dark" >Pag. Nº: {pagina} / {num_paginas}</Button>    
+       {#if num_paginas-pagina!=0 }
+        <Button style="background-color: #7A05B5 " on:click={siguiente}>Siguiente</Button>
+        {/if}
+   </div>
+
+
+       <Button color="dark" on:click={pop}>Volver</Button>
+       
+   {:else}
+   <br/>
+   <p style="text-align: center; background-color: antiquewhite;">Lo sentimos, no existe ningun dato</p>
+   
+       <Button color="dark" on:click={pop}>Volver</Button>
+   {/if}
+
+</main>
+
+
+<style>
   
-            <td>
-              <a href="#/statewisetestingdetails/{stat.date}/{stat.state}">
-                <Button color="primary">Editar</Button>
-              </a>
-            </td>
-            <td
-              ><Button
-                color="danger"
-                on:click={deleteStat(stat.date, stat.state)}>Borrar</Button
-              ></td
-            >
-          </tr>
-        {/each}
-      </tbody>
-    </Table>
-  
-    <Pagination ariaLabel="Web pagination">
-      <PaginationItem class={current_page === 1 ? "disabled" : ""}>
-        <PaginationLink
-          previous
-          href="#/statewisetestingdetails"
-          on:click={() => changePage(current_page - 1, current_offset - 10)}
-        />
-      </PaginationItem>
-      {#each range(last_page, 1) as page}
-        <PaginationItem class={current_page === page ? "active" : ""}>
-          <PaginationLink
-            previous
-            href="#/statewisetestingdetails"
-            on:click={() => changePage(page, (page - 1) * 10)}
-            >{page}</PaginationLink
-          >
-        </PaginationItem>
-      {/each}
-      <PaginationItem class={current_page === last_page ? "disabled" : ""}>
-        <PaginationLink
-          next
-          href="#/statewisetestingdetails"
-          on:click={() => changePage(current_page + 1, current_offset + 10)}
-        />
-      </PaginationItem>
-    </Pagination>
-  
-  </main>
-  
-  <style>
-    main {
-      text-align: center;
-      padding: 1em;
-      margin: 0 auto;
-    }
-    h2 {
-      text-transform: uppercase;
-      font-size: 4em;
-      font-weight: 100;
-    }
-  </style>
+   a:hover {
+       color:white;
+   }
+
+</style>
