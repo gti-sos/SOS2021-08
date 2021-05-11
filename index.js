@@ -4,7 +4,7 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var app = express();
 var port = (process.env.PORT || 10000);
-var BASE_API_PATH = "/api/v1/";
+var BASE_API_PATH = "/api/v1";
 
 
 /*
@@ -19,8 +19,8 @@ app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 //=========================================== ANTSILGOR =========================================================
 
-var antsilgorAPI =  require("./src/back/antsilgorAPI");
-antsilgorAPI.register(app);
+var antsilgorAPI = require("./src/back/antsilgorAPI");
+antsilgorAPI.register(app,BASE_API_PATH);
 
 
 //=========================================== JUAVECSEG =========================================================
