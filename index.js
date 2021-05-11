@@ -1,7 +1,3 @@
-
-
-
-
 //Para desplegar la app
 var express = require("express");
 var app = express();
@@ -35,10 +31,11 @@ app.listen(port, () => {
 //Acceso a recursos ( MILESTONE F04)
 
 
-// API 'Homicides by firearms' (Iván Martín Jiménez)
-
 	var juavegsecAPI = require("./src/back/juavegsecAPI");
 	juavegsecAPI.register(app,BASE_API_PATH);
+
+	var antsilgorAPI = require("./src/back/antsilgorAPI");
+	antsilgorAPI.register(app,BASE_API_PATH);
 
 	
 
