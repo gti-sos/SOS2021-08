@@ -830,38 +830,6 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "delete a lista que no existe",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 404\", function () {",
-							"    pm.response.to.have.status(404);",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany",
-					"host": [
-						"{{HEROKU}}"
-					],
-					"path": [
-						"api",
-						"v1",
-						"covid19-tracking-germany"
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"variable": [
