@@ -91,9 +91,9 @@
 
                let mes="Hemos encontrado "+ data.length +" elementos que concuerden con la busqueda";
                if(filtros_act) lanzamensaje(res.status,res.statusText,"Advertencia",mes,null)
-           }else{
-               console.log("ERROR!");
-               lanzamensaje(res.status,res.statusText,"Error al obtener los elementos","Vaya... Algo ha salido mal. Probablemente la Base de Datos haya tenido un problema.",true)
+           }else if(res.status == 404){
+               console.log("Error 404!");
+               lanzamensaje(res.status,res.statusText,"No sde ha encontrado el elemento buscado","El dato no ha sido encontrado en la base de datos haya tenido un .",true)
            }
 
        }
