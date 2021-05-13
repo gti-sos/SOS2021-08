@@ -318,19 +318,21 @@ const togglealerta=()=>{
 <!-- svelte-ignore missing-declaration -->
 <main>
    <div>
+      
+       <Button style="background-color: #f3ca12" on:click={deleteStats}> Eliminar datos</Button> 
        {#if cargados}  
-       <Button style="background-color: #F39C12;" disabled> Cargar datos</Button>
+       <Button style="background-color: #f31255;" disabled> Cargar datos</Button>
        {:else}
-       <Button style="background-color: #F39C12;" on:click={loadStats}> Cargar datos</Button>
+       <Button style="background-color: #f31255;" on:click={loadStats}> Cargar datos</Button>
        {/if}
-       <Button style="background-color: #F08080" on:click={deleteStats}> Eliminar datos</Button>
-       <Button style="background-color: #28B463" on:click={toggle1}> Insertar</Button>
        <p></p>
+       <Button style="background-color: #f33012" on:click={toggle1}> Insertar</Button>
+       
        {#if !filtros_act} 
-       <Button style="background-color: #B833FF" on:click={cancelarbusqueda}> Buscar específica </Button>
+       <Button style="background-color: #12f3e4" on:click={cancelarbusqueda}> Busqueda específica </Button>
        {:else}
-       <Button style="background-color: #B833FF" on:click={quitafiltros}> Quitar filtros </Button>
-       <p style="text-align: rigth; background-color: antiquewhite;">↑(!) Existen filtros activos, para realizar otro filtrado desactivelos primero.</p>
+       <Button style="background-color: #12f3e4" on:click={quitafiltros}> Quitar filtros </Button>
+       <p style="text-align: rigth; background-color: antiquewhite;">↑(!) Existen filtros activos, para realizar otro filtrado desactivelos.</p>
        {/if}
 
 
@@ -339,7 +341,7 @@ const togglealerta=()=>{
            <Modal isOpen={open1} toggle={toggle1} transitionOptions>
                <ModalHeader {toggle1}>¿Quieres insertar un nuevo dato?</ModalHeader>
                <ModalBody >
-                   Por favor, rellene el formulario. Todos los campos tienen que tener un valor. De lo contrario no se añadirá nada.
+                   Por favor, rellene el formulario, es necesario que todos los campos tengan un valor.
                    <tr>
                        <Table >
                            
@@ -476,8 +478,8 @@ const togglealerta=()=>{
  
    {#if data.length != 0}
        <br/>
-       <Table bordered  style="background-color: #F5EEF8 ; width:75% ; text-align: center; ">
-       <thead style="background-color: #E8DAEF; color:black">
+       <Table bordered  style="background-color: #bcb9bd ; width:100% ; text-align: center; ">
+       <thead style="background-color: #abc5ff; color:black">
            <tr>
                <td>Fecha</td>
                 <td>Estado</td>
@@ -499,8 +501,8 @@ const togglealerta=()=>{
            
                    
                   <td>
-                       <Button style="background-color: #F08080" on:click={() =>deleteData(data.date,data.state)}> Eliminar</Button>
-                       <Button style="background-color: #28B463" on:click={() =>gotoupdate(data.date,data.state) }> Actualizar</Button>
+                       <Button style="background-color: #000000" on:click={() =>deleteData(data.date,data.state)}> Eliminar</Button>
+                       <Button style="background-color: #bd2020" on:click={() =>gotoupdate(data.date,data.state) }> Actualizar</Button>
                    </td>
                  
 
@@ -516,7 +518,7 @@ const togglealerta=()=>{
        {#if pagina != 1}
        <Button style="background-color: #7A05B5 " on:click={anterior}>Anterior</Button>
        {/if}
-       <Button color="dark" >Pag. Nº: {pagina} / {num_paginas}</Button>    
+       <Button style="background-color: #2081bd " >Pag. Nº: {pagina} / {num_paginas}</Button>    
        {#if num_paginas-pagina!=0 }
         <Button style="background-color: #7A05B5 " on:click={siguiente}>Siguiente</Button>
         {/if}
@@ -529,7 +531,7 @@ const togglealerta=()=>{
    <br/>
    <p style="text-align: center; background-color: antiquewhite;">Lo sentimos, no existe ningun dato</p>
    
-       <Button color="dark" on:click={pop}>Volver</Button>
+       <Button style="background-color: #2081bd " on:click={pop}>Volver</Button>
    {/if}
 
 </main>
