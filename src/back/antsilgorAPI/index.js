@@ -1,5 +1,4 @@
-var BASE_API_PATH
- = "/api/v1"; //tipo de recurso
+var BASE_API_PATH = "/api/v1"; //tipo de recurso
 
 var DataStore = require("nedb");
 var db = new DataStore({ filename: "./src/back/antsilgorAPI/covid19TrackingGermany.db", autoload: true });
@@ -150,11 +149,6 @@ app.get(BASE_API_PATH
     });
 	
 	
-	
-	
-		
-	
-
 
 
 

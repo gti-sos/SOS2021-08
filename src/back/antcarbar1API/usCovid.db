@@ -1,0 +1,41 @@
+{"date":"2020-01-21","county":"Snoomish","state":"Washington","fips":56061,"cases":1,"deaths":0,"_id":"9VEb7se2HEWAEgjX"}
+{"date":"2020-01-28","county":"Los Angeles","state":"California","fips":6037,"cases":1,"deaths":0,"_id":"JKDDvTFDem618sei"}
+{"date":"2020-01-26","county":"Maricopa","state":"Arizona","fips":4013,"cases":1,"deaths":0,"_id":"QtJ0ZbC08CWJAaJD"}
+{"date":"2020-01-25","county":"Orange","state":"California","fips":6059,"cases":1,"deaths":0,"_id":"nxNA5wVEftW29K6Q"}
+{"date":"2020-01-21","county":"Snoomish","state":"Washington","fips":"56061","cases":1,"deaths":"99","_id":"9VEb7se2HEWAEgjX"}
+{"date":"2020-01-28","county":"Los Angeles","state":"California","fips":"6037","cases":1,"deaths":"9","_id":"JKDDvTFDem618sei"}
+{"$$deleted":true,"_id":"9VEb7se2HEWAEgjX"}
+{"$$deleted":true,"_id":"JKDDvTFDem618sei"}
+{"$$deleted":true,"_id":"QtJ0ZbC08CWJAaJD"}
+{"$$deleted":true,"_id":"nxNA5wVEftW29K6Q"}
+{"date":"2020-01-21","county":"Snoomish","state":"Washington","fips":56061,"cases":1,"deaths":0,"_id":"DLaobIDV4zX87Hcm"}
+{"date":"2020-01-25","county":"Orange","state":"California","fips":6059,"cases":1,"deaths":0,"_id":"ko9PqN3AxytHmcMU"}
+{"date":"2020-01-26","county":"Maricopa","state":"Arizona","fips":4013,"cases":1,"deaths":0,"_id":"AiOzMkmDypqpit08"}
+{"date":"2020-01-28","county":"Los Angeles","state":"California","fips":6037,"cases":1,"deaths":0,"_id":"Lqc4EhcFibEFvodu"}
+{"$$deleted":true,"_id":"AiOzMkmDypqpit08"}
+{"$$deleted":true,"_id":"DLaobIDV4zX87Hcm"}
+{"$$deleted":true,"_id":"Lqc4EhcFibEFvodu"}
+{"$$deleted":true,"_id":"ko9PqN3AxytHmcMU"}
+{"date":"2020-01-21","county":"Snoomish","state":"Washington","fips":56061,"cases":1,"deaths":0,"_id":"0djNsN6JIe84SROw"}
+{"date":"2020-01-25","county":"Orange","state":"California","fips":6059,"cases":1,"deaths":0,"_id":"yzLYEpUsUQgtYuc7"}
+{"date":"2020-01-26","county":"Maricopa","state":"Arizona","fips":4013,"cases":1,"deaths":0,"_id":"tjDk3omb8ffo98Xn"}
+{"date":"2020-01-28","county":"Los Angeles","state":"California","fips":6037,"cases":1,"deaths":0,"_id":"dOOAzIjix2ppFNSA"}
+{"date":"2020-01-25","county":"Orange","state":"California","fips":"6059","cases":1,"deaths":"99","_id":"yzLYEpUsUQgtYuc7"}
+{"date":"2020-01-26","county":"Maricopa","state":"Arizona","fips":"4013","cases":"10","deaths":0,"_id":"tjDk3omb8ffo98Xn"}
+{"$$deleted":true,"_id":"0djNsN6JIe84SROw"}
+{"$$deleted":true,"_id":"dOOAzIjix2ppFNSA"}
+{"$$deleted":true,"_id":"tjDk3omb8ffo98Xn"}
+{"$$deleted":true,"_id":"yzLYEpUsUQgtYuc7"}
+{"date":"2020-01-21","county":"Snoomish","state":"Washington","fips":56061,"cases":1,"deaths":0,"_id":"GOQKZdFpsSANDHjK"}
+{"date":"2020-01-25","county":"Orange","state":"California","fips":6059,"cases":1,"deaths":0,"_id":"k4OuVhfXR6mDvptL"}
+{"date":"2020-01-26","county":"Maricopa","state":"Arizona","fips":4013,"cases":1,"deaths":0,"_id":"7LWD9C5HEBPPkXyN"}
+{"date":"2020-01-28","county":"Los Angeles","state":"California","fips":6037,"cases":1,"deaths":0,"_id":"dKAXGvQWa8BJxD8L"}
+{"date":"2020-01-261","county":"Maricopa","state":"Arizona","fips":"4013","cases":1,"deaths":0,"_id":"7LWD9C5HEBPPkXyN"}
+{"$$deleted":true,"_id":"k4OuVhfXR6mDvptL"}
+{"$$deleted":true,"_id":"7LWD9C5HEBPPkXyN"}
+{"$$deleted":true,"_id":"GOQKZdFpsSANDHjK"}
+{"$$deleted":true,"_id":"dKAXGvQWa8BJxD8L"}
+{"date":"2020-01-21","county":"Snoomish","state":"Washington","fips":56061,"cases":1,"deaths":0,"_id":"oZvxywtbROYfYtUv"}
+{"date":"2020-01-25","county":"Orange","state":"California","fips":6059,"cases":1,"deaths":0,"_id":"JEIfh2Cpu81Puw28"}
+{"date":"2020-01-26","county":"Maricopa","state":"Arizona","fips":4013,"cases":1,"deaths":0,"_id":"lTLO9PIFLSKWYPiu"}
+{"date":"2020-01-28","county":"Los Angeles","state":"California","fips":6037,"cases":1,"deaths":0,"_id":"CDaAMcpvjRiIfHpg"}

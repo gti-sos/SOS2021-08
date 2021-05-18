@@ -121,11 +121,7 @@ async function updateCrime(){
 
 
         }
-    });	
-
-    
-
-   
+    });	  
 
 };
 
@@ -188,7 +184,7 @@ const togglealerta=()=>{
      <tbody>
          
               <tr>
-                
+  
                 <td><input readonly onmousedown="return false;" bind:value="{date}"></td>
                 <td><input readonly onmousedown="return false;" bind:value="{state}"> </td>
                 <td><input bind:value="{totalsamples}"> </td>
