@@ -2,17 +2,17 @@
 <script lang="ts">
 	import Router from 'svelte-spa-router';
 	  
-	  import NotFound from "./Pages/NotFound.svelte";
-	  import Home from "./Pages/Home.svelte";
-	  import Info from "./Pages/Info.svelte";
-	  import covid19TrackingGermanyAPI from "./front/antsilgorAPI/covid19TrackingGermanyAPI.svelte";
-	  import EditCovid19TrackingGermanyAPI from "./front/antsilgorAPI/EditCovid19TrackingGermanyAPI.svelte";
+	import NotFound from "./Pages/NotFound.svelte";
+	import Home from "./Pages/Home.svelte";
+	import Info from "./Pages/Info.svelte";
+	import covid19TrackingGermanyAPI from "./front/antsilgorAPI/covid19TrackingGermanyAPI.svelte";
+	import EditCovid19TrackingGermanyAPI from "./front/antsilgorAPI/EditCovid19TrackingGermanyAPI.svelte";
 	 
-	  import statewisetestingdetailsAPI from "./front/juavegsecAPI/statewisetestingdetailsAPI.svelte";
-	  import Editstatewisetestingdetails from "./front/juavegsecAPI/Editstatewisetestingdetails.svelte";
+	import statewisetestingdetailsAPI from "./front/juavegsecAPI/statewisetestingdetailsAPI.svelte";
+	import Editstatewisetestingdetails from "./front/juavegsecAPI/Editstatewisetestingdetails.svelte";
 
-	  import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
-	  import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
+	import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
+	import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
 
 	  const routes = {
 		  "/":Home,
@@ -26,7 +26,7 @@
 		  '*': NotFound};
   </script>
   <main>
-	  <Router {routes}> </Router>
+      <Router {routes}> </Router>
   </main>
   
   <style>
