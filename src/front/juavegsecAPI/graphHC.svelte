@@ -26,15 +26,13 @@ async function getData(){
 
         }
       }    
-        a = positivos[0];
-        b = negativos[0];
-        console.log(a);
-        console.log(b);
+  
 }
 onMount(getData); 
     
     async function loadGraph (){
-        
+        a = positivos[0];
+        b = negativos[0];
         Highcharts.chart('container', {
         chart: {
         plotBackgroundColor: null,
