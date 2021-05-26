@@ -122,6 +122,9 @@
               <a href="/#/statewisetestingdetails">
                 <Button color="primary">Interfaz</Button>
               </a>
+              <a href="https://sos2021-08.herokuapp.com/#/statewisetestingdetails/graph">
+                <Button color="primary">Gráfica</Button>
+              </a>
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a
               >
