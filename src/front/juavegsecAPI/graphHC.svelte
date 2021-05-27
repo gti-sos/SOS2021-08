@@ -1,14 +1,14 @@
 <script>
-import{ 
-  onMount } from "svelte";
-  
+    import {
+        onMount
+    } from "svelte";
 
         let positivos = [];
         let negativos = [];
         let data = [];
         let a;
         let b;
-   
+   onMount(getData); 
 async function getData(){
 
      const resData = await fetch ("api/v1/statewisetestingdetails?state=Assam");
@@ -26,7 +26,6 @@ async function getData(){
     }  
   
     }
-    onMount(getData); 
     
     async function loadGraph (){
         a = positivos[0];
@@ -75,8 +74,8 @@ async function getData(){
         }]
     }]
 });
-
 }
+
 
 
 // Create the chart
@@ -84,14 +83,16 @@ async function getData(){
     
 </script>
 
-<svelte:head>  
+<svelte:head>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts.js" on:load="{loadGraph}"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/highcharts.src.js" on:load="{loadGraph}"></script>
+
+
+
+
  
 </svelte:head>
 

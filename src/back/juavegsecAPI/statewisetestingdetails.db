@@ -1,10 +1,5 @@
-{"date":"2020-04-17","state":"Andaman and Nicobar Islands","totalsamples":1403,"negative":1250,"positive":12,"_id":"E1hkt0RhI3VDKOtj"}
-{"date":"2021-04-02","state":"Andhra Pradesh","totalsamples":1800,"negative":1175,"positive":132,"_id":"JiZSGOvA5cseQhX0"}
-{"date":"2021-04-09","state":"Arunachal Pradesh","totalsamples":206,"negative":185,"positive":1,"_id":"d3kjNKG6LWCPHwCu"}
-{"date":"2021-04-05","state":"Bihar","totalsamples":3037,"negative":2299,"positive":32,"_id":"lW9uTa8UErJtYNCu"}
-{"date":"2021-04-02","state":"Assam","totalsamples":962,"negative":819,"positive":16,"_id":"xtWrMxwkKNcApgg1"}
-{"$$deleted":true,"_id":"E1hkt0RhI3VDKOtj"}
-{"$$deleted":true,"_id":"JiZSGOvA5cseQhX0"}
-{"$$deleted":true,"_id":"d3kjNKG6LWCPHwCu"}
-{"$$deleted":true,"_id":"lW9uTa8UErJtYNCu"}
-{"$$deleted":true,"_id":"xtWrMxwkKNcApgg1"}
+{"date":"2021-04-02","state":"Andhra Pradesh","totalsamples":1800,"negative":1175,"positive":132,"_id":"jEuGP3bLzB346KM6"}
+{"date":"2021-04-05","state":"Bihar","totalsamples":3037,"negative":2299,"positive":32,"_id":"o7wyJdido5F8eOjP"}
+{"date":"2021-04-09","state":"Arunachal Pradesh","totalsamples":206,"negative":185,"positive":1,"_id":"sWqJiRoFIzNahovx"}
+{"date":"2020-04-17","state":"Andaman and Nicobar Islands","totalsamples":1403,"negative":1250,"positive":12,"_id":"ypC2PxFcJ9RlGNJu"}
+{"date":"2021-04-02","state":"Assam","totalsamples":962,"negative":819,"positive":16,"_id":"zEMoYQu2LKqhNIQl"}

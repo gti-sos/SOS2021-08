@@ -122,8 +122,11 @@
               <a href="/#/statewisetestingdetails">
                 <Button color="primary">Interfaz</Button>
               </a>
-              <a href="/#/statewisetestingdetails/graph">
+              <a href="http://localhost:10000/#/statewisetestingdetails/graph">
                 <Button color="primary">Gráfica</Button>
+              </a>
+              <a href="/#/statewisetestingdetails/graph2">
+                <Button color="primary">Gráfica 2</Button>
               </a>
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a
