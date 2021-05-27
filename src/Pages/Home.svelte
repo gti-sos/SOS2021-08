@@ -119,14 +119,14 @@
               <a href="https://sos2021-08.herokuapp.com/api/v1/statewisetestingdetails">
                 <Button color="primary">API v1</Button></a
               >
-              <a href="/#/statewisetestingdetails/graph">
+              <a href="/#/statewisetestingdetails">
                 <Button color="primary">Interfaz</Button>
               </a>
-              <a href="/#/statewisetestingdetails/graph2">
+              <a href="/#/statewisetestingdetails/graph">
                 <Button color="primary">Gráfica Pie HC</Button>
               </a>
               <a href="/#/statewisetestingdetails/graph2">
-                <Button color="primary">Gráfica 3D HC</Button>
+                <Button color="primary">Gráfica 3D</Button>
               </a>
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a
