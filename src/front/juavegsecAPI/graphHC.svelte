@@ -22,13 +22,11 @@ async function getData(){
       for(var i = 0; i<data.length; i++){
         positivos.push(data[i].positive);
         negativos.push(data[i].negative);
-        
-
         }
-      }    
+    }  
   
-}
-onMount(getData); 
+    }
+    onMount(getData); 
     
     async function loadGraph (){
         a = positivos[0];
@@ -88,10 +86,8 @@ onMount(getData);
 
 <svelte:head>  
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/export-data.js"></script>
-    <script src="https://code.highcharts.com/modules/accessibility.js"on:load="{loadGraph}"></script>
+
+    <script src="https://code.highcharts.com/highcharts.src.js" on:load="{loadGraph}"></script>
  
 </svelte:head>
 
