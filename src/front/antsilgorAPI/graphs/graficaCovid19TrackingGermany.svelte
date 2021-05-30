@@ -38,18 +38,13 @@
     onMount(buscar)
     async function getData(){
         console.log("Fetching data...");
-        const res = await fetch("api/v1/covid19-tracking-germany");
+        const res = await fetch("api/v1/covid19-tracking-germany?date="+date);
         if(res.ok){
             console.log("Ok.");
             const json = await res.json();
             data = json;
             console.log(`We have received ${data.length} data points.`);
-            for(let i=0;i<data.length;i++){
-                let aux= data[i].covid_19_tracking_germany.replace(".","")
-                array[i]=parseInt(aux,10)
-            }
-            
-            console.log(array);
+            console.log(data);
         }else{
             console.log("Error!");
         }

@@ -6,11 +6,12 @@
 	import Info from "./Pages/Info.svelte";
 	import covid19TrackingGermanyAPI from "./front/antsilgorAPI/covid19TrackingGermanyAPI.svelte";
 	import EditCovid19TrackingGermanyAPI from "./front/antsilgorAPI/EditCovid19TrackingGermanyAPI.svelte";
+	import GraficaCovid19TrackingGermany from './front/antsilgorAPI/graphs/graficaCovid19TrackingGermany.svelte';
 	import statewisetestingdetailsAPI from "./front/juavegsecAPI/statewisetestingdetailsAPI.svelte";
 	import Editstatewisetestingdetails from "./front/juavegsecAPI/Editstatewisetestingdetails.svelte";
 	import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
 	import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
-    import GraficaCovid19TrackingGermany from './front/antsilgorAPI/graphs/graficaCovid19TrackingGermany.svelte';
+    
 
 	  const routes = {
 		  "/":Home,
