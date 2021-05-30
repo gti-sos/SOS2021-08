@@ -75,6 +75,8 @@
             <a href="https://documenter.getpostman.com/view/14969395/TzJoE1Zm"
               ><Button color="info">Documentación v1</Button></a
             >
+            <a href="./#/covid19-tracking-germany/analytics"
+            ><Button style="background-color: #D453AF">Gráfica</Button></a>
           </CardBody>
           <CardFooter
             >desarrollado por
