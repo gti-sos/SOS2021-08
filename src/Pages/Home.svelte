@@ -124,15 +124,11 @@
               <a href="/#/statewisetestingdetails">
                 <Button color="primary">Interfaz</Button>
               </a>
-              <a href="/#/statewisetestingdetails/graph">
-                <Button color="primary">Gráfica Pie HC</Button>
-              </a>
+              
               <a href="/#/statewisetestingdetails/graph2">
                 <Button color="primary">Gráfica 3D</Button>
               </a>
-              <a href="/#/statewisetestingdetails/graphQ">
-                <Button color="primary">Gráfica Quickchart</Button>
-              </a>
+             
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a
               >
