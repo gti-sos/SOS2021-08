@@ -100,8 +100,7 @@
             console.log(num_paginas)
             console.log("Fetching germany covid data...");
           
-            const res = await fetch(BASE_API_PATH
-+"?limit="+limit+"&offset="+ofset+flags);
+            const res = await fetch(BASE_API_PATH+"?limit="+limit+"&offset="+ofset+flags);
             if(res.status==200){
                 const json = await res.json();
                 data = json;
