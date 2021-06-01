@@ -6,7 +6,7 @@ async function loadChart(){
    
     var data=[];
     var pnt = [];
-    const resData = await fetch("api/v1/statewisetestingdetails?state=Assam"); 
+    const resData = await fetch("api/v1/statewisetestingdetails"); 
   
     
     if(resData.ok){
@@ -16,8 +16,7 @@ async function loadChart(){
       console.log(data);
       for(var i = 0; i<data.length; i++){
         pnt.push(data[i].positive);
-        pnt.push(data[i].negative);
-        pnt.push(data[i].totalsamples);
+   
         }
     }  
     
@@ -34,7 +33,7 @@ Highcharts.chart('container', {
         }
     },
     title: {
-        text: 'Casos totales de covid, positivos y negativos en Assam'
+        text: 'Casos totales positivos en los estados de India'
     },
     accessibility: {
         announceNewData: {
@@ -46,7 +45,7 @@ Highcharts.chart('container', {
     },
     yAxis: {
         title: {
-            text: 'Casos'
+            text: 'Positivos en cada estado indio'
         }
     },
     legend: {
@@ -62,7 +61,7 @@ Highcharts.chart('container', {
         pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}</b><br/>'
     },
         series: [{
-            name: 'Casos',
+            name: 'Casos Positivos',
             colorByPoint: true,
             data: pnt
         }]
