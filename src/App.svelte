@@ -13,6 +13,7 @@
 	import Editstatewisetestingdetails from "./front/juavegsecAPI/Editstatewisetestingdetails.svelte";
 	import graph2 from "./front/juavegsecAPI/graphHC2.svelte";
 	import graphAMC from "./front/juavegsecAPI/amcChart.svelte";
+	import graphintegrationAnx from "./front/juavegsecAPI/integrationAnx.svelte";
 	
 	
 	import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
@@ -33,6 +34,7 @@
 		  "/us_counties_covid19_daily/:county/:fips":EditUs_counties_covid19,
 		  "/statewisetestingdetails/graph2": graph2,
 		  "/statewisetestingdetails/amcChart": graphAMC,
+		  "/statewisetestingdetails/integrationAnx": graphintegrationAnx,
 		  '*': NotFound};
   </script>
   <main>

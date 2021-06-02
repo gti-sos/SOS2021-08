@@ -131,6 +131,9 @@
               <a href="/#/statewisetestingdetails/amcChart">
                 <Button color="primary">Gráfica amc</Button>
               </a>
+              <a href="/#/statewisetestingdetails/integrationAnx">
+                <Button color="primary">Gráfica Integracion anxiety stats</Button>
+              </a>
              
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a
