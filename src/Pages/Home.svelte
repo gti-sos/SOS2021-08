@@ -138,7 +138,13 @@
                 <Button color="primary">Gráfica Integracion Covid API</Button>
               </a>
               <a href="/#/statewisetestingdetails/integracionE2">
-                <Button color="primary">Gráfica Integracion Futbol API</Button>
+                <Button color="primary">Gráfica Integracion Países API</Button>
+              </a>
+              <a href="/#/statewisetestingdetails/integracionE3">
+                <Button color="primary">Gráfica Integracion criptos API</Button>
+              </a>
+              <a href="/#/statewisetestingdetails/integracionE4">
+                <Button color="primary">Gráfica Integracion Covid 2 API</Button>
               </a>
              
              

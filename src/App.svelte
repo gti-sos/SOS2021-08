@@ -17,6 +17,8 @@
 	import graphintegrationAnx from "./front/juavegsecAPI/integrationAnx.svelte";
 	import graphintegracionE1 from "./front/juavegsecAPI/integracionE1.svelte";
 	import graphintegracionE2 from "./front/juavegsecAPI/integracionE2.svelte";
+	import graphintegracionE3 from "./front/juavegsecAPI/integracionE3.svelte";
+	import graphintegracionE4 from "./front/juavegsecAPI/integracionE4.svelte";
 	
 	import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
 	import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
@@ -40,6 +42,8 @@
 		  "/statewisetestingdetails/integrationAnx": graphintegrationAnx,
 		  "/statewisetestingdetails/integracionE1": graphintegracionE1,
 		  "/statewisetestingdetails/integracionE2": graphintegracionE2,
+		  "/statewisetestingdetails/integracionE3": graphintegracionE3,
+		  "/statewisetestingdetails/integracionE4": graphintegracionE4,
 
 		  '*': NotFound};
   </script>
