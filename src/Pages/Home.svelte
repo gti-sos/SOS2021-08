@@ -137,6 +137,9 @@
               <a href="/#/statewisetestingdetails/integracionE1">
                 <Button color="primary">Gráfica Integracion Covid API</Button>
               </a>
+              <a href="/#/statewisetestingdetails/integracionE2">
+                <Button color="primary">Gráfica Integracion Futbol API</Button>
+              </a>
              
              
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"

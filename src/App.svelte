@@ -16,7 +16,7 @@
 	import graphAMC from "./front/juavegsecAPI/amcChart.svelte";
 	import graphintegrationAnx from "./front/juavegsecAPI/integrationAnx.svelte";
 	import graphintegracionE1 from "./front/juavegsecAPI/integracionE1.svelte";
-	
+	import graphintegracionE2 from "./front/juavegsecAPI/integracionE2.svelte";
 	
 	import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
 	import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
@@ -39,6 +39,7 @@
 		  "/statewisetestingdetails/amcChart": graphAMC,
 		  "/statewisetestingdetails/integrationAnx": graphintegrationAnx,
 		  "/statewisetestingdetails/integracionE1": graphintegracionE1,
+		  "/statewisetestingdetails/integracionE2": graphintegracionE2,
 
 		  '*': NotFound};
   </script>
