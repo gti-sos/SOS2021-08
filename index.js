@@ -5,11 +5,13 @@ var app = express();
 var port = (process.env.PORT || 10000);
 //Para modificar y definiar las rutas, modulo 'path'
 var path = require("path");
-
+var cors = require("cors");
 
 app.use("/", express.static( path.join(__dirname ,"./public")));
 
 app.use(express.json());
+
+app.use(cors());
 
 //Ruta base de acceso a los recursos, bajo la versión 'v1'
 var BASE_API_PATH = "/api/v1";
