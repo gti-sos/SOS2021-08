@@ -131,6 +131,25 @@
               <a href="/#/statewisetestingdetails/amcChart">
                 <Button color="primary">Gráfica amc</Button>
               </a>
+              <a href="/#/statewisetestingdetails/integrationAnx">
+                <Button color="primary">Gráfica Integracion anxiety stats(externa 1)</Button>
+              </a>
+              <a href="/#/statewisetestingdetails/integracionE1">
+                <Button color="primary">Gráfica Integracion Covid API</Button>
+              </a>
+              <a href="/#/statewisetestingdetails/integracionE2">
+                <Button color="primary">Gráfica Integracion Países API</Button>
+              </a>
+              <a href="/#/statewisetestingdetails/integracionE3">
+                <Button color="primary">Gráfica Integracion criptos API</Button>
+              </a>
+              <a href="/#/statewisetestingdetails/integracionE4">
+                <Button color="primary">Gráfica Integracion Covid 2 API</Button>
+              </a>
+              <a href="/#/statewisetestingdetails/integracionI2">
+                <Button color="primary">Gráfica Integracion Nuts (externa 2)</Button>
+              </a>
+             
              
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a
