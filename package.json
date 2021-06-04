@@ -33,6 +33,7 @@
     "nedb": "^1.8.0",
     "ng-chartist": "^5.0.0",
     "node": "^16.0.0",
+    "puppeteer": "^10.0.0",
     "quickchart-js": "^1.0.7",
     "svelte-spa-router": "^3.1.0",
     "sveltestrap": "^3.14.1"

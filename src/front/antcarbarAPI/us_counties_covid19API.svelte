@@ -366,30 +366,30 @@ const togglealerta=()=>{
                            <tbody>
                                  <tr>
                                        <td>Fecha</td>
-                                       <td><input bind:value="{newData.date}"></td>
+                                       <td><input id="Fecha" bind:value="{newData.date}"></td>
                                        
                                        
                                    </tr><tr>
                                        <td>Condado</td>
-                                       <td><input bind:value="{newData.county}"> </td>
+                                       <td><input id="Condado" bind:value="{newData.county}"> </td>
                                   
                                        
                                    </tr><tr>
                                        <td>Estado</td>
-                                       <td><input bind:value="{newData.state}"> </td>
+                                       <td><input id="Estado" bind:value="{newData.state}"> </td>
                                       
                                    </tr><tr>
                                        <td>Fips</td>
-                                       <td><input bind:value="{newData.fips}"> </td>
+                                       <td><input id="Fips" bind:value="{newData.fips}"> </td>
                                        
                                        
                                    </tr><tr>
                                        <td>Casos</td>
-                                       <td><input bind:value="{newData.cases}"> </td>
+                                       <td><input  id="Casos" bind:value="{newData.cases}"> </td>
 
            </tr><tr>
                                        <td>Muertes</td>
-                                       <td><input bind:value="{newData.deaths}"> </td>
+                                       <td><input id="Muertes" bind:value="{newData.deaths}"> </td>
 
            </tr>
                             
