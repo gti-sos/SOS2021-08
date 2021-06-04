@@ -9,13 +9,11 @@ module.exports.register = (app, BASE_API_PATH
     
     var us_counties_covid19_daily = [];
 
-
     app.get("/info/us_counties_covid19_daily", (req, res) =>{
         res.send("<html> <body> <table><thead><tr><th>date</th><th>county</th><th>state</th><th>fips</th><th>cases</th><th>deaths</th></tr></thead><tbody><tr><td>2020-01-21</td><td>Snohomish</td><td>Washington</td><td>53061</td><td>1</td><td>0</td></tr><tr><td>2020-01-22</td><td>Snohomish</td><td>Washington</td><td>53061</td><td>1</td><td>0</td></tr><tr><td>2020-01-23</td><td>Snohomish</td><td>Washington</td><td>53061</td><td>1</td><td>0</td></tr><tr><td>2020-01-24</td><td>Cook</td><td>Illinois</td><td>17031</td><td>1</td><td>0</td></tr><tr><td>2020-01-25</td><td>Snohomish</td><td>Washington</td><td>53061</td><td>1</td><td>0</td></tr></tbody></table> <h6>Por Antonio Carranza</h6> </body> </html>")
         console.log("New request to /info/us_counties_covid19_daily has arrived");
 
     });
-
 
     app.get(BASE_API_PATH
         +"/us_counties_covid19_daily/loadInitialData", (req,res)=>{ 
@@ -54,7 +52,35 @@ module.exports.register = (app, BASE_API_PATH
                         "fips": 6037.0,
                         "cases":1,
                         "deaths":0
-                    }
+                    },
+                    {
+                        "date": "2020-02-28",
+                        "county": "Napa",
+                        "state": "California",
+                        "fips":6055.0,
+                        "cases":1,
+                        "deaths":0.0
+                    },
+                    {
+                    "date":"2020-03-04",
+                    "county": "Washington",
+                    "state":"Oregon",
+                    "fips":41067.0,
+                    "cases":2,
+                    "deaths":0.0
+                    },   
+                {
+
+                    "date":"2020-03-07",
+                    "county":"Polk",
+                    "state":"Georgia",
+                    "fips":13233.0,
+                    "cases":1,
+                    "deaths":0.0
+
+                }
+
+
                 ];
         
             
@@ -92,7 +118,7 @@ module.exports.register = (app, BASE_API_PATH
                    if (req.query.date) query["date"] = req.query.date;
                    if (req.query.county) query["county"] = req.query.county;
                    if (req.query.state) query["state"] = req.query.state;
-                   if (req.query.fips) query["fips"] =req.query.fips;
+                   if (req.query.fips) query["fips"] = req.query.fips;
                    if (req.query.cases) query["cases"] = req.query.cases;
                    if (req.query.deaths) query["deaths"] = req.query.deaths;
                
@@ -113,11 +139,11 @@ module.exports.register = (app, BASE_API_PATH
            
                                // res.status(200).send(JSON.stringify(resourcesToSend, null, 2));
                                res.status(200).send(aux);
-                           } else {
-                               var array = [];
-                               res.status(200).send(array);
-                           }
-           
+                           }   else {
+                            let mensaje = "No existen datos cargados"
+                            res.status(404).send(mensaje);
+                        }
+        
                        }
            
                    });
@@ -136,7 +162,7 @@ module.exports.register = (app, BASE_API_PATH
                 
                 
                 
-                db.find({county:String(req.body.county), fips:parseFloat(req.body.fips)}, function(err, record) {
+                db.find({county:String(req.body.county), fips:parseInt(req.body.fips)}, function(err, record) {
                     
                     
                     if (record.length!=0) {
@@ -190,12 +216,11 @@ app.get(BASE_API_PATH
     +"/us_counties_covid19_daily/:county/:fips", (req,res)=>{ 
             
             
-        db.find({county:String(req.params.county), fips:parseFloat(req.params.fips)}, function(err, record) {
+        db.find({county:String(req.params.county), fips:parseInt(req.params.fips)}, function(err, record) {
             
             console.log(record);
             
             if (record.length==0) {
-               
                 res.sendStatus(404);
         
             }else{
@@ -212,7 +237,6 @@ app.get(BASE_API_PATH
         
         
     });
-
 
 
 
@@ -261,7 +285,7 @@ app.get(BASE_API_PATH
             bodyok =false;
             }
         
-        db.find({county:String(req.params.county), fips:Number(req.params.fips)}, function(err, record) {
+        db.find({county:String(req.params.county), fips:parseFloat(req.params.fips)}, function(err, record) {
             
             //console.log(record);
             if(err!=null){
@@ -282,7 +306,7 @@ app.get(BASE_API_PATH
                         
                     }else{
                         
-                        if(String(req.params.county) !=  req.body.county ||Number(req.params.fips) !=  req.body.fips  ){
+                        if(String(req.params.county) !=  req.body.county || req.params.fips  !=  req.body.fips  ){
                         
                             
                             res.sendStatus(409);
@@ -290,7 +314,7 @@ app.get(BASE_API_PATH
                         }else{
                         
                             
-                            db.update({county:String(req.params.county), fips:Number(req.params.fips)}, 
+                            db.update({county:String(req.params.county), fips:req.params.fips}, 
                                 {date:String(req.body.date),county:String(req.params.county), state:String(req.body.state), fips:req.params.fips, 
                                      cases:req.body.cases, deaths:req.body.deaths}, {}, function (err, numReplaced) {
                                             
@@ -321,18 +345,55 @@ app.get(BASE_API_PATH
             });
         
     });
-    
+     //GET a un recurso concreto ERROR 1
+     app.get(BASE_API_PATH+"/us_counties_covid19_daily/:data", (req, res) => {
+        console.error("No se puede buscar por el recurso pedido");
+        res.sendStatus(400);
+    });
+
 
 
 //6)POST a un recurso (en concreto), debe de dar un error de método no permitido 
     
-app.post(BASE_API_PATH
+    app.post(BASE_API_PATH
 
     +"/us_counties_covid19_daily/:county/:fips", function(req, res) { 
     
         res.sendStatus(405); 
     });
 
+
+
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:county", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/county");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:state", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/state");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:fips", (req,res)=>{
+        console.log("NEW POST ...../oil-production-stats/fips");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:cases", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/cases");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:deaths", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/deaths");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+    app.post(BASE_API_PATH+"/us_counties_covid19_daily/:county/:fips", (req,res)=>{
+        console.log("NEW POST ...../us_counties_covid19_daily/county/fips");
+        res.status(405).send("NOT ALLOWED");
+    });
+
+    app.put(BASE_API_PATH+"/us_counties_covid19_daily", (req,res)=>{
+        console.log("NEW PUT ...../us_counties_covid19_daily");
+        res.status(405).send("NOT ALLOWED");
+    })
 
 //7)PUT a la lista de recursos (completa) debe dar un error de no permitido
 
@@ -344,20 +405,26 @@ app.put(BASE_API_PATH
     });
 
 
-app.delete(BASE_API_PATH
-
-        +"/us_counties_covid19_daily", (req,res)=>{
-                
-            db.remove({}, { multi: true }, function(err, numDeleted) {
-             console.log('Deleted', numDeleted, 'user(s)');
-        }); 
-            res.sendStatus(200);
-        
-        });
+  // DELETE a lista
+  app.delete(BASE_API_PATH+"/us_counties_covid19_daily", (req,res)=>{
+    db.remove({}, {multi:true}, function (err,numRemoved) {
+        if (err) {
+            console.error("ERROR deleting DB usCovidDB in DELETE");
+            res.sendStatus(500);
+        }else{
+            if(numRemoved == 0){
+                console.error("ERROR usCovidDB not found");
+                res.sendStatus(404);
+            } else {
+                res.sendStatus(200);
+            }
+        }
+    });
+    
+});
              
              
 }
-    
     
 
 /*
