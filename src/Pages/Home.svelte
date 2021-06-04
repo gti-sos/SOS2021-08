@@ -99,7 +99,7 @@
               <a href="/#/us_counties_covid19_daily">
                 <Button color="primary">Interfaz</Button>
               </a>
-              <a href="https://documenter.getpostman.com/view/14969056/TzJshe8k"
+              <a href="https://documenter.getpostman.com/view/14969056/TzY4gFnd"
                 ><Button color="info">Documentación v1</Button></a
               >
             </CardBody>

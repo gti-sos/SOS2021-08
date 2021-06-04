@@ -13,4 +13,7 @@ jobs:
       - run: npm start &
       - run: npx newman run test/antsilgorIntegration.json
       - run: npx newman run test/integrationjuanchi.json
-     - run: npx newman run test/integrationCarranza.json
+      - run: npx newman run test/integrationCarranza.json
+
+
+      
