@@ -29,7 +29,7 @@
     "degit": "^2.8.4",
     "express": "^4.17.1",
     "heroku": "^7.54.0",
-    "highcharts": "^9.1.0",
+    "highcharts": "^9.1.1",
     "nedb": "^1.8.0",
     "ng-chartist": "^5.0.0",
     "node": "^16.0.0",

@@ -23,6 +23,7 @@
 	
 	import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
 	import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
+	import graphicDonut3D from './front/antcarbarAPI/graphicDonut3D.svelte';
 
 	
 
@@ -37,7 +38,7 @@
 		  "/statewisetestingdetails/:date/:state":Editstatewisetestingdetails,
 		  "/us_counties_covid19_daily":  us_counties_covid19API,
 		  "/us_counties_covid19_daily/:county/:fips":EditUs_counties_covid19,
-		 
+		  "/us_counties_covid19_daily/graphicDonut3D":graphicDonut3D,
 		  "/statewisetestingdetails/graph2": graph2,
 		  "/statewisetestingdetails/amcChart": graphAMC,
 		  "/statewisetestingdetails/integrationAnx": graphintegrationAnx,
