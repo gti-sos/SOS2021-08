@@ -3,3 +3,14 @@
 {"state":"Bayern","county":"SK-Hof","agegroup":"05-14","gender":"F","date":"03/04/2021","cases":2,"death":0,"recovered":0,"_id":"NbqUZ0haOwkbwTYi"}
 {"state":"Sachsen","county":"SK-Dresden","agegroup":"15-34","gender":"M","date":"09/11/2020","cases":19,"death":0,"recovered":19,"_id":"QLTMk761NyZ4pXlH"}
 {"state":"Berlin","county":"SK-Berlin-Reinickendorf","agegroup":"35-59","gender":"M","date":"24/10/2020","cases":18,"death":0,"recovered":18,"_id":"jP3hgcRkpUubjDlj"}
+{"$$deleted":true,"_id":"9T44aohcuUfbFTxl"}
+{"$$deleted":true,"_id":"D8S4AEvp7Typ1YVJ"}
+{"$$deleted":true,"_id":"NbqUZ0haOwkbwTYi"}
+{"$$deleted":true,"_id":"QLTMk761NyZ4pXlH"}
+{"$$deleted":true,"_id":"jP3hgcRkpUubjDlj"}
+{"state":"Bayern","county":"SK-Hof","agegroup":"05-14","gender":"F","date":"03/04/2021","cases":2,"death":0,"recovered":0,"_id":"9Db9kGGCp5Y2rx5E"}
+{"state":"Berlin","county":"SK-Berlin-Mitte","agegroup":"35-59","gender":"M","date":"03/04/2021","cases":16,"death":0,"recovered":0,"_id":"zsq5RskgUoZBYKD3"}
+{"state":"Nordrhein-Westfalen","county":"SK-Solingen","agegroup":"80-99","gender":"F","date":"03/04/2021","cases":1,"death":0,"recovered":0,"_id":"IiHMrVFve8ZzzCiD"}
+{"state":"Sachsen","county":"SK-Dresden","agegroup":"15-34","gender":"M","date":"09/11/2020","cases":19,"death":0,"recovered":19,"_id":"4bVcjUtvdKJXYG7P"}
+{"state":"Berlin","county":"SK-Berlin-Reinickendorf","agegroup":"35-59","gender":"M","date":"24/10/2020","cases":18,"death":0,"recovered":18,"_id":"qoeP4yAIJ3J6DlEp"}
+{"$$deleted":true,"_id":"9Db9kGGCp5Y2rx5E"}
