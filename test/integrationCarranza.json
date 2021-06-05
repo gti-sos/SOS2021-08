@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "35729a61-09e3-40f2-a859-b116163bac6c",
+		"_postman_id": "34e19c80-7052-41e4-a1d0-d3a7eeee7242",
 		"name": "API US COUNTIES",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -24,12 +24,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/loadInitialData",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/loadInitialData",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -60,12 +57,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -95,12 +89,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily?limit=2&offset=0",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily?limit=2&offset=0",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -150,12 +141,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -195,12 +183,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -240,12 +225,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -276,12 +258,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily?county=Napa",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily?county=Napa",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -318,12 +297,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily?state=Arizona",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily?state=Arizona",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -359,12 +335,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/Maricopa/4013",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/Maricopa/4013",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -396,12 +369,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/2021-04-05/Biharr",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/2021-04-05/Biharr",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -433,12 +403,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/2021-04-05",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/2021-04-05",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -469,12 +436,9 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/Orange/6059",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/Orange/6059",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -506,12 +470,9 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/2021-04-05/Bihar",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/2021-04-05/Bihar",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -552,12 +513,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/Los Angeles/6037",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/Los Angeles/6037",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -598,12 +556,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/2021-04-02/Assamm",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/2021-04-02/Assamm",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -644,12 +599,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -689,12 +641,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/New Orleans",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/New Orleans",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -735,12 +684,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/Bihar",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/Bihar",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -781,12 +727,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/1175",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/1175",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -827,12 +770,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/2021-04-05",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/2021-04-05",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -873,12 +813,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/132",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/132",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -919,12 +856,9 @@
 					}
 				},
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily/2021-04-05/Bihar",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/2021-04-05/Bihar",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -956,12 +890,9 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -991,12 +922,9 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
@@ -1026,17 +954,47 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily",
-					"protocol": "https",
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily",
 					"host": [
-						"sos2021-08",
-						"herokuapp",
-						"com"
+						"{{HEROKU}}"
 					],
 					"path": [
 						"api",
 						"v1",
 						"us_counties_covid19_daily"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loadInitial Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/us_counties_covid19_daily/loadInitialData",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"us_counties_covid19_daily",
+						"loadInitialData"
 					]
 				}
 			},
