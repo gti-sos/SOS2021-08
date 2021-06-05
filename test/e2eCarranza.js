@@ -49,6 +49,27 @@ const puppeteer = require('puppeteer');
     console.log("Timeout superado haciendo captura");
 
     await page.screenshot({ path: '/Users/Antonio Carranza/Desktop/SOS/SOS2021-08/test/e2eCarranzaCatpturas/clickOnInsertarButton.png' });
+
+
+    console.log("Insertando nuevo dato");
+    await page.$eval('#Fecha', el => el.value = '2020-12-12');
+    await page.$eval('#Condado', el => el.value = 'New York');
+    await page.$eval('#Estado', el => el.value = 'Texas');
+    await page.$eval('#Fips', el => el.value = 1997);
+    await page.$eval('#Casos', el => el.value = 12);
+    await page.$eval('#Muertes', el => el.value = 12);
+
+    await page.screenshot({ path: '/Users/Antonio Carranza/Desktop/SOS/SOS2021-08/test/e2eCarranzaCatpturas/clickOnInsertarDato.png' });
+
+    page.click("#BtnInsertar")
+
+
+    console.log("Haciendo captura de insert exitoso")
+    await page.screenshot({ path: '/Users/Antonio Carranza/Desktop/SOS/SOS2021-08/test/e2eCarranzaCatpturas/clickOnInsertarConExito.png' });
+    
+    
+
+
   
   
 

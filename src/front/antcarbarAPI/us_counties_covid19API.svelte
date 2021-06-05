@@ -399,7 +399,7 @@ const togglealerta=()=>{
                    </tr>
                </ModalBody>
                <ModalFooter>
-                   <Button color="primary" on:click={toggle1P}>Insertar</Button>
+                   <Button id="BtnInsertar" color="primary" on:click={toggle1P}>Insertar</Button>
                    <Button color="secondary" on:click={toggle1}
                        >Cancelar</Button
                    >
