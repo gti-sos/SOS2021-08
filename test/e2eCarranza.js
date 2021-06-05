@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('https://sos2021-08.herokuapp.com/');
-  await page.screenshot({ path: '.test/e2eCarranzaCapturas/init.png' });
+  await page.screenshot({ path: 'init_us_counties.png' });
 
   console.log("Página abierta");
 
@@ -15,7 +15,7 @@ const puppeteer = require('puppeteer');
     page.click("body > main > main > div > div:nth-child(12) > div > div:nth-child(2) > div.card-body > a:nth-child(3) > button"),
   ]);
 
-  await page.screenshot({ path: '.test/e2eCarranzaCapturas/clickOnAPiv1Button.png' });
+  await page.screenshot({ path: 'clickOnAPiv1Button_us_counties.png' });
 
   console.log("Click en api v1");
   
@@ -30,7 +30,7 @@ const puppeteer = require('puppeteer');
   await page.waitForTimeout(1000);
   console.log("Timeout superado haciendo captura");
 
-  await page.screenshot({ path: '.test/e2eCarranzaCapturas/clickOnInterfazButton.png' });
+  await page.screenshot({ path: 'clickOnInterfazButton_us_counties.png' });
 
 
 //NO ES NECESARIO POR EL TIME OUT  await page.waitForSelector();
@@ -48,7 +48,7 @@ const puppeteer = require('puppeteer');
     await page.waitForTimeout(1000);
     console.log("Timeout superado haciendo captura");
 
-    await page.screenshot({ path: '.test/e2eCarranzaCapturas/clickOnInsertarButton.png' });
+    await page.screenshot({ path: 'clickOnInsertarButton_us_counties.png' });
 
 
     console.log("Insertando nuevo dato");
@@ -59,7 +59,7 @@ const puppeteer = require('puppeteer');
     await page.$eval('#Casos', el => el.value = '12');
     await page.$eval('#Muertes', el => el.value = '12');
 
-    await page.screenshot({ path: '.test/e2eCarranzaCapturas/clickOnInsertarDato.png' });
+    await page.screenshot({ path: 'clickOnInsertarDato_us_counties.png' });
 
     
     await page.click("#BtnInsertar"),
@@ -68,7 +68,7 @@ const puppeteer = require('puppeteer');
     console.log("Timeout superado haciendo captura");
 
     console.log("Haciendo captura de insert exitoso (AUNQUE SABEMOS QUE LOS CAMPOS SE ENVIAN VACIOS, FALLO DE SVELTE")
-    await page.screenshot({ path: '.test/e2eCarranzaCapturas/clickOnInsertarConExito.png' });
+    await page.screenshot({ path: 'clickOnInsertarConExito_us_counties.png' });
   
 
   await browser.close();
