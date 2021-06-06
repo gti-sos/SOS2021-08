@@ -343,6 +343,7 @@ const togglealerta=()=>{
         <p style="text-align: rigth; background-color: antiquewhite;">↑(!) Existen filtros activos, para realizar otro filtrado desactivelos primero.</p>
         {/if}
 
+
               <!-- Modal para insertar -->
             <div id="modal">
             <Modal isOpen={open1} toggle={toggle1} transitionOptions>
