@@ -1,7 +1,7 @@
-{"date":"2020-01-21","county":"Snoomish","state":"Washington","fips":56061,"cases":1,"deaths":0,"_id":"EXLcOdCn0Rao4SAl"}
-{"date":"2020-03-07","county":"Polk","state":"Georgia","fips":13233,"cases":1,"deaths":0,"_id":"WD4z69njPe6Lpyi6"}
-{"date":"2020-01-28","county":"Los Angeles","state":"California","fips":6037,"cases":1,"deaths":0,"_id":"ZznYlZhlnGyAjrGB"}
-{"date":"2020-03-04","county":"Washington","state":"Oregon","fips":41067,"cases":2,"deaths":0,"_id":"bRI3aNi7OqnzerEA"}
-{"date":"2020-01-25","county":"Orange","state":"California","fips":6059,"cases":1,"deaths":0,"_id":"nPpJxpgWhirT4zwR"}
-{"date":"2020-02-28","county":"Napa","state":"California","fips":6055,"cases":1,"deaths":0,"_id":"qvsLrN6BPxH9K9w0"}
-{"date":"2020-01-26","county":"Maricopa","state":"Arizona","fips":4013,"cases":1,"deaths":0,"_id":"x8laOQ5rOGSJHA3X"}
+{"date":"2020-01-25","county":"Orange","state":"California","fips":6059,"cases":1,"deaths":3,"_id":"8LbENn6SKKxI15Rq"}
+{"date":"2020-03-04","county":"Washington","state":"Oregon","fips":41067,"cases":2,"deaths":20,"_id":"MoCyNqe4YeUVXka4"}
+{"date":"2020-01-21","county":"Snoomish","state":"Washington","fips":56061,"cases":1,"deaths":5,"_id":"RxR4RjIo84lo1o7C"}
+{"date":"2020-02-28","county":"Napa","state":"California","fips":6055,"cases":1,"deaths":8,"_id":"ggqRwiIigEELM5Pl"}
+{"date":"2020-03-07","county":"Polk","state":"Georgia","fips":13233,"cases":1,"deaths":40,"_id":"oPCj1RQLZUlsSp0A"}
+{"date":"2020-01-26","county":"Maricopa","state":"Arizona","fips":4013,"cases":1,"deaths":12,"_id":"p0t9DxSxU3kHLPnn"}
+{"date":"2020-01-28","county":"Los Angeles","state":"California","fips":6037,"cases":1,"deaths":2,"_id":"yoib5KfrNcja59IA"}

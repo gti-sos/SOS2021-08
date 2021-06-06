@@ -25,7 +25,7 @@
    } from "svelte-spa-router";
 
    
-   const BASE_API_PATH = "/api/v1/us_counties_covid19_daily"; //tiene que llamar a la API para tratar los datos
+   const BASE_API_PATH = "api/v1/us_counties_covid19_daily"; //tiene que llamar a la API para tratar los datos
  
     let cargados = false;
     let data = [];

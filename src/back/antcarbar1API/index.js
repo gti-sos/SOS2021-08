@@ -26,7 +26,7 @@ module.exports.register = (app, BASE_API_PATH
                         "state": "Washington",
                         "fips": 56061.0,
                         "cases":1,
-                        "deaths":0
+                        "deaths":5
                         },
                         {
                         "date": "2020-01-25",
@@ -34,7 +34,7 @@ module.exports.register = (app, BASE_API_PATH
                         "state": "California",
                         "fips": 6059.0,
                         "cases":1,
-                        "deaths":0
+                        "deaths":3
                     },
                     {
                         "date": "2020-01-26",
@@ -42,7 +42,7 @@ module.exports.register = (app, BASE_API_PATH
                         "state": "Arizona",
                         "fips": 4013.0,
                         "cases":1,
-                        "deaths":0
+                        "deaths":12
                     } ,  
                 
                     {
@@ -51,7 +51,7 @@ module.exports.register = (app, BASE_API_PATH
                         "state": "California",
                         "fips": 6037.0,
                         "cases":1,
-                        "deaths":0
+                        "deaths":2
                     },
                     {
                         "date": "2020-02-28",
@@ -59,7 +59,7 @@ module.exports.register = (app, BASE_API_PATH
                         "state": "California",
                         "fips":6055.0,
                         "cases":1,
-                        "deaths":0.0
+                        "deaths":8
                     },
                     {
                     "date":"2020-03-04",
@@ -67,7 +67,7 @@ module.exports.register = (app, BASE_API_PATH
                     "state":"Oregon",
                     "fips":41067.0,
                     "cases":2,
-                    "deaths":0.0
+                    "deaths":20
                     },   
                 {
 
@@ -76,7 +76,7 @@ module.exports.register = (app, BASE_API_PATH
                     "state":"Georgia",
                     "fips":13233.0,
                     "cases":1,
-                    "deaths":0.0
+                    "deaths":40
 
                 }
 
@@ -118,9 +118,9 @@ module.exports.register = (app, BASE_API_PATH
                    if (req.query.date) query["date"] = req.query.date;
                    if (req.query.county) query["county"] = req.query.county;
                    if (req.query.state) query["state"] = req.query.state;
-                   if (req.query.fips) query["fips"] = req.query.fips;
-                   if (req.query.cases) query["cases"] = req.query.cases;
-                   if (req.query.deaths) query["deaths"] = req.query.deaths;
+                   if (req.query.fips) query["fips"] = parseInt(req.query.fips);
+                   if (req.query.cases) query["cases"] = parseInt(req.query.cases);
+                   if (req.query.deaths) query["deaths"] = parseInt(req.query.deaths);
                
                 db.find(query).sort({ state: 1, county: -1}).skip(offset).limit(limit).exec(function (err, resources) {
                        if (err) {
