@@ -19,8 +19,7 @@ app.get("/info/covid19-tracking-germany", (req, res) =>{
 //GET para cargar (o meter) los datos iniciales (todo en JSON)
 //(de modo que cree 2 o más elementos)
 
-app.get(BASE_API_PATH
-+"/covid19-tracking-germany/loadInitialData", (req,res)=>{ 
+app.get(BASE_API_PATH+"/covid19-tracking-germany/loadInitialData", (req,res)=>{ 
 
 	
 	var covid19_tracking_germanyArray_initial_data = [
@@ -140,7 +139,7 @@ app.get(BASE_API_PATH
                     res.status(200).send(aux);
                 } else {
 					var array = [];
-                    res.status(200).send(array);
+                    res.status(404).send("La lista se encuentra vacía, cargue datos");
                 }
 
             }
