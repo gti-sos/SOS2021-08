@@ -1,5 +1,3 @@
-var BASE_API_PATH = "/api/integration"; //tipo de recurso
-
 var DataStore = require("nedb");
 var db = new DataStore({ filename: "./src/back/antsilgorAPI/covid19TrackingGermany.db", autoload: true });
 
@@ -14,7 +12,7 @@ var covid19_tracking_germanyArray = [];
 //GET para cargar (o meter) los datos iniciales (todo en JSON)
 //(de modo que cree 2 o más elementos)
 
-app.get(BASE_API_PATH+"/covid19-tracking-germany/loadInitialData", (req,res)=>{ 
+app.get(BASE_API_PATH+"/integration/covid19-tracking-germany/loadInitialData", (req,res)=>{ 
 
 	
 	var covid19_tracking_germanyArray_initial_data = [
@@ -86,7 +84,7 @@ app.get(BASE_API_PATH+"/covid19-tracking-germany/loadInitialData", (req,res)=>{
 //1)GET a la lista de recursos devuelve una lista con todos los recursos
 //(GET para cargar el array completo)
 
-app.get(BASE_API_PATH + "/covid19-tracking-germany", (req,res) => {
+app.get(BASE_API_PATH + "/integration/covid19-tracking-germany", (req,res) => {
 	
 	let query = {};
 	let offset = 0;
@@ -141,7 +139,7 @@ app.get(BASE_API_PATH + "/covid19-tracking-germany", (req,res) => {
 
 //2)POST  a la lista de recursos (para introducir nuevos arrays de datos)
 
-app.post(BASE_API_PATH+"/covid19-tracking-germany", (req,res)=>{
+app.post(BASE_API_PATH+"/integration/covid19-tracking-germany", (req,res)=>{
 	
 	var data = req.body;
 	
@@ -202,7 +200,7 @@ app.post(BASE_API_PATH+"/covid19-tracking-germany", (req,res)=>{
 
 app.get(BASE_API_PATH
 
-+"/covid19-tracking-germany/:state/:county", (req,res)=>{ 
++"/integration/covid19-tracking-germany/:state/:county", (req,res)=>{ 
 		
 		
 	db.find({state:String(req.params.state), county:String(req.params.county)}, function(err, record) {
@@ -234,7 +232,7 @@ app.get(BASE_API_PATH
 
 app.delete(BASE_API_PATH
 
-+"/covid19-tracking-germany/:state/:county", function(req, res) { 
++"/integration/covid19-tracking-germany/:state/:county", function(req, res) { 
 	//Si el 'estado' y 'año' coinciden con los recibidos o dados, se elimina ese recurso
 	
 	
@@ -261,7 +259,7 @@ app.delete(BASE_API_PATH
 //actualizamos los que coincidan con 'state' y 'county'
 
 
-app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,res) { 
+app.put(BASE_API_PATH+"/integration/covid19-tracking-germany/:state/:county", function(req,res) { 
 
 	var data = req.body;
 	
@@ -339,52 +337,52 @@ app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,r
 
 //6)POST a un recurso (en concreto), debe de dar un error de método no permitido 
     
-app.post(BASE_API_PATH +"/covid19-tracking-germany/:county/:fips", function(req, res) { 
+app.post(BASE_API_PATH +"/integration/covid19-tracking-germany/:county/:fips", function(req, res) { 
     
         res.sendStatus(405); 
     });
 
 
 
-    app.post(BASE_API_PATH+"/covid19-tracking-germany/:state", (req,res)=>{
-        console.log("NEW POST ...../covid19-tracking-germany/state");
+    app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:state", (req,res)=>{
+        console.log("NEW POST ...../integration/covid19-tracking-germany/state");
         res.status(405).send("NOT ALLOWED");
     })
-    app.post(BASE_API_PATH+"/covid19-tracking-germany/:county", (req,res)=>{
-        console.log("NEW POST ...../covid19-tracking-germany/county");
+    app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:county", (req,res)=>{
+        console.log("NEW POST ...../integration/covid19-tracking-germany/county");
         res.status(405).send("NOT ALLOWED");
     })
-    app.post(BASE_API_PATH+"/covid19-tracking-germany/:agegroup", (req,res)=>{
+    app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:agegroup", (req,res)=>{
         console.log("NEW POST ...../oil-production-stats/agegroup");
         res.status(405).send("NOT ALLOWED");
     })
-    app.post(BASE_API_PATH+"/covid19-tracking-germany/:gender", (req,res)=>{
-        console.log("NEW POST ...../covid19-tracking-germany/gender");
+    app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:gender", (req,res)=>{
+        console.log("NEW POST ...../integration/covid19-tracking-germany/gender");
         res.status(405).send("NOT ALLOWED");
     })
-    app.post(BASE_API_PATH+"/covid19-tracking-germany/:deaths", (req,res)=>{
-        console.log("NEW POST ...../covid19-tracking-germany/deaths");
-        res.status(405).send("NOT ALLOWED");
-    })
-
-	app.post(BASE_API_PATH+"/covid19-tracking-germany/:date", (req,res)=>{
-        console.log("NEW POST ...../covid19-tracking-germany/date");
+    app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:deaths", (req,res)=>{
+        console.log("NEW POST ...../integration/covid19-tracking-germany/deaths");
         res.status(405).send("NOT ALLOWED");
     })
 
-
-	app.post(BASE_API_PATH+"/covid19-tracking-germany/:cases", (req,res)=>{
-        console.log("NEW POST ...../covid19-tracking-germany/cases");
+	app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:date", (req,res)=>{
+        console.log("NEW POST ...../integration/covid19-tracking-germany/date");
         res.status(405).send("NOT ALLOWED");
     })
 
-	app.post(BASE_API_PATH+"/covid19-tracking-germany/:death", (req,res)=>{
-        console.log("NEW POST ...../covid19-tracking-germany/death");
+
+	app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:cases", (req,res)=>{
+        console.log("NEW POST ...../integration/covid19-tracking-germany/cases");
         res.status(405).send("NOT ALLOWED");
     })
 
-	app.post(BASE_API_PATH+"/covid19-tracking-germany/:recovered", (req,res)=>{
-        console.log("NEW POST ...../covid19-tracking-germany/recovered");
+	app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:death", (req,res)=>{
+        console.log("NEW POST ...../integration/covid19-tracking-germany/death");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+	app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:recovered", (req,res)=>{
+        console.log("NEW POST ...../integration/covid19-tracking-germany/recovered");
         res.status(405).send("NOT ALLOWED");
     })
 
@@ -392,7 +390,7 @@ app.post(BASE_API_PATH +"/covid19-tracking-germany/:county/:fips", function(req,
 
 //6)POST a un recurso (en concreto), debe de dar un error de método no permitido 
 
-app.post(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req, res) { 
+app.post(BASE_API_PATH+"/integration/covid19-tracking-germany/:state/:county", function(req, res) { 
 
 	res.sendStatus(405); 
 });
@@ -400,7 +398,7 @@ app.post(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,
 
 //7)PUT a la lista de recursos (completa) debe dar un error de no permitido
 
-app.put(BASE_API_PATH+"/covid19-tracking-germany", function(req, res) { 
+app.put(BASE_API_PATH+"/integration/covid19-tracking-germany", function(req, res) { 
 
 	res.sendStatus(405); 
 });
@@ -410,7 +408,7 @@ app.put(BASE_API_PATH+"/covid19-tracking-germany", function(req, res) {
 
 app.delete(BASE_API_PATH
 
-+"/covid19-tracking-germany", (req,res)=>{
++"/integration/covid19-tracking-germany", (req,res)=>{
 		
 	db.remove({}, { multi: true }, function(err, numDeleted) {
      console.log('Deleted', numDeleted, 'user(s)');
