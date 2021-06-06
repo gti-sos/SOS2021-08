@@ -113,7 +113,6 @@ module.exports.register = (app, BASE_API_PATH
                        offset = parseInt(req.query.offset);
                        delete req.query.offset;
                    }
-           
                    // Search
                    if (req.query.date) query["date"] = req.query.date;
                    if (req.query.county) query["county"] = req.query.county;
