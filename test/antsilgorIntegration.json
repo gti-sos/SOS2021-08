@@ -77,48 +77,6 @@
 			"response": []
 		},
 		{
-			"name": "paginacion",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?limit=2&offset=0",
-					"host": [
-						"{{HEROKU}}"
-					],
-					"path": [
-						"api",
-						"v1",
-						"covid19-tracking-germany"
-					],
-					"query": [
-						{
-							"key": "limit",
-							"value": "2"
-						},
-						{
-							"key": "offset",
-							"value": "0"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "GET recurso",
 			"event": [
 				{
@@ -548,6 +506,48 @@
 						"covid19-tracking-germany",
 						"2021-04-05",
 						"Biharr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paginacion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HEROKU}}/api/v1/covid19-tracking-germany?limit=2&offset=0",
+					"host": [
+						"{{HEROKU}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"covid19-tracking-germany"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
 					]
 				}
 			},
