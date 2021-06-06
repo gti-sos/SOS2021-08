@@ -114,7 +114,7 @@ app.get(BASE_API_PATH
         if (req.query.state) query["state"] = req.query.state;
         if (req.query.county) query["county"] = req.query.county;
         if (req.query.agegroup) query["agegroup"] = req.query.agegroup;
-        if (req.query.gender) query["gender"] =req.query.gender;
+        if (req.query.gender) query["gender"] = req.query.gender;
         if (req.query.date) query["date"] = req.query.date;
         if (req.query.cases) query["cases"] = req.query.cases;
         if (req.query.death) query["death"] = req.query.death;
@@ -128,18 +128,18 @@ app.get(BASE_API_PATH
                 if (resources.length != 0) {
                    
 					var aux = resources.map((c)=>{
-				return {state : c.state, county: c.county, agegroup: c.agegroup, gender: c.gender, date: c.date, cases: c.cases, death: c.death, recovered: c.recovered}
-			
-		            res.status(200).send(aux);
+					return {state : c.state, county: c.county, agegroup: c.agegroup, gender: c.gender, date: c.date, cases: c.cases, death: c.death, recovered: c.recovered}
+					
 					
 					
                     });
+					res.status(200).send(aux);
 
-                    // res.status(200).send(JSON.stringify(resourcesToSend, null, 2));
-                    res.status(200).send(aux);
+                
+    
                 } else {
 					var array = [];
-                    res.status(404).send("La lista se encuentra vacía, cargue datos");
+                    res.status(404).send("Elemento(s) no encontrado(s)");
                 }
 
             }
