@@ -7,69 +7,70 @@ module.exports.register = (app, BASE_API_PATH
 
 var covid19_tracking_germanyArray = [];
 
+var covid19_tracking_germanyArray_initial_data = [
+	{
+		"state": "Bayern",
+		"county": "SK-Hof",
+		"agegroup": "05-14",
+		"gender": "F",
+		"date": "03/04/2021",
+		"cases": 2,
+		"death": 0,
+		"recovered": 0
+	  },
+	  {
+		"state": "Berlin",
+		"county": "SK-Berlin-Mitte",
+		"agegroup": "35-59",
+		"gender": "M",
+		"date": "03/04/2021",
+		"cases": 16,
+		"death": 0,
+		"recovered": 0
+	  },
+	  {
+		"state": "Nordrhein-Westfalen",
+		"county": "SK-Solingen",
+		"agegroup": "80-99",
+		"gender": "F",
+		"date": "03/04/2021",
+		"cases": 1,
+		"death": 0,
+		"recovered": 0
+	  },
+	  {
+		"state": "Sachsen",
+		"county": "SK-Dresden",
+		"agegroup": "15-34",
+		"gender": "M",
+		"date": "09/11/2020",
+		"cases": 19,
+		"death": 0,
+		"recovered": 19
+	  },
+	  {
+		"state": "Berlin",
+		"county": "SK-Berlin-Reinickendorf",
+		"agegroup": "35-59",
+		"gender": "M",
+		"date": "24/10/2020",
+		"cases": 18,
+		"death": 0,
+		"recovered": 18
+	  }
+
+];
+
 
 
 //GET para cargar (o meter) los datos iniciales (todo en JSON)
 //(de modo que cree 2 o más elementos)
 
-app.get(BASE_API_PATH+"/integration/covid19-tracking-germany/loadInitialData", (req,res)=>{ 
+app.get(BASE_API_PATH+"/integration/covid19-tracking-germany/loadInitialData", (req,res)=>{
 
 	
-	var covid19_tracking_germanyArray_initial_data = [
-		{
-            "state": "Bayern",
-            "county": "SK-Hof",
-            "agegroup": "05-14",
-            "gender": "F",
-            "date": "03/04/2021",
-            "cases": 2,
-            "death": 0,
-            "recovered": 0
-          },
-          {
-            "state": "Berlin",
-            "county": "SK-Berlin-Mitte",
-            "agegroup": "35-59",
-            "gender": "M",
-            "date": "03/04/2021",
-            "cases": 16,
-            "death": 0,
-            "recovered": 0
-          },
-          {
-            "state": "Nordrhein-Westfalen",
-            "county": "SK-Solingen",
-            "agegroup": "80-99",
-            "gender": "F",
-            "date": "03/04/2021",
-            "cases": 1,
-            "death": 0,
-            "recovered": 0
-          },
-          {
-            "state": "Sachsen",
-            "county": "SK-Dresden",
-            "agegroup": "15-34",
-            "gender": "M",
-            "date": "09/11/2020",
-            "cases": 19,
-            "death": 0,
-            "recovered": 19
-          },
-          {
-            "state": "Berlin",
-            "county": "SK-Berlin-Reinickendorf",
-            "agegroup": "35-59",
-            "gender": "M",
-            "date": "24/10/2020",
-            "cases": 18,
-            "death": 0,
-            "recovered": 18
-          }
+	db.remove({}, { multi: true });
 
-	];
-
-	
 	db.insert(covid19_tracking_germanyArray_initial_data);
 	
 	//Lanzamos el código 200 indicando que se han cargado los datos iniciales de forma satisfactoria

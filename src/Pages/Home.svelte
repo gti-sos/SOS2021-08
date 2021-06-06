@@ -69,6 +69,9 @@
             <a href="https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany">
               <Button color="primary">API v1</Button></a
             >
+            <a href="https://sos2021-08.herokuapp.com/api/v1/integracion/covid19-tracking-germany">
+              <Button color="primary">API Estable Integracion</Button></a
+            >
             <a href="/#/covid19-tracking-germany">
               <Button color="primary">Interfaz</Button>
             </a>
