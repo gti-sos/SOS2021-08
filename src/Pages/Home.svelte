@@ -66,6 +66,9 @@
             <CardText
               >Estadisticas sobre casos, muertes, recuperados, grupos de edad y género de la evolución de la COVID-19 EN Alemania.</CardText
             >
+            <a href="https://sos2021-08.herokuapp.com/api/v1/integration/covid19-tracking-germany">
+              <Button color="primary">API Estable (para integración)</Button></a
+            >
             <a href="https://sos2021-08.herokuapp.com/api/v1/covid19-tracking-germany">
               <Button color="primary">API v1</Button></a
             >
