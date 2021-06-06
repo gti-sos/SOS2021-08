@@ -352,9 +352,7 @@ app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,r
 
 //6)POST a un recurso (en concreto), debe de dar un error de método no permitido 
     
-app.post(BASE_API_PATH
-
-    +"/covid19-tracking-germany/:county/:fips", function(req, res) { 
+app.post(BASE_API_PATH +"/covid19-tracking-germany/:county/:fips", function(req, res) { 
     
         res.sendStatus(405); 
     });
