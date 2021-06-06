@@ -70,8 +70,6 @@ var covid19_tracking_germanyArray_initial_data = [
 
 app.get(BASE_API_PATH+"/integration/covid19-tracking-germany/loadInitialData", (req,res)=>{
 
-	
-	db.remove({}, { multi: true });
 
 	db.insert(covid19_tracking_germanyArray_initial_data);
 	
