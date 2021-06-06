@@ -91,61 +91,57 @@ app.get(BASE_API_PATH+"/covid19-tracking-germany/loadInitialData", (req,res)=>{
 //1)GET a la lista de recursos devuelve una lista con todos los recursos
 //(GET para cargar el array completo)
 
-app.get(BASE_API_PATH
-
- + "/covid19-tracking-germany", (req,res) => {
+app.get(BASE_API_PATH + "/covid19-tracking-germany", (req,res) => {
 	
 	let query = {};
-        let offset = 0;
-        let limit = Number.MAX_SAFE_INTEGER;
+	let offset = 0;
+	let limit = Number.MAX_SAFE_INTEGER;
 
-        // Pagination
-        if (req.query.limit) {
-            limit = parseInt(req.query.limit);
-            delete req.query.limit;
-        }
+	// Pagination
+	if (req.query.limit) {
+		limit = parseInt(req.query.limit);
+		delete req.query.limit;
+	}
 
-        if (req.query.offset) {
-            offset = parseInt(req.query.offset);
-            delete req.query.offset;
-        }
+	if (req.query.offset) {
+		offset = parseInt(req.query.offset);
+		delete req.query.offset;
+	}
 
-        // Search
-        if (req.query.state) query["state"] = req.query.state;
-        if (req.query.county) query["county"] = req.query.county;
-        if (req.query.agegroup) query["agegroup"] = req.query.agegroup;
-        if (req.query.gender) query["gender"] = req.query.gender;
-        if (req.query.date) query["date"] = req.query.date;
-        if (req.query.cases) query["cases"] = req.query.cases;
-        if (req.query.death) query["death"] = req.query.death;
-        if (req.query.recovered) query["recovered"] = req.query.recovered;
-	
-	 db.find(query).sort({ state: 1, county: -1}).skip(offset).limit(limit).exec(function (err, resources) {
-            if (err) {
-                console.error(DATABASE_ERR_MSSG + err);
-                res.sendStatus(500);
-            } else {
-                if (resources.length != 0) {
-                   
-					var aux = resources.map((c)=>{
-					return {state : c.state, county: c.county, agegroup: c.agegroup, gender: c.gender, date: c.date, cases: c.cases, death: c.death, recovered: c.recovered}
-					
-					
-					
-                    });
-					res.status(200).send(aux);
+	// Search
+	if (req.query.state) query["state"] = req.query.state;
+	if (req.query.county) query["county"] = req.query.county;
+	if (req.query.agegroup) query["agegroup"] = req.query.agegroup;
+	if (req.query.gender) query["gender"] = req.query.gender;
+	if (req.query.date) query["date"] = req.query.date;
+	if (req.query.cases) query["cases"] = parseInt(req.query.cases);
+	if (req.query.death) query["death"] = parseInt(req.query.death);
+	if (req.query.recovered) query["recovered"] = parseInt(req.query.recovered);
 
-                
-    
-                } else {
-					var array = [];
-                    res.status(404).send("Elemento(s) no encontrado(s)");
-                }
+	db.find(query).sort({ state: 1, county: -1}).skip(offset).limit(limit).exec(function (err, resources) {
+		if (err) {
+			console.error(DATABASE_ERR_MSSG + err);
+			res.sendStatus(500);
+		} else {
+			if (resources.length != 0) {
+				
+				var aux = resources.map((c)=>{
+				return {state : c.state, county: c.county, agegroup: c.agegroup, gender: c.gender, date: c.date, cases: c.cases, death: c.death, recovered: c.recovered}
+				
+				});
+				res.status(200).send(aux);
 
-            }
+			
 
-        });
-    });
+			} else {
+				var array = [];
+				res.status(404).send("Elemento(s) no encontrado(s)");
+			}
+
+		}
+
+	});
+});
 	
 	
 //2)POST  a la lista de recursos (para introducir nuevos arrays de datos)
