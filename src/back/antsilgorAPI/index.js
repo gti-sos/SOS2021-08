@@ -317,7 +317,7 @@ app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,r
 					   
 						   
 						   db.update({state:String(req.params.state), county:String(req.params.county)}, 
-							  {state:String(req.params.state), county:String(req.params.county),agegroup: req.body.agegroup, gender:  req.body.gender, 
+							  {state:String(req.params.state), county:String(req.params.county), agegroup:String(req.body.agegroup), gender:  req.body.gender, 
 							 	date: req.body.date, cases: req.body.cases, death: req.body.death, recovered: req.body.recovered}, {}, function (err, numReplaced) {
 										
 						if(err) {
@@ -350,13 +350,64 @@ app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,r
 
 
 
+//6)POST a un recurso (en concreto), debe de dar un error de método no permitido 
+    
+app.post(BASE_API_PATH
 
+    +"/covid19-tracking-germany/:county/:fips", function(req, res) { 
+    
+        res.sendStatus(405); 
+    });
+
+
+
+    app.post(BASE_API_PATH+"/covid19-tracking-germany/:state", (req,res)=>{
+        console.log("NEW POST ...../covid19-tracking-germany/state");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/covid19-tracking-germany/:county", (req,res)=>{
+        console.log("NEW POST ...../covid19-tracking-germany/county");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/covid19-tracking-germany/:agegroup", (req,res)=>{
+        console.log("NEW POST ...../oil-production-stats/agegroup");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/covid19-tracking-germany/:gender", (req,res)=>{
+        console.log("NEW POST ...../covid19-tracking-germany/gender");
+        res.status(405).send("NOT ALLOWED");
+    })
+    app.post(BASE_API_PATH+"/covid19-tracking-germany/:deaths", (req,res)=>{
+        console.log("NEW POST ...../covid19-tracking-germany/deaths");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+	app.post(BASE_API_PATH+"/covid19-tracking-germany/:date", (req,res)=>{
+        console.log("NEW POST ...../covid19-tracking-germany/date");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+
+	app.post(BASE_API_PATH+"/covid19-tracking-germany/:cases", (req,res)=>{
+        console.log("NEW POST ...../covid19-tracking-germany/cases");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+	app.post(BASE_API_PATH+"/covid19-tracking-germany/:death", (req,res)=>{
+        console.log("NEW POST ...../covid19-tracking-germany/death");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+	app.post(BASE_API_PATH+"/covid19-tracking-germany/:recovered", (req,res)=>{
+        console.log("NEW POST ...../covid19-tracking-germany/recovered");
+        res.status(405).send("NOT ALLOWED");
+    })
+
+  
 
 //6)POST a un recurso (en concreto), debe de dar un error de método no permitido 
 
-app.post(BASE_API_PATH
-
-+"/covid19-tracking-germany/:state/:county", function(req, res) { 
+app.post(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req, res) { 
 
 	res.sendStatus(405); 
 });
@@ -364,9 +415,7 @@ app.post(BASE_API_PATH
 
 //7)PUT a la lista de recursos (completa) debe dar un error de no permitido
 
-app.put(BASE_API_PATH
-
-+"/covid19-tracking-germany", function(req, res) { 
+app.put(BASE_API_PATH+"/covid19-tracking-germany", function(req, res) { 
 
 	res.sendStatus(405); 
 });
