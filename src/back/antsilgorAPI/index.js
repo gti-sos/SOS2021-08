@@ -108,7 +108,7 @@ app.get(BASE_API_PATH + "/covid19-tracking-germany", (req,res) => {
 		delete req.query.offset;
 	}
 
-	// Search
+	// Búsqueda por campos
 	if (req.query.state) query["state"] = req.query.state;
 	if (req.query.county) query["county"] = req.query.county;
 	if (req.query.agegroup) query["agegroup"] = req.query.agegroup;
