@@ -143,7 +143,6 @@ app.get(BASE_API_PATH + "/covid19-tracking-germany", (req,res) => {
 	});
 });
 	
-	
 //2)POST  a la lista de recursos (para introducir nuevos arrays de datos)
 
 app.post(BASE_API_PATH+"/covid19-tracking-germany", (req,res)=>{
