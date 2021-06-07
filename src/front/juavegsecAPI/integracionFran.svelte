@@ -37,7 +37,7 @@
         zoomType: 'xy'
     },
     title: {
-        text: 'Gráfica que contiene las notas de corte del grado de ingeniería informática de la US en distintos años, y el peso y el id de un jugador aleatorio de la NBA'
+        text: 'Gráfica que contiene las notas de corte del grado de ingeniería informática de la US en distintos años y los casos y positivos en diferentes estados de la India'
     },
     xAxis: {
         title: {

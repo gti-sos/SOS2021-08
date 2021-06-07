@@ -52,7 +52,7 @@
                 }
             },
             title: {
-                text: 'Energías renovables'
+                text: 'Unemployment rate'
             },
             plotOptions: {
                 series: {
