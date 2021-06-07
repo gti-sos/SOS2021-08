@@ -114,8 +114,8 @@
               <a href="/#/us_counties_covid19_daily/fusionchart1">
                 <Button color="primary">Gráfica fusionChart(Integracion)</Button>
               </a>
-
-
+              
+             
               <a href="https://documenter.getpostman.com/view/14969056/TzY4gFnd"
                 ><Button color="info">Documentación v1</Button></a
               >
@@ -166,7 +166,10 @@
               <a href="/#/statewisetestingdetails/integracionI2">
                 <Button color="primary">Gráfica Integracion Nuts (externa 2)</Button>
               </a>
-             
+              
+              <a href="/#/us_counties_covid19_daily/groupIntegration">
+                <Button color="primary">Gráfica Integracion grupal</Button>
+              </a>
              
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a

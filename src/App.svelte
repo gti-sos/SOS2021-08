@@ -27,6 +27,7 @@
 	import chartist from './front/antcarbarAPI/chartist.svelte';	
 	import highchartBB from './front/antcarbarAPI/highchartBB.svelte';
 	import fusionchart1 from './front/antcarbarAPI/fusionchart1.svelte';
+	import groupIntegration from './Pages/groupIntegration.svelte';
 
 	
 
@@ -45,6 +46,7 @@
 		  "/us_counties_covid19_daily/chartist":chartist,
 		  "/us_counties_covid19_daily/fusionchart1":fusionchart1,
 		  "/us_counties_covid19_daily/highchartBB":highchartBB,
+		  "/us_counties_covid19_daily/groupIntegration":groupIntegration,
 		  "/statewisetestingdetails/graph2": graph2,
 		  "/statewisetestingdetails/amcChart": graphAMC,
 		  "/statewisetestingdetails/integrationAnx": graphintegrationAnx,
