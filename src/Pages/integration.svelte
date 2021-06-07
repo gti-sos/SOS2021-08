@@ -61,24 +61,32 @@
           <h3 class="titulo"><b>Integraciones de Juan Vega Seco</b></h3>
            <br>
            <div class="titulo">
-            <a href="/#/statewisetestingdetails/integrationAnx">
-              <Button color="primary">Gráfica Integracion anxiety stats(externa 1)</Button>
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/integrations/statewisetestingdetails/graph2">
+              <Button color="primary">Gráfica HC</Button>
             </a>
-            <a href="/#/statewisetestingdetails/integracionE1">
-              <Button color="primary">Gráfica Integracion Covid API</Button>
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/amcChart">
+              <Button color="primary">Gráfica Integracion AMC</Button>
             </a>
-            <a href="/#/statewisetestingdetails/integracionE2">
-              <Button color="primary">Gráfica Integracion Países API</Button>
+            <a href="https://sos2021-08.herokuapp.com/#/statewisetestingdetails/integrations/statewisetestingdetails/integrationAnx">
+              <Button color="primary">Gráfica Integracion E1</Button>
             </a>
-            <a href="/#/statewisetestingdetails/integracionE3">
-              <Button color="primary">Gráfica Integracion criptos API</Button>
+            <a href="https://sos2021-08.herokuapp.com/#/statewisetestingdetails/integrations/statewisetestingdetails/integracionE2">
+              <Button color="primary">Gráfica Integracion E2</Button>
             </a>
-            <a href="/#/statewisetestingdetails/integracionE4">
-              <Button color="primary">Gráfica Integracion Covid 2 API</Button>
+            <a href="https://sos2021-08.herokuapp.com/#/statewisetestingdetails/integrations/statewisetestingdetails/integracionE3">
+              <Button color="primary">Gráfica Integracion E3 </Button>
             </a>
-            <a href="/#/statewisetestingdetails/integracionI2">
-              <Button color="primary">Gráfica Integracion Nuts (externa 2)</Button>
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integracionE4">
+              <Button color="primary">Gráfica Integracion E4 </Button>
             </a>
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integracionI2">
+              <Button color="primary">Gráfica Integracion I2 </Button>
+            </a>
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integracionFran">
+              <Button color="primary">Gráfica Externa </Button>
+            </a>
+            
+
             <a href="/#/statewisetestingdetails/integracionFran">
               <Button color="primary">Gráfica Integracion Fran ( proxy)</Button>
             </a>
