@@ -2,9 +2,8 @@
 <script lang="ts">
 	import Router from 'svelte-spa-router';
 	  
-	import NotFound from "./Pages/NotFound.svelte";
 	import Home from "./Pages/Home.svelte";
-	import Info from "./Pages/Info.svelte";
+	
 	import Integration from "./Pages/integration.svelte";
 	import Grupal from "./Pages/groupIntegration.svelte";
 	import covid19TrackingGermanyAPI from "./front/antsilgorAPI/covid19TrackingGermanyAPI.svelte";
@@ -40,7 +39,6 @@
 
 	  const routes = {
 		  "/":Home,
-		  "/info":Info,
 		  "/integrations":Integration,
 		  "/integrations/grupal":Grupal,
 		  "/covid19-tracking-germany": covid19TrackingGermanyAPI,
@@ -70,7 +68,7 @@
 		  "/statewisetestingdetails/integracionFran": graphintegracionFran,
 		
 
-		  '*': NotFound};
+		  };
   </script>
   <main>
       <Router {routes}> </Router>
