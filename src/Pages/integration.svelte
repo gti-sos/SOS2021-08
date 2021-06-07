@@ -48,7 +48,7 @@
           <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/depresionAndCovidGraph" class="fakeButton">Depression (Externa)</a>
           <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/obesityAndCovidGraph" class="fakeButton">Obesity (Externa)</a>
           <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/agegroupDeathsAndCases" class="fakeButton">Covid Alemania (propia Dygraph library)</a>
-          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/analytics" class="fakeButton">Covid Alemania (propia highcharts)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/covid19-tracking-germany/analytics" class="fakeButton">Covid Alemania (propia highcharts)</a>
           </div>
         </div>
       </slot>
