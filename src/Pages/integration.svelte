@@ -61,7 +61,27 @@
           <h3 class="titulo"><b>Integraciones de Juan Vega Seco</b></h3>
            <br>
            <div class="titulo">
-            
+            <a href="/#/statewisetestingdetails/integrationAnx">
+              <Button color="primary">Gráfica Integracion anxiety stats(externa 1)</Button>
+            </a>
+            <a href="/#/statewisetestingdetails/integracionE1">
+              <Button color="primary">Gráfica Integracion Covid API</Button>
+            </a>
+            <a href="/#/statewisetestingdetails/integracionE2">
+              <Button color="primary">Gráfica Integracion Países API</Button>
+            </a>
+            <a href="/#/statewisetestingdetails/integracionE3">
+              <Button color="primary">Gráfica Integracion criptos API</Button>
+            </a>
+            <a href="/#/statewisetestingdetails/integracionE4">
+              <Button color="primary">Gráfica Integracion Covid 2 API</Button>
+            </a>
+            <a href="/#/statewisetestingdetails/integracionI2">
+              <Button color="primary">Gráfica Integracion Nuts (externa 2)</Button>
+            </a>
+            <a href="/#/statewisetestingdetails/integracionFran">
+              <Button color="primary">Gráfica Integracion Fran ( proxy)</Button>
+            </a>
           </div>
         </div>
       </slot>
