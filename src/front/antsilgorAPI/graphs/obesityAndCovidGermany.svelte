@@ -1,6 +1,6 @@
 <script>
 
-    var BASE_API_PATH_EE = 'http://sos2021-10.herokuapp.com/api/integration/obesity-stats';
+    var BASE_API_PATH_EE = 'https://sos2021-10.herokuapp.com/api/integration/obesity-stats';
         
     
     var edex_data = [];
