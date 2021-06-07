@@ -1,0 +1,62 @@
+{
+  "name": "sos2021-08",
+  "version": "1.0.0",
+  "description": "Team",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0"
+  },
+  "dependencies": {
+    "@amcharts/amcharts4": "^4.10.18",
+    "billboard": "^1.0.0",
+    "billboard.js": "^3.0.3",
+    "body-parser": "^1.19.0",
+    "chart.js": "^3.3.2",
+    "chartist": "^0.11.4",
+    "chartjs": "^0.3.24",
+    "cool-ascii-faces": "^1.3.4",
+    "cors": "^2.8.5",
+    "degit": "^2.8.4",
+    "express": "^4.17.1",
+    "fusioncharts": "^3.17.0",
+    "heroku": "^7.54.0",
+    "highcharts": "^9.1.1",
+    "nedb": "^1.8.0",
+    "ng-chartist": "^5.0.0",
+    "node": "^16.0.0",
+    "puppeteer": "^10.0.0",
+    "quickchart-js": "^1.0.7",
+    "request": "^2.88.2",
+    "svelte-fusioncharts": "^1.0.0",
+    "svelte-spa-router": "^3.1.0",
+    "sveltestrap": "^3.14.1",
+    "utils": "^0.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gti-sos/SOS2021-08.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gti-sos/SOS2021-08/issues"
+  },
+  "homepage": "https://github.com/gti-sos/SOS2021-08#readme",
+  "directories": {
+    "test": "test"
+  }
+}

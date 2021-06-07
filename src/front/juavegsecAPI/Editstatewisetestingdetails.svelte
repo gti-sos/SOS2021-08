@@ -186,9 +186,9 @@ const togglealerta=()=>{
               <tr>
   
                 <td><input readonly onmousedown="return false;" bind:value="{date}"></td>
-                <td><input readonly onmousedown="return false;" bind:value="{state}"> </td>
-                <td><input bind:value="{totalsamples}"> </td>
-                <td><input bind:value="{negative}"> </td>
+                <td><input  readonly onmousedown="return false;" bind:value="{state}"> </td>
+                <td><input  bind:value="{totalsamples}"> </td>
+                <td><input  bind:value="{negative}"> </td>
                 <td><input bind:value="{positive}"> </td>
    
       

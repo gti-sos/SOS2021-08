@@ -12,6 +12,7 @@
 	import graficaCovid19TrackingGermany from "./front/antsilgorAPI/graphs/graficaCovid19TrackingGermany.svelte";
 	import graficaDygraphCovid19TrackingGermany from "./front/antsilgorAPI/graphs/dygraphCovid19Germany.svelte";
 	import graficaDepressionCovid19TrackingGermany from "./front/antsilgorAPI/graphs/depresionAndCovidGraph.svelte";
+	import graficaNBA from "./front/antsilgorAPI/graphs/nbagraph.svelte";
 	import graficaObesityCovid19TrackingGermany from "./front/antsilgorAPI/graphs/obesityAndCovidGermany.svelte";
 	import statewisetestingdetailsAPI from "./front/juavegsecAPI/statewisetestingdetailsAPI.svelte";
 	import Editstatewisetestingdetails from "./front/juavegsecAPI/Editstatewisetestingdetails.svelte";
@@ -47,6 +48,7 @@
 		  "/integrations/covid19-tracking-germany/depresionAndCovidGraph":graficaDepressionCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/obesityAndCovidGraph":graficaObesityCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/agegroupDeathsAndCases":graficaDygraphCovid19TrackingGermany,
+		  "/integrations/covid19-tracking-germany/nbaGraph":graficaNBA,
 		  "/covid19-tracking-germany/:state/:county":EditCovid19TrackingGermanyAPI,
 		  "/statewisetestingdetails": statewisetestingdetailsAPI,
 		  "/statewisetestingdetails/:date/:state":Editstatewisetestingdetails,

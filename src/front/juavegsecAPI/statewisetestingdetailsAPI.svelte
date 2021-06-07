@@ -348,23 +348,23 @@ const togglealerta=()=>{
                            <tbody>
                                     <tr>
                                        <td>Fecha</td>
-                                       <td><input bind:value="{newData.date}"></td>
+                                       <td><input   bind:value="{newData.date}"></td>
                                        </tr>
                                        <tr>
                                        <td>Estado</td>
-                                       <td><input bind:value="{newData.state}"> </td>
+                                       <td><input   bind:value="{newData.state}"> </td>
                                         </tr>
                                         <tr>
                                        <td>Casos totales</td>
-                                       <td><input bind:value="{newData.totalsamples}"> </td>
+                                       <td><input  bind:value="{newData.totalsamples}"> </td>
                                         </tr>
                                       <tr>
                                        <td>Negativos</td>
-                                       <td><input bind:value="{newData.negative}"> </td>
+                                       <td><input  bind:value="{newData.negative}"> </td>
                                        </tr>
                                        <tr>
                                        <td>Postivos</td>
-                                       <td><input bind:value="{newData.positive}"> </td>
+                                       <td><input  bind:value="{newData.positive}"> </td>
                                         </tr>
 
                            </tbody>
@@ -393,7 +393,7 @@ const togglealerta=()=>{
                                        
                                   <tr>
                                        <td>Fecha</td>
-                                       <td><input bind:value="{databusqueda.date}"></td>
+                                       <td><input  bind:value="{databusqueda.date}"></td>
                                        
                                        
                                    </tr><tr>
@@ -403,16 +403,16 @@ const togglealerta=()=>{
                                        
                                    </tr><tr>
                                        <td>Casos totales</td>
-                                       <td><input bind:value="{databusqueda.totalsamples}"> </td>
+                                       <td><input   bind:value="{databusqueda.totalsamples}"> </td>
                                       
                                    </tr><tr>
                                        <td>Negativos</td>
-                                       <td><input bind:value="{databusqueda.negative}"> </td>
+                                       <td><input   bind:value="{databusqueda.negative}"> </td>
                                        
                                        
                                    </tr><tr>
                                        <td>Positivos</td>
-                                       <td><input bind:value="{databusqueda.positive}"> </td>
+                                       <td><input   bind:value="{databusqueda.positive}"> </td>
 
                                     </tr>
 
