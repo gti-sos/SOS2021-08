@@ -61,19 +61,19 @@
           <h3 class="titulo"><b>Integraciones de Juan Vega Seco</b></h3>
            <br>
            <div class="titulo">
-            <a href="https://sos2021-08.herokuapp.com/#/integrations/integrations/statewisetestingdetails/graph2">
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/graph2">
               <Button color="primary">Gráfica HC</Button>
             </a>
             <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/amcChart">
               <Button color="primary">Gráfica Integracion AMC</Button>
             </a>
-            <a href="https://sos2021-08.herokuapp.com/#/statewisetestingdetails/integrations/statewisetestingdetails/integrationAnx">
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integrationAnx">
               <Button color="primary">Gráfica Integracion E1</Button>
             </a>
-            <a href="https://sos2021-08.herokuapp.com/#/statewisetestingdetails/integrations/statewisetestingdetails/integracionE2">
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integracionE2">
               <Button color="primary">Gráfica Integracion E2</Button>
             </a>
-            <a href="https://sos2021-08.herokuapp.com/#/statewisetestingdetails/integrations/statewisetestingdetails/integracionE3">
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integracionE3">
               <Button color="primary">Gráfica Integracion E3 </Button>
             </a>
             <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integracionE4">
