@@ -39,6 +39,9 @@ app.listen(port, () => {
 	var antsilgorAPI = require("./src/back/antsilgorAPI");
 	antsilgorAPI.register(app,BASE_API_PATH);
 
+	var antsilgorAPIIntegration = require("./src/back/antsilgorAPI/integration");
+	antsilgorAPIIntegration.register(app,BASE_API_PATH);
+
 	var antcarbar1API = require("./src/back/antcarbar1API");
 	antcarbar1API.register(app,BASE_API_PATH);
 
