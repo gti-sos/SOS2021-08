@@ -32,7 +32,7 @@
             <h3 class="titulo"><b>Grafica Grupal</b></h3>
             <br>
             <div class="titulo">
-            <a href="#/graphics/integrations/grupal" class="fakeButton">Ver</a>
+            <a href="/#/integrations/grupal" class="fakeButton">Ver</a>
             </div>
           </div>
         </slot>

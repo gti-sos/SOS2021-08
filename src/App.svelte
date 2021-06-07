@@ -6,6 +6,7 @@
 	import Home from "./Pages/Home.svelte";
 	import Info from "./Pages/Info.svelte";
 	import Integration from "./Pages/integration.svelte";
+	import Grupal from "./Pages/groupIntegration.svelte";
 	import covid19TrackingGermanyAPI from "./front/antsilgorAPI/covid19TrackingGermanyAPI.svelte";
 	import EditCovid19TrackingGermanyAPI from "./front/antsilgorAPI/EditCovid19TrackingGermanyAPI.svelte";
 	import graficaCovid19TrackingGermany from "./front/antsilgorAPI/graphs/graficaCovid19TrackingGermany.svelte";
@@ -38,6 +39,7 @@
 		  "/":Home,
 		  "/info":Info,
 		  "/integrations":Integration,
+		  "/integrations/grupal":Grupal,
 		  "/covid19-tracking-germany": covid19TrackingGermanyAPI,
 		  "/covid19-tracking-germany/analytics": graficaCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/depresionAndCovidGraph":graficaDepressionCovid19TrackingGermany,
