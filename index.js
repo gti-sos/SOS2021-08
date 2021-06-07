@@ -1,6 +1,8 @@
 //Para desplegar la app
 var express = require("express");
+var request = require('request');
 var app = express();
+
 //Puerto por defecto 
 var port = (process.env.PORT || 10000);
 //Para modificar y definiar las rutas, modulo 'path'
@@ -13,6 +15,21 @@ app.use(express.json());
 
 app.use(cors());
 
+var juavegsecAPIAllowList ={"degrees": "https://sos2021-09.herokuapp.com/api/v2/cut-off-marks-by-degrees-us/cuts"};
+app.use("/juavegsec/proxyRequest/:api", function(req,res){
+        let NameApi = req.params.api;
+        if(NameApi in juavegsecAPIAllowList){
+            let url = juavegsecAPIAllowList[NameApi] + req.url;
+           
+            console.log(juavegsecAPIAllowList[NameApi]);
+            console.log(req.url)
+            console.log(url);
+            req.pipe(request(url)).pipe(res);
+        }
+        else{
+            res.sendStatus(400);
+        }
+    }); 
 //Ruta base de acceso a los recursos, bajo la versión 'v1'
 var BASE_API_PATH = "/api/v1";
 
