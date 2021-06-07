@@ -39,11 +39,7 @@
     "node": "^16.0.0",
     "puppeteer": "^10.0.0",
     "quickchart-js": "^1.0.7",
-<<<<<<< HEAD
-    "request": "^2.88.2",
-=======
     "svelte-fusioncharts": "^1.0.0",
->>>>>>> 5eb873ba0a66ccca65f72a920a3d48f9894bc8d2
     "svelte-spa-router": "^3.1.0",
     "sveltestrap": "^3.14.1",
     "utils": "^0.3.1"
