@@ -1,163 +1,162 @@
 <script>
-  import { Nav, NavItem, NavLink } from "sveltestrap";
-  var errorMsg = "";
-  
-  let covid19GermanyData = [];
-    let ejeX = [];
-    let cases = [];
-    let death = [];
-    let recovered = [];
-    
-    async function loadGraph(){  
-        const covid19Germany = await fetch("/api/v1/covid19-tracking-germany");
+
+  import {
+      Jumbotron,
+      Navbar,
+      Nav,
+      NavItem,
+      NavLink,
+      NavbarBrand,
+      Dropdown,
+      DropdownToggle,
+      DropdownMenu,
+      DropdownItem,
+  } from "sveltestrap";
+  let isOpen = false;
+
+  var pieKeys = [];
+
+  var death = [];
+
+  var recovered = [];
+
+  var covid19GermanyData = [];
+
+  async function getData() {
+      const porsiacaso = await fetch(
+          "http://sos2021-11.herokuapp.com/api/integration/depression_stats/loadInitialData"
+      ); // La bd no termina de ser consistente, es necesario esto para que funcione siempre.
+
+      const depresionstats = await fetch("http://sos2021-11.herokuapp.com/api/integration/depression_stats");
+      let depressionJsons = [];
+      depressionJsons = await depresionstats.json();
+
+
+      let anyos2 = [];
+      for (let depYear of depressionJsons) {
+          anyos2.push(depYear.year);
+      }
+      let anyosSet2 = new Set(anyos2);
+
+
+      for (let anyo of anyosSet2) {
+          let anyoActual=anyo;
+          let obj = {};
+          let obj2 = {};
+          let depManAcum=0.;
+          let depWomanAcum=0.;
+
+          for (let depLog of depressionJsons) {
+              if(depLog.year==anyoActual){
+                  depManAcum+=depLog.depression_men;
+                  
+                  depWomanAcum+=depLog.depression_women;
+              }
+
+          }
+
+          obj["name"]="Depresión acumulada en el País (Hombres) y muertes por covid- "+ anyo;
+          obj["value"]=Math.round(depManAcum);
+
+          obj2["name"]="Depresión acumulada en el País (Mujeres) y recuperados de covid - "+ anyo;
+          obj2["value"]=Math.round(depWomanAcum);
+
+          pieKeys.push(obj);
+          pieKeys.push(obj2);
+      }
+
+      console.log(pieKeys)
+
+      const covid19Germany = await fetch("/api/v1/covid19-tracking-germany");
         if(covid19Germany.ok){
             covid19GermanyData = await covid19Germany.json();
             console.log(`We have received ${covid19GermanyData.length} data points: `);
             console.log(JSON.stringify(covid19GermanyData,null,2));
             covid19GermanyData.forEach(data => {
-                ejeX.push(data.state + " " + data.county + "|" + data.date + "|" + data.agegroup + "|"  + data.gender);
-                cases.push(data["cases"]);
-                death.push(data["death"]);
-                recovered.push(data["recovered"]);
+               death.push(data["death"]);
+              recovered.push(data["recovered"]);
             });
         }else{
             console.log("Error loading covid19Germany");
-        }
-      
-  
-        Highcharts.chart('container', {
-            chart: {
-                type: 'areaspline'
-            },
-            title: {
-                text: 'Capacidades de energía renovable'
-            },
-            legend: {
-                layout: 'vertical',
-                align: 'left',
-                verticalAlign: 'top',
-                x: 150,
-                y: 100,
-                floating: true,
-                borderWidth: 1,
-                backgroundColor:
-                    Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF'
-            },
-            xAxis: {
-                categories: etiquetas,
-            },
-            yAxis: {
-                title: {
-                    text: 'Megavatios'
-                }
-            },
-            tooltip: {
-                shared: true,
-                valueSuffix: ' units'
-            },
-            credits: {
-                enabled: false
-            },
-            plotOptions: {
-                areaspline: {
-                    fillOpacity: 0.5
-                }
-            },
-            series: [{
-                name: 'Producción solar en megavatios',
-                data: sPIM     
-            }, {
-                name: 'Podrucción hidráulica en megavatios',
-                data: hPIM
-            }, {
-              name: 'Producción de energía eólica en megavatios',
-              data : wPIM
-            }]
-        });
-           
-    }
-  
+
     
-  </script>
+          obj["name"]="Muertes" ;
+          obj["value"]=death;
+
+          obj2["name"]="Recuperados";
+          obj2["value"]=recovered;
+
+          pieKeys.push(obj);
+          pieKeys.push(obj2);
+
+          
+      }
+  }
+
   
-  <svelte:head>
-      
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/highcharts-more.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script src="https://code.highcharts.com/modules/accessibility.js" on:load={loadGraph}></script>
-  </svelte:head>
-  
-   
-  <main> 
-    <Nav>
-        <NavItem>
-        <NavLink href="/">Página Principal</NavLink>
-        </NavItem>
-        <NavItem>
-        <NavLink href="#/integrations">Integraciones</NavLink>
-        </NavItem>
-        </Nav>          
-        
-    <h3>Uso de la API del grupo 20 de SOS</h3>
-    <h5>Se recogen los datos para 2008</h5> 
-    <p>Areaspline chart</p>
-  
-    <figure class="highcharts-figure">
-      <div id="container"></div>
-      <p class="highcharts-description">    </p>
-    </figure>
-  
-  
-    {#if errorMsg}
-    <p>{errorMsg}</p>
-    {/if}
-  </main>
-  
-    
-  <style>
-    main {
+
+
+  async function loadGraph() {
+      getData().then(() => {
+          var graphdef = {
+              categories: [""], // Esta vez no usaré categoria ya que viene implicita en el name.
+              dataset: {
+                  "": pieKeys,
+              },
+          };
+
+          var chart = uv.chart("Pie", graphdef, {
+              meta: {
+                  caption:
+                      "",
+              },
+          });
+
+          console.log("fin");
+      });
+  }
+</script>
+
+<svelte:head>
+  <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+  <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/uvCharts/1.1.5/uvcharts.min.js"
+      on:load={loadGraph}></script>
+</svelte:head>
+
+<main>
+  <body>
+      <Jumbotron class="p-3" style="background-color: #FFB833">
+          <h1 class="titulo; mainDiv" style="color: white">
+              Integración Api Depresión
+          </h1>
+      </Jumbotron>
+  </body>
+  <br />
+  <h1 class="titulo2">Depresión, muertes y recuperados de covid. </h1>
+  <div style="width:800px; margin:0 auto;">
+      <figure class="highcharts-figure">
+          <div id="container" />
+      </figure>
+      <div id="uv-div" />
+      <br>
+      <p style="centrado">
+          Gráfica que muestra la depresión acumulada total por sexo de las regiones registradas en un año determinado y las muertes y recuperados por covid 19.
+          registradas en un determinado año.
+      </p>
+  </div>
+</main>
+
+<style>
+  .titulo2 {
+      color: #000000;
       text-align: center;
-      padding: 1em;
-      margin: 0 auto;
-    }
-  
-    #container {
-      height: 400px; 
-    }
-  
-    .highcharts-figure, .highcharts-data-table table {
-      min-width: 310px; 
-      max-width: 800px;
-      margin: 1em auto;
-    }
-  
-    .highcharts-data-table table {
-      font-family: Verdana, sans-serif;
-      border-collapse: collapse;
-      border: 1px solid #EBEBEB;
-      margin: 10px auto;
+      font-size: 150%;
+  }
+  .mainDiv {
       text-align: center;
-      width: 100%;
-      max-width: 500px;
-    }
-    .highcharts-data-table caption {
-      padding: 1em 0;
-      font-size: 1.2em;
-      color: #555;
-    }
-    .highcharts-data-table th {
-      font-weight: 600;
-      padding: 0.5em;
-    }
-    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
-      padding: 0.5em;
-    }
-    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
-      background: #f8f8f8;
-    }
-    .highcharts-data-table tr:hover {
-      background: #f1f7ff;
-    }
-  </style>
+      margin: 20px;
+  }
+</style>
