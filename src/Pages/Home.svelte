@@ -160,6 +160,9 @@
               <a href="/#/statewisetestingdetails/integracionI2">
                 <Button color="primary">Gráfica Integracion Nuts (externa 2)</Button>
               </a>
+              <a href="/#/statewisetestingdetails/integracionFran">
+                <Button color="primary">Gráfica Integracion Fran ( proxy)</Button>
+              </a>
              
              
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
