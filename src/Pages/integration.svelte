@@ -87,9 +87,6 @@
             </a>
             
 
-            <a href="/#/statewisetestingdetails/integracionFran">
-              <Button color="primary">Gráfica Integracion Fran ( proxy)</Button>
-            </a>
           </div>
         </div>
       </slot>
