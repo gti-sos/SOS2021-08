@@ -45,9 +45,10 @@
           <h3 class="titulo"><b>Integraciones de Antonio Silva Gordillo</b></h3>
           <br>
           <div class="titulo">
-          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/depresionAndCovidGraph" class="fakeButton">Depression (Externa)</a>
-          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/obesityAndCovidGraph" class="fakeButton">Obesity (Externa)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/depresionAndCovidGraph" class="fakeButton">Depression (Externa Alumno SOS)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/obesityAndCovidGraph" class="fakeButton">Obesity (Externa ALumno SOS)</a>
           <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/agegroupDeathsAndCases" class="fakeButton">Covid Alemania (propia Dygraph library)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/nbaGraph" class="fakeButton">Datos de la NBA (Externa)</a>
           <a href="https://sos2021-08.herokuapp.com/#/covid19-tracking-germany/analytics" class="fakeButton">Covid Alemania (propia highcharts)</a>
           </div>
         </div>
@@ -57,13 +58,10 @@
     <div class="box">
       <slot>
         <div>
-          <h3 class="titulo"><b>Integraciones de Fernando Nuevo</b></h3>
+          <h3 class="titulo"><b>Integraciones de Juan Vega Seco</b></h3>
            <br>
            <div class="titulo">
-            <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/educationExpenditures" class="fakeButton">Gastos en educación (G04)</a>
-            <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/lifeStats" class="fakeButton">Índice calidad de vida (G01)</a>
-            <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/superheroStats" class="fakeButton">Estadísticas de Iron Man (externa)</a>
-            <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/audioDB" class="fakeButton">Discografía Daft Punk (externa)</a>
+            
           </div>
         </div>
       </slot>
@@ -72,17 +70,10 @@
     <div class="box">
       <slot>
         <div>
-        <h3 class="titulo"><b>Integraciones de Humberto Garcia</b></h3>
+        <h3 class="titulo"><b>Integraciones de Antonio Carranza Barroso</b></h3>
          <br>
           <div class="titulo">
-         <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/alcohol" class="fakeButton">Covid2 (Externa)</a>
-         <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/cards" class="fakeButton">cartas (Externa)</a>
-         <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/poverty" class="fakeButton">Pobreza (G04)</a>
-         <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/unemployment" class="fakeButton">Desempleados (G23)</a>
-         <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/starwar" class="fakeButton">StarWar (Externa)</a>
-         <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/outschool" class="fakeButton">Abandono (G24)</a>
-         <a href="https://sos2021-08.herokuapp.com/#/graphics/integrations/chuck" class="fakeButton">chuck (externa)</a>
-
+         
          <a href="https://sos2021-08.herokuapp.com/#/info" class="fakeButton" style="background-color:#80ced6">Vistas de la API personal.</a>
 
           
