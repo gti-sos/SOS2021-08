@@ -27,9 +27,9 @@ app.get(BASE_API_PATH+"/covid19-tracking-germany/loadInitialData", (req,res)=>{
             "agegroup": "05-14",
             "gender": "F",
             "date": "03/04/2021",
-            "cases": 2,
-            "death": 0,
-            "recovered": 0
+            "cases": 83,
+            "death": 41,
+            "recovered": 50
           },
           {
             "state": "Berlin",
@@ -37,9 +37,9 @@ app.get(BASE_API_PATH+"/covid19-tracking-germany/loadInitialData", (req,res)=>{
             "agegroup": "35-59",
             "gender": "M",
             "date": "03/04/2021",
-            "cases": 16,
-            "death": 0,
-            "recovered": 0
+            "cases": 93,
+            "death": 19,
+            "recovered": 30
           },
           {
             "state": "Nordrhein-Westfalen",
@@ -47,9 +47,9 @@ app.get(BASE_API_PATH+"/covid19-tracking-germany/loadInitialData", (req,res)=>{
             "agegroup": "80-99",
             "gender": "F",
             "date": "03/04/2021",
-            "cases": 1,
-            "death": 0,
-            "recovered": 0
+            "cases": 176,
+            "death": 56,
+            "recovered": 74
           },
           {
             "state": "Sachsen",
@@ -57,9 +57,9 @@ app.get(BASE_API_PATH+"/covid19-tracking-germany/loadInitialData", (req,res)=>{
             "agegroup": "15-34",
             "gender": "M",
             "date": "09/11/2020",
-            "cases": 19,
-            "death": 0,
-            "recovered": 19
+            "cases": 207,
+            "death": 87,
+            "recovered": 253
           },
           {
             "state": "Berlin",
