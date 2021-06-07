@@ -58,6 +58,9 @@
     <Container>
       <Col xs="auto">
         <Card class="mb-3">
+          <a href="/#/integrations">
+            <Button color="primary">Integraciones</Button>
+          </a>
           <CardHeader>
             <CardTitle><h5>covid19-tracking-germany</h5></CardTitle>
           </CardHeader>
@@ -107,6 +110,12 @@
               </a>
               <a href="/#/us_counties_covid19_daily/chartist">
                 <Button color="primary">Gráfica Chartist</Button>
+              </a>
+              <a href="/#/us_counties_covid19_daily/highchartBB">
+                <Button color="primary">Gráfica API EXTERNA BREAKING BAD</Button>
+              </a>
+              <a href="/#/us_counties_covid19_daily/fusionchart1">
+                <Button color="primary">Gráfica fusionChart(Integracion)</Button>
               </a>
 
 
