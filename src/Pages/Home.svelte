@@ -111,6 +111,12 @@
               <a href="/#/us_counties_covid19_daily/chartist">
                 <Button color="primary">Gráfica Chartist</Button>
               </a>
+              <a href="/#/us_counties_covid19_daily/highchartBB">
+                <Button color="primary">Gráfica API EXTERNA BREAKING BAD</Button>
+              </a>
+              <a href="/#/us_counties_covid19_daily/fusionchart1">
+                <Button color="primary">Gráfica fusionChart(Integracion)</Button>
+              </a>
 
 
               <a href="https://documenter.getpostman.com/view/14969056/TzY4gFnd"

@@ -27,8 +27,9 @@
 	import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
 	import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
 	import graphicDonut3D from './front/antcarbarAPI/graphicDonut3D.svelte';
-	import chartist from './front/antcarbarAPI/chartist.svelte';
-
+	import chartist from './front/antcarbarAPI/chartist.svelte';	
+	import highchartBB from './front/antcarbarAPI/highchartBB.svelte';
+	import fusionchart1 from './front/antcarbarAPI/fusionchart1.svelte';
 
 	
 
@@ -49,6 +50,8 @@
 		  "/us_counties_covid19_daily/:county/:fips":EditUs_counties_covid19,
 		  "/us_counties_covid19_daily/graphicDonut3D":graphicDonut3D,
 		  "/us_counties_covid19_daily/chartist":chartist,
+		  "/us_counties_covid19_daily/fusionchart1":fusionchart1,
+		  "/us_counties_covid19_daily/highchartBB":highchartBB,
 		  "/statewisetestingdetails/graph2": graph2,
 		  "/statewisetestingdetails/amcChart": graphAMC,
 		  "/statewisetestingdetails/integrationAnx": graphintegrationAnx,
