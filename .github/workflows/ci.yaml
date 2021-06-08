@@ -17,7 +17,7 @@ jobs:
       - run: npx newman run test/integrationCarranza.json
       - run: node test/e2eCarranza.js
       - run: node test/juavegsec.js
-      - run: node test/e2eantsilgor.js
+      - run: node test/e2eAntsilgor.js
 
      
 

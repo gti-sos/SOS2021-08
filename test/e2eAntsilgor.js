@@ -1,6 +1,5 @@
 const puppeteer = require('puppeteer');
 
-//donde path , cambiar nombre rollo ....germany
 
 (async () => {
   const browser = await puppeteer.launch();
