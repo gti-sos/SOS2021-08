@@ -31,7 +31,6 @@ app.use("/juavegsec/proxyRequest/:api", function(req,res){
         }
     }); 
 
-<<<<<<< HEAD
 app.use("/antsilgorAPI/proxyRequestExt2/love-calculator/:sname/:fname", function(req, res) {
     var sname = req.params.sname;
     var fname = req.params.fname;
@@ -42,7 +41,6 @@ app.use("/antsilgorAPI/proxyRequestExt2/love-calculator/:sname/:fname", function
     console.log("url" + url2);
     req.pipe(request(url2)).pipe(res);
 });
-=======
 
 
 //PROXY ANTCARBAR 
@@ -61,7 +59,6 @@ app.use("/antcarbar1/proxyRequest/:api", function(req,res){
             res.sendStatus(400);
         }
     });
->>>>>>> 84e004195597e3d652b9c080a8e42d3d1325055a
 //Ruta base de acceso a los recursos, bajo la versión 'v1'
 var BASE_API_PATH = "/api/v1";
 
