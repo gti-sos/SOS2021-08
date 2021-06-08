@@ -26,7 +26,7 @@ const puppeteer = require('puppeteer');
 
   const [response1] = await Promise.all([
     page.waitForNavigation(),
-    page.click("body > main > main > div > div:nth-child(12) > div > div:nth-child(2) > div.card-body > a:nth-child(4) > button"),
+    page.click("body > main > main > div > div:nth-child(12) > div > div:nth-child(1) > div.card-body > a:nth-child(5) > button"),
   ]);
   console.log("Click en Interfaz");
   await page.waitForTimeout(1000);
@@ -42,7 +42,7 @@ const puppeteer = require('puppeteer');
     console.log(`Initial rowCount = ${rowCount}`);
 
     */
-    page.click("#intGER");
+    page.click("#body > main > main > div:nth-child(1) > button:nth-child(3)");
   
     console.log("Click en Insertar");
 
