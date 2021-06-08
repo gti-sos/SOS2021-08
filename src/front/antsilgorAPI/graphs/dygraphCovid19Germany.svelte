@@ -1,5 +1,6 @@
 <script>
     import { pop }from "svelte-spa-router";
+    import { Nav, NavItem, NavLink } from "sveltestrap";
     import { Button } from "sveltestrap";
     var covid19GermanyData = [];
     var errorMsg = "";
@@ -73,6 +74,11 @@
     <br>
     <h6>Gráfico que muestra la relación entre casos y muertes de la covid 19 por rangos de edad en Alemania</h6>
     {/if}
+    <Nav>
+      <NavItem>
+        <NavLink href="/#/integrations/">volver</NavLink>
+      </NavItem>
+    </Nav>
   </main>
   
   <style>

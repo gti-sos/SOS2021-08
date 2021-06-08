@@ -47,9 +47,6 @@
 <main>
   <Nav>
     <NavItem>
-      <NavLink href="/">Página Principal</NavLink>
-    </NavItem>
-    <NavItem>
       <NavLink href="/#/integrations/">volver</NavLink>
     </NavItem>
   </Nav>

@@ -32,7 +32,7 @@
             <h3 class="titulo"><b>Grafica Grupal</b></h3>
             <br>
             <div class="titulo">
-            <a href="/#/integrations/grupal" class="fakeButton">Ver</a>
+            <a href="/#/analytics" class="primary">Ver</a>
             </div>
           </div>
         </slot>
@@ -45,12 +45,12 @@
           <h3 class="titulo"><b>Integraciones de Antonio Silva Gordillo</b></h3>
           <br>
           <div class="titulo">
-          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/depresionAndCovidGraph" class="fakeButton">Depression (Externa Alumno SOS)</a>
-          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/obesityAndCovidGraph" class="fakeButton">Obesity (Externa ALumno SOS)</a>
-          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/agegroupDeathsAndCases" class="fakeButton">Covid Alemania (propia Dygraph library)</a>
-          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/nbaGraph" class="fakeButton">Datos de la NBA (Externa)</a>
-          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/europePopulationVariationGraph" class="fakeButton">Datos de la variación de la población en europa (Externa con proxy)</a>
-          <a href="https://sos2021-08.herokuapp.com/#/covid19-tracking-germany/analytics" class="fakeButton">Covid Alemania (propia highcharts)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/depresionAndCovidGraph" class="primary">Depression (Externa Alumno SOS)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/obesityAndCovidGraph" class="primary">Obesity (Externa ALumno SOS)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/agegroupDeathsAndCases" class="primary">Covid Alemania (propia Dygraph library)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/nbaGraph" class="primary">Datos de la NBA (Externa)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/europePopulationVariationGraph" class="primary">Datos de la variación de la población en europa (Externa con proxy)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/covid19-tracking-germany/analytics" class="primary">Covid Alemania (propia highcharts)</a>
           </div>
         </div>
       </slot>
@@ -130,21 +130,6 @@
   </main>
   
   <style>
-    .fakeButton {
-      background-color: #ffb833;
-      border: none;
-      color: white;
-      padding: 16px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      transition-duration: 0.4s;
-      cursor: pointer;
-      margin-right: 60px;
-      border-radius: 12px;
-    }
   
     .mainDiv {
       text-align: center;
@@ -166,7 +151,7 @@
       margin: 20px;
     }
     .color {
-        color: #FFB833;
+        color: #800c97;
     }
 
     .titulo {

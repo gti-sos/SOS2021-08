@@ -356,44 +356,44 @@ const togglealerta=()=>{
                             <tbody>
                                   <tr>
                                         <td>Estado</td>
-                                        <td><input  bind:value="{newData.state}"></td>
+                                        <td><input id="Estado" bind:value="{newData.state}"></td>
                                         
                                         
                                     </tr><tr>
                                         <td>Condado</td>
-                                        <td><input  bind:value="{newData.county}"> </td>
+                                        <td><input id="Condado"  bind:value="{newData.county}"> </td>
                                    
                                         
                                     </tr><tr>
                                         <td>Grupo de edad</td>
-                                        <td><input  bind:value="{newData.agegroup}"> </td>
+                                        <td><input id="GrupoEdad"  bind:value="{newData.agegroup}"> </td>
                                        
                                     </tr><tr>
                                         <td>Sexo</td>
-                                        <td><input  bind:value="{newData.gender}"> </td>
+                                        <td><input id="Genero"  bind:value="{newData.gender}"> </td>
 
                                     </tr><tr>
                                         <td>Fecha</td>
-                                        <td><input  bind:value="{newData.date}"> </td>
+                                        <td><input id="Fecha" bind:value="{newData.date}"> </td>
 
                                     </tr><tr>
                                        <td>Casos</td>
-                                       <td><input  bind:value="{newData.cases}"> </td>
+                                       <td><input id="Casos" bind:value="{newData.cases}"> </td>
 
                                     </tr><tr>
                                        <td>Muertes</td>
-                                       <td><input  bind:value="{newData.death}"> </td>
+                                       <td><input id="Muertes" bind:value="{newData.death}"> </td>
                                        
                                       </tr><tr>
                                         <td>Recuperados</td>
-                                        <td><input  bind:value="{newData.recovered}"> </td>
+                                        <td><input id="Recuperados" bind:value="{newData.recovered}"> </td>
                                     </tr>
                             </tbody>
                         </Table >
                     </tr>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" on:click={toggle1P}>Insertar</Button>
+                    <Button color="primary"  id="BtnInsertar2" on:click={toggle1P}>Insertar</Button>
                     <Button color="secondary" on:click={toggle1}
                         >Cancelar</Button
                     >
