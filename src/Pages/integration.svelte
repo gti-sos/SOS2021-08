@@ -18,7 +18,7 @@
   
   <main>
     <body>
-      <Jumbotron class="p-3" style="background-color: #FFB833">
+      <Jumbotron class="p-3" style="background-color: #6c4675">
         <h1 class="titulo; mainDiv" style="color: white">Integraciones del grupo sos2021-08</h1>
       </Jumbotron>
       
@@ -156,9 +156,6 @@
     .mainDiv {
       text-align: center;
       margin: 20px;
-    }
-    .color {
-        color: #800c97;
     }
 
     .titulo {
