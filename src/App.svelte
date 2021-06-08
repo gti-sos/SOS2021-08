@@ -6,6 +6,7 @@
 	import Home from "./Pages/Home.svelte";
 	import Info from "./Pages/Info.svelte";
 	import Integration from "./Pages/integration.svelte";
+	import aboutus from "./Pages/aboutus.svelte";
 	import Grupal from "./Pages/groupIntegration.svelte";
 	import covid19TrackingGermanyAPI from "./front/antsilgorAPI/covid19TrackingGermanyAPI.svelte";
 	import EditCovid19TrackingGermanyAPI from "./front/antsilgorAPI/EditCovid19TrackingGermanyAPI.svelte";
@@ -28,12 +29,14 @@
 	import graphintegracionI2 from "./front/juavegsecAPI/integracionI2.svelte";
 	import graphintegracionFran from "./front/juavegsecAPI/integracionFran.svelte";
 	import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
+	import  integracionProxy  from "./front/antcarbarAPI/integracionProxy.svelte";
 	
 	import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
 	import graphicDonut3D from './front/antcarbarAPI/graphicDonut3D.svelte';
 	import chartist from './front/antcarbarAPI/chartist.svelte';	
 	import highchartBB from './front/antcarbarAPI/highchartBB.svelte';
 	import fusionchart1 from './front/antcarbarAPI/fusionchart1.svelte';
+	import aleatorio  from "./front/antcarbarAPI/aleatorio.svelte";
 
 	
 
@@ -42,6 +45,7 @@
 		  "/":Home,
 		  "/info":Info,
 		  "/integrations":Integration,
+		  "/aboutus":aboutus,
 		  "/integrations/grupal":Grupal,
 		  "/covid19-tracking-germany": covid19TrackingGermanyAPI,
 		  "/covid19-tracking-germany/analytics": graficaCovid19TrackingGermany,
@@ -49,6 +53,7 @@
 		  "/integrations/covid19-tracking-germany/obesityAndCovidGraph":graficaObesityCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/agegroupDeathsAndCases":graficaDygraphCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/nbaGraph":graficaNBA,
+<<<<<<< HEAD
 		  "/integrations/covid19-tracking-germany/europePopulationVariationGraph":graficaVariacionPoblacion,
 		 
 		  "/integrations/statewisetestingdetails/graph2": graph2,
@@ -61,6 +66,8 @@
 		  "/integrations/statewisetestingdetails/integracionI2": graphintegracionI2,
 		  "/integrations/statewisetestingdetails/integracionFran": graphintegracionFran,
 
+=======
+>>>>>>> 84e004195597e3d652b9c080a8e42d3d1325055a
 		  "/covid19-tracking-germany/:state/:county":EditCovid19TrackingGermanyAPI,
 		  "/statewisetestingdetails": statewisetestingdetailsAPI,
 		  "/statewisetestingdetails/:date/:state":Editstatewisetestingdetails,
@@ -70,7 +77,17 @@
 		  "/us_counties_covid19_daily/chartist":chartist,
 		  "/us_counties_covid19_daily/fusionchart1":fusionchart1,
 		  "/us_counties_covid19_daily/highchartBB":highchartBB,
-		
+		  "/us_counties_covid19_daily/aleatorio":aleatorio,
+		  "/us_counties_covid19_daily/integracionProxy":integracionProxy,
+		  "/statewisetestingdetails/graph2": graph2,
+		  "/statewisetestingdetails/amcChart": graphAMC,
+		  "/statewisetestingdetails/integrationAnx": graphintegrationAnx,
+		  "/statewisetestingdetails/integracionE1": graphintegracionE1,
+		  "/statewisetestingdetails/integracionE2": graphintegracionE2,
+		  "/statewisetestingdetails/integracionE3": graphintegracionE3,
+		  "/statewisetestingdetails/integracionE4": graphintegracionE4,
+		  "/statewisetestingdetails/integracionI2": graphintegracionI2,
+		  "/statewisetestingdetails/integracionFran": graphintegracionFran,
 		
 
 		  '*': NotFound};

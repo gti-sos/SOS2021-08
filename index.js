@@ -31,6 +31,7 @@ app.use("/juavegsec/proxyRequest/:api", function(req,res){
         }
     }); 
 
+<<<<<<< HEAD
 app.use("/antsilgorAPI/proxyRequestExt2/love-calculator/:sname/:fname", function(req, res) {
     var sname = req.params.sname;
     var fname = req.params.fname;
@@ -41,6 +42,26 @@ app.use("/antsilgorAPI/proxyRequestExt2/love-calculator/:sname/:fname", function
     console.log("url" + url2);
     req.pipe(request(url2)).pipe(res);
 });
+=======
+
+
+//PROXY ANTCARBAR 
+var antcarbar1APIAllowList ={"tourism": "https://sos2021-03.herokuapp.com/api/v2/international-tourisms"};
+app.use("/antcarbar1/proxyRequest/:api", function(req,res){
+        let NameApi = req.params.api;
+        if(NameApi in antcarbar1APIAllowList){
+            let url =  antcarbar1APIAllowList[NameApi] + req.url;
+           
+            console.log( antcarbar1APIAllowList[NameApi]);
+            console.log(req.url)
+            console.log(url);
+            req.pipe(request(url)).pipe(res);
+        }
+        else{
+            res.sendStatus(400);
+        }
+    });
+>>>>>>> 84e004195597e3d652b9c080a8e42d3d1325055a
 //Ruta base de acceso a los recursos, bajo la versión 'v1'
 var BASE_API_PATH = "/api/v1";
 

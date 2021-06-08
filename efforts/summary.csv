@@ -1,0 +1,38 @@
+﻿Project,Client,Title,Duration
+SOS2021-08,,#1 Realizar todas las tareas solicitadas en la hoja de Backlog.,00:02:42
+SOS2021-08,,#10 Hacer F04,15:34:10
+SOS2021-08,,#11 La API debe implementar adecuadamente todos los casos de la “tabla azul” comentada en el L06:,03:06:00
+SOS2021-08,,#12 Haber realizado una API REST tal como se explica y ejemplifica en el L06,06:41:47
+SOS2021-08,,#13 Tener configurado el sistema de despliegue automático en heroku siempre que las pruebas de integración continua pasen,05:08:15
+SOS2021-08,,#14 La API debe respetar en todo momento el funcionamiento que se indico en la tabla azul y se deben devolver los códigos de estado que aparecen en la tabla verde (tal como se discutió en el L06).,09:08:13
+SOS2021-08,,#15 Tener configurado el sistema de despliegue automático en heroku siempre que las pruebas de integración continua pasen,02:13:00
+SOS2021-08,,#16 Hacer todas las tareas de BACKLOG,07:08:17
+SOS2021-08,,#17 La API debe implementar búsquedas por todos los campos del recurso.,03:50:35
+SOS2021-08,,#18 Crear Front-end Svelte que permita una forma de listar todos los recursos.,04:38:34
+SOS2021-08,,#19 Todos los elementos de la interfaz deben ser comprensibles por usuarios no técnicos y deben estar en español.,09:47:29
+SOS2021-08,,#2 Tener una cuenta en GitHub,00:00:46
+SOS2021-08,,#20 Añadir a la página inicial de la aplicación un enlace a cada una de los front-end desarrollados por cada miembro del grupo.,03:18:53
+SOS2021-08,,#21 Se debe tener un nuevo portal público de documentación de la API v2 (generado por POSTMAN) sobre el entorno de HEROKU.manteniendo un enlace a ambos portales de documentación en el README.md del proyecto.,03:00:09
+SOS2021-08,,#22 Front-end Svelte que permita todas las funcionalidades básicas de gestión de la información realizando peticiones a la API REST,03:12:56
+SOS2021-08,,#24 Api desplegada en Heroku con todos requisitos Backlog,11:58:13
+SOS2021-08,,#25 Api en Heroku operativa,03:01:00
+SOS2021-08,,#26 Api en Heroku con requisitos,11:27:00
+SOS2021-08,,#27 El nombre de los componentes del equipo y el nombre de su fuente de datos (que debe coincidir con el nombre de recurso de su API).,00:02:48
+SOS2021-08,,#28 Debe tener desplegado en Heroku una aplicación funcional que tenga las siguientes características,00:01:51
+SOS2021-08,,"#29 Se debe tener un nuevo portal público de documentación de la API v2 (generado por Postman) sobre el entorno de Heroku, manteniendo un enlace a ambos portales de documentación en el README.md del proyecto.",10:02:36
+SOS2021-08,,#3 Completar backlog,00:47:53
+SOS2021-08,,#30 D01,16:35:58
+SOS2021-08,,#4 Haber leído todas las noticias en piazza previas a las 18:00 horas del día anterior a la sesión de feedback.,03:33:00
+SOS2021-08,,#5 Subir código servidor con node y express,04:39:00
+SOS2021-08,,#7 Tener una ruta “/info/YYYYYY,03:56:00
+SOS2021-08,,#8 Tener desplegado el proyecto en Heroku,05:12:09
+SOS2021-08,,Api desplegada en Heroku con todos requisitos Backlog,03:11:54
+SOS2021-08,,D03 B,20:11:58
+SOS2021-08,,Debe tener desplegado en Heroku una aplicación funcional que tenga las siguientes características,20:25:39
+SOS2021-08,,Hacer F04 ,00:00:14
+SOS2021-08,,La API debe implementar adecuadamente todos los casos de la “tabla azul” comentada en el L06:,00:00:12
+SOS2021-08,,Pruebas de Frontend,01:15:21
+SOS2021-08,,Tareas Para el f02 del patrón,05:05:00
+SOS2021-08,,Tener correctamente Heroku y todas las cosas relacionadas,03:01:00
+SOS2021-08,,Todos los elementos de la interfaz deben ser comprensibles por usuarios no técnicos y deben estar en español.,00:00:08
+SOS2021-08,,,03:49:00

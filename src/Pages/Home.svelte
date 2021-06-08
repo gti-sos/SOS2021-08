@@ -15,7 +15,7 @@
       Row,
     } from "sveltestrap";
   </script>
-  
+
   <main>
     <div class="container-fluid"> 
     <h1>SOS2021-08</h1>
@@ -61,6 +61,9 @@
           <a href="/#/integrations">
             <Button color="primary">Integraciones</Button>
           </a>
+          <a href="/#/aboutus">
+            <Button color="primary">About us</Button>
+          </a>
           <CardHeader>
             <CardTitle><h5>covid19-tracking-germany</h5></CardTitle>
           </CardHeader>
@@ -105,20 +108,8 @@
               <a href="/#/us_counties_covid19_daily">
                 <Button color="primary">Interfaz</Button>
               </a>
-              <a href="/#/us_counties_covid19_daily/graphicDonut3D">
-                <Button color="primary">Gráfica Donut</Button>
-              </a>
-              <a href="/#/us_counties_covid19_daily/chartist">
-                <Button color="primary">Gráfica Chartist</Button>
-              </a>
-              <a href="/#/us_counties_covid19_daily/highchartBB">
-                <Button color="primary">Gráfica API EXTERNA BREAKING BAD</Button>
-              </a>
-              <a href="/#/us_counties_covid19_daily/fusionchart1">
-                <Button color="primary">Gráfica fusionChart(Integracion)</Button>
-              </a>
-
-
+          
+             
               <a href="https://documenter.getpostman.com/view/14969056/TzY4gFnd"
                 ><Button color="info">Documentación v1</Button></a
               >
@@ -146,8 +137,7 @@
               </a>
               
             
-             
-             
+            
              
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a
@@ -163,7 +153,6 @@
     </Container>
     </div>
   </main>
-  
   <style>
     main {
       text-align: center;
