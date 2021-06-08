@@ -23,7 +23,7 @@ import {pop} from "svelte-spa-router";
 export let params = {};
 
 
-onMount(getCrime);
+onMount(get);
 
 
 let statewisetestingdetails = {};
@@ -39,8 +39,8 @@ let type_not_stated;
 
 
 
-async function getCrime(){
-    console.log("Buscando crimen...");
+async function get(){
+  
     const res = await fetch("/api/v1/statewisetestingdetails/"+params.date+"/"+params.state);
 
     switch(res.status){
@@ -77,7 +77,7 @@ async function getCrime(){
 
 }
 
-async function updateCrime(){
+async function update(){
     console.log('Actualizando crimen con '+ JSON.stringify(params.date)+" "+JSON.stringify(params.state));
     const res = await fetch("/api/v1/statewisetestingdetails/"+date+"/"+state,{
         method: "PUT",
@@ -127,7 +127,7 @@ async function updateCrime(){
 
 let popactualizar = false;
 const toggleactualizar = () => (popactualizar = !popactualizar);
-const actualiza = () => {updateCrime(); popactualizar = !popactualizar};
+const actualiza = () => {update(); popactualizar = !popactualizar};
 
 
 
