@@ -72,7 +72,7 @@ const puppeteer = require('puppeteer');
 
     console.log("Haciendo captura de insert exitoso (AUNQUE SABEMOS QUE LOS CAMPOS SE ENVIAN VACIOS, FALLO DE SVELTE")
     await page.screenshot({ path: 'clickOnInsertarConExito_us_counties.png' });
-  */
+  
 
   await browser.close();
   console.log("Navegador Cerrado");
