@@ -30,6 +30,17 @@ app.use("/juavegsec/proxyRequest/:api", function(req,res){
             res.sendStatus(400);
         }
     }); 
+
+app.use("/antsilgorAPI/proxyRequestExt2/love-calculator/:sname/:fname", function(req, res) {
+    var sname = req.params.sname;
+    var fname = req.params.fname;
+    var url2 = "https://love-calculator.p.rapidapi.com/getPercentage?rapidapi-key=" 
+        + RAPIDAPI_KEY + "&sname="+sname+"&fname=" + fname;
+
+    console.log(req.url);
+    console.log("url" + url2);
+    req.pipe(request(url2)).pipe(res);
+});
 //Ruta base de acceso a los recursos, bajo la versión 'v1'
 var BASE_API_PATH = "/api/v1";
 

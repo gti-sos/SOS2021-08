@@ -49,6 +49,7 @@
           <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/obesityAndCovidGraph" class="fakeButton">Obesity (Externa ALumno SOS)</a>
           <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/agegroupDeathsAndCases" class="fakeButton">Covid Alemania (propia Dygraph library)</a>
           <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/nbaGraph" class="fakeButton">Datos de la NBA (Externa)</a>
+          <a href="https://sos2021-08.herokuapp.com/#/integrations/covid19-tracking-germany/europePopulationVariationGraph" class="fakeButton">Datos de la variación de la población en europa (Externa con proxy)</a>
           <a href="https://sos2021-08.herokuapp.com/#/covid19-tracking-germany/analytics" class="fakeButton">Covid Alemania (propia highcharts)</a>
           </div>
         </div>

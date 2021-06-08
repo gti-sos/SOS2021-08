@@ -13,6 +13,7 @@
 	import graficaDygraphCovid19TrackingGermany from "./front/antsilgorAPI/graphs/dygraphCovid19Germany.svelte";
 	import graficaDepressionCovid19TrackingGermany from "./front/antsilgorAPI/graphs/depresionAndCovidGraph.svelte";
 	import graficaNBA from "./front/antsilgorAPI/graphs/nbagraph.svelte";
+	import graficaVariacionPoblacion from "./front/antsilgorAPI/graphs/europeanPopulationVariety.svelte";
 	import graficaObesityCovid19TrackingGermany from "./front/antsilgorAPI/graphs/obesityAndCovidGermany.svelte";
 	import statewisetestingdetailsAPI from "./front/juavegsecAPI/statewisetestingdetailsAPI.svelte";
 	import Editstatewisetestingdetails from "./front/juavegsecAPI/Editstatewisetestingdetails.svelte";
@@ -48,6 +49,7 @@
 		  "/integrations/covid19-tracking-germany/obesityAndCovidGraph":graficaObesityCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/agegroupDeathsAndCases":graficaDygraphCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/nbaGraph":graficaNBA,
+		  "/integrations/covid19-tracking-germany/europePopulationVariationGraph":graficaVariacionPoblacion,
 		 
 		  "/integrations/statewisetestingdetails/graph2": graph2,
 		  "/integrations/statewisetestingdetails/amcChart": graphAMC,
