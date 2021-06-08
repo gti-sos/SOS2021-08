@@ -22,15 +22,11 @@
         <main>
             <h3>Video explicativo de interfaz de usuario y backend de los Positivos,negativos y casos totales en India - Juan Vega Seco</h3>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/uElwbed8sN8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<<<<<<< HEAD
-            <h3>Video explicativo de interfaz de usuario y backend de casos de covid  en EEUU- Antonio Carranza Barroso</h3>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/AOJilfL84EI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-=======
             <h3>Video explicativo de interfaz de usuario y graficas sobre los datos recogidos del covid19 en ALemania - Antonio Silva Gordillo</h3>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/pv1y9khpsVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
            
->>>>>>> b7289d6c59168958247dc0bbb37a8a43f14e175d
-        
+            <h3>Video explicativo de interfaz de usuario y backend de casos de covid  en EEUU- Antonio Carranza Barroso</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/AOJilfL84EI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </main>
     </body>
   </main>
