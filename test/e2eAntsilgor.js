@@ -52,17 +52,20 @@ const puppeteer = require('puppeteer');
 
 
     console.log("Insertando nuevo dato");
-  /*  await page.$eval('#Fecha', el => el.value = '2020-12-12');
+    await page.$eval('#Fecha', el => el.value = '2020-12-12');
     await page.$eval('#Condado', el => el.value = 'New York');
     await page.$eval('#Estado', el => el.value = 'Texas');
-    await page.$eval('#Fips', el => el.value = '1997');
+    await page.$eval('#Genero', el => el.value = '1997');
+    await page.$eval('#GrupoEdad', el => el.value = '12');
     await page.$eval('#Casos', el => el.value = '12');
     await page.$eval('#Muertes', el => el.value = '12');
+    await page.$eval('#Recuperados', el => el.value = '12');
 
-    await page.screenshot({ path: 'clickOnInsertarDato_us_counties.png' });
+
+    await page.screenshot({ path: 'clickOnInsertarDato_covidGER.png' });
 
     
-    await page.click("#BtnInsertar"),
+    await page.click("#BtnInsertar2"),
     
     await page.waitForTimeout(1000);
     console.log("Timeout superado haciendo captura");
