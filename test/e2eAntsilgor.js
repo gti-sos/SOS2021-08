@@ -40,35 +40,26 @@ const puppeteer = require('puppeteer');
     var rowCount = (await page.$$("body > main > main > table > tbody:nth-child(3)")).length;
 
     console.log(`Initial rowCount = ${rowCount}`);
+  
+    
 
+    await page.screenshot({ path: 'clickOnInsertarDato_covidGER.png' });
+
+    
+    await page.click("#BtnInsertar2"),
     */
-    page.click("#body > main > main > div:nth-child(1) > button:nth-child(3)");
+    page.click("body > main > main > div:nth-child(1) > button:nth-child(3)")
   
     console.log("Click en Insertar");
 
     await page.waitForTimeout(1000);
     console.log("Timeout superado haciendo captura");
 
-    await page.screenshot({ path: 'clickOnInsertarButton_covidGER.png' });
+    await page.screenshot({ path: 'clickOnInsertarButton_us_counties.png' });
 
 
     console.log("Insertando nuevo dato");
-    await page.$eval('#Fecha', el => el.value = '2020-12-12');
-    await page.$eval('#Condado', el => el.value = 'New York');
-    await page.$eval('#Estado', el => el.value = 'Texas');
-    await page.$eval('#Genero', el => el.value = '1997');
-    await page.$eval('#GrupoEdad', el => el.value = '12');
-    await page.$eval('#Casos', el => el.value = '12');
-    await page.$eval('#Muertes', el => el.value = '12');
-    await page.$eval('#Recuperados', el => el.value = '12');
-
-
-    await page.screenshot({ path: 'clickOnInsertarDato_covidGER.png' });
-
     
-    await page.click("#BtnInsertar2"),
-    
-    await page.waitForTimeout(1000);
     console.log("Timeout superado haciendo captura");
 
     console.log("Haciendo captura de insert exitoso (AUNQUE SABEMOS QUE LOS CAMPOS SE ENVIAN VACIOS, FALLO DE SVELTE")
