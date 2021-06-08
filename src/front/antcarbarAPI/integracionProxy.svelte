@@ -18,10 +18,10 @@
     
     async function getData(){
         console.log("Fetching data...");
-        const res = await fetch("https://sos2021-03.herokuapp.com/api/v2/international-tourisms");
+        let res =await (await fetch("/antcarbar1/proxyRequest/tourism"));
         const res2 = await fetch("https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily");
         if(res.ok ){
-            console.log("Ok.");
+            console.log("Ok.")
             const json = await res.json();
             const json2 = await res2.json();
             data = json;
@@ -100,3 +100,6 @@
         <Button outline color="secondary" onclick="window.location.href='#/integrations'">Volver</Button>
         <div id="chartDiv" style="max-width: 740px;height: 400px;margin: 0px auto"></div>
 </main>
+
+
+
