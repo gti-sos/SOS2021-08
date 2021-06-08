@@ -57,9 +57,8 @@ const puppeteer = require('puppeteer');
 
     await page.screenshot({ path: 'clickOnInsertarButton_us_counties.png' });
 
-
-    console.log("Insertando nuevo dato");
     
+    await page.waitForTimeout(1000);
     console.log("Timeout superado haciendo captura");
 
     console.log("Haciendo captura de insert exitoso (AUNQUE SABEMOS QUE LOS CAMPOS SE ENVIAN VACIOS, FALLO DE SVELTE")
