@@ -53,7 +53,6 @@
 		  "/integrations/covid19-tracking-germany/obesityAndCovidGraph":graficaObesityCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/agegroupDeathsAndCases":graficaDygraphCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/nbaGraph":graficaNBA,
-<<<<<<< HEAD
 		  "/integrations/covid19-tracking-germany/europePopulationVariationGraph":graficaVariacionPoblacion,
 		 
 		  "/integrations/statewisetestingdetails/graph2": graph2,
@@ -66,8 +65,6 @@
 		  "/integrations/statewisetestingdetails/integracionI2": graphintegracionI2,
 		  "/integrations/statewisetestingdetails/integracionFran": graphintegracionFran,
 
-=======
->>>>>>> 84e004195597e3d652b9c080a8e42d3d1325055a
 		  "/covid19-tracking-germany/:state/:county":EditCovid19TrackingGermanyAPI,
 		  "/statewisetestingdetails": statewisetestingdetailsAPI,
 		  "/statewisetestingdetails/:date/:state":Editstatewisetestingdetails,
