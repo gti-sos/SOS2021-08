@@ -100,7 +100,21 @@
           <div class="titulo">
          
          <a href="https://sos2021-08.herokuapp.com/#/info" class="fakeButton" style="background-color:#80ced6">Vistas de la API personal.</a>
-
+         <a href="/#/us_counties_covid19_daily/graphicDonut3D">
+          <Button color="primary">Gráfica Donut</Button>
+        </a>
+        <a href="/#/us_counties_covid19_daily/chartist">
+          <Button color="primary">Gráfica Chartist</Button>
+        </a>
+        <a href="/#/us_counties_covid19_daily/highchartBB">
+          <Button color="primary">Gráfica API EXTERNA BREAKING BAD</Button>
+        </a>
+        <a href="/#/us_counties_covid19_daily/fusionchart1">
+          <Button color="primary">Gráfica fusionChart(Integracion)</Button>
+        </a>
+        <a href="/#/us_counties_covid19_daily/aleatorio">
+          <Button color="primary">API EXTERNA aleatorio</Button>
+        </a>
           
           </div>
         </div>
