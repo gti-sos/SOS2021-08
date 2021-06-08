@@ -15,7 +15,7 @@
       Row,
     } from "sveltestrap";
   </script>
-  
+
   <main>
     <div class="container-fluid"> 
     <h1>SOS2021-08</h1>
@@ -120,8 +120,8 @@
               <a href="/#/us_counties_covid19_daily/fusionchart1">
                 <Button color="primary">Gráfica fusionChart(Integracion)</Button>
               </a>
-
-
+              
+             
               <a href="https://documenter.getpostman.com/view/14969056/TzY4gFnd"
                 ><Button color="info">Documentación v1</Button></a
               >
@@ -149,8 +149,7 @@
               </a>
               
             
-             
-             
+            
              
               <a href="https://documenter.getpostman.com/view/14947979/TzJsgyZ1"
                 ><Button color="info">Documentación v1</Button></a
@@ -166,7 +165,6 @@
     </Container>
     </div>
   </main>
-  
   <style>
     main {
       text-align: center;

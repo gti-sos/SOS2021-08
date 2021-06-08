@@ -1,53 +1,92 @@
 <script>
+  import { pop } from "svelte-spa-router";
+  import Button from "sveltestrap/src/Button.svelte";
+  import ApexCharts from "apexcharts";
 
-
-    async function realizarPeticion(){
-    console.log("Obteniendo Datos");
-  
-    const res = await fetch('https://sos2021-21.herokuapp.com/api/v2/temperature-stats');
-    const resData = await fetch("api/v1/us_counties_covid19_daily"); 
-
-
-    if (res.ok) {
-        const json2 = await resData.json();
-        data = json2;
-        console.log(`We have received ${data.length} entradas.`);
-        console.log(data)
-        var condados = [];
-   
-        
-            
+  async function loadGraph() {
+      const temperatureData = await fetch("https://sos2021-21.herokuapp.com/api/v2/temperature-stats");
+      let MisDatos = await temperatureData.json();
       
-        const json = await res.json();
-        countries = json;
-  
-        console.log(`We have received ${countries.length} countries.`);
-        console.log(countries)
-        
-       // const paises = (JSON.stringify(countries,['country']))
-        console.log(paises)
+      const countiescovid = await fetch(
+          "https://sos2021-08.herokuapp.com/api/v1/us_counties_covid19_daily");
+      let SusDatos = await countiescovid.json();
 
+      let country = [];
+      let data = [];
+      let data2 = [];
 
-  
-        msg = "";
-        console.log("Ok");
-      } else {
-        msg = "Error recuperando datos de rest countries";
-  
-        console.log("ERROR!" + msg);
-      }
-    }
+      MisDatos.forEach((x) => {
+          data.push(parseInt(x.temperature_min));
+          country.push(x.country + "-" + x.year);
+      });
 
+      SusDatos.forEach((x) => {
+          data2.push(parseInt(x.cases));
+      });
 
-  </script>
+      var options = {
+          series: [
+              {
+                  data: data
+              },
+              {
+                  data: data2
+              },
+          ],
+          chart: {
+              type: "bar",
+              height: 440,
+              stacked: true,
+          },
+          colors: ["#ff8000", "#008f39"],
+          plotOptions: {
+              bar: {
+                  horizontal: false,
+                  barHeight: "80%",
+              },
+          },
+          dataLabels: {
+              enabled: false,
+          },
+          stroke: {
+              width: 1,
+              colors: ["#fff"],
+          },
 
-<svelte:head>
+          grid: {
+              xaxis: {
+                  lines: {
+                      show: false,
+                  },
+              },
+          },
 
-  <script src="https://code.highcharts.com/highcharts.js" on:load={realizarPeticion}></script>
-</svelte:head>
-  
-  <div id="container">
-    <SvelteFC {...chartConfigs} />
-  </div>
+          tooltip: {
+              shared: false,
+              x: {
+                  formatter: function (val) {
+                      return val;
+                  },
+              },
+              y: {
+                  formatter: function (val) {
+                      return Math.abs(val) + "%";
+                  },
+              },
+          },
+          xaxis: {
+              categories: country
+          },
+      };
 
-  
+      var chart = new ApexCharts(document.querySelector("#chart"), options);
+      chart.render();
+  }
+
+  loadGraph();
+</script>
+
+<main>
+  <div id="chart" />
+  <p>En color naranja, la temperatura minima en dicho pais . En color verde, el numero de casos covid en un estado </p>
+</main>

@@ -34,6 +34,7 @@
 	import chartist from './front/antcarbarAPI/chartist.svelte';	
 	import highchartBB from './front/antcarbarAPI/highchartBB.svelte';
 	import fusionchart1 from './front/antcarbarAPI/fusionchart1.svelte';
+	import aleatorio  from "./front/antcarbarAPI/aleatorio.svelte";
 
 	
 
@@ -50,17 +51,6 @@
 		  "/integrations/covid19-tracking-germany/obesityAndCovidGraph":graficaObesityCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/agegroupDeathsAndCases":graficaDygraphCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/nbaGraph":graficaNBA,
-		 
-		  "/integrations/statewisetestingdetails/graph2": graph2,
-		  "/integrations/statewisetestingdetails/amcChart": graphAMC,
-		  "/integrations/statewisetestingdetails/integrationAnx": graphintegrationAnx,
-		  "/integrations/statewisetestingdetails/integracionE1": graphintegracionE1,
-		  "/integrations/statewisetestingdetails/integracionE2": graphintegracionE2,
-		  "/integrations/statewisetestingdetails/integracionE3": graphintegracionE3,
-		  "/integrations/statewisetestingdetails/integracionE4": graphintegracionE4,
-		  "/integrations/statewisetestingdetails/integracionI2": graphintegracionI2,
-		  "/integrations/statewisetestingdetails/integracionFran": graphintegracionFran,
-
 		  "/covid19-tracking-germany/:state/:county":EditCovid19TrackingGermanyAPI,
 		  "/statewisetestingdetails": statewisetestingdetailsAPI,
 		  "/statewisetestingdetails/:date/:state":Editstatewisetestingdetails,
@@ -70,7 +60,16 @@
 		  "/us_counties_covid19_daily/chartist":chartist,
 		  "/us_counties_covid19_daily/fusionchart1":fusionchart1,
 		  "/us_counties_covid19_daily/highchartBB":highchartBB,
-		
+		  "/us_counties_covid19_daily/aleatorio":aleatorio,
+		  "/statewisetestingdetails/graph2": graph2,
+		  "/statewisetestingdetails/amcChart": graphAMC,
+		  "/statewisetestingdetails/integrationAnx": graphintegrationAnx,
+		  "/statewisetestingdetails/integracionE1": graphintegracionE1,
+		  "/statewisetestingdetails/integracionE2": graphintegracionE2,
+		  "/statewisetestingdetails/integracionE3": graphintegracionE3,
+		  "/statewisetestingdetails/integracionE4": graphintegracionE4,
+		  "/statewisetestingdetails/integracionI2": graphintegracionI2,
+		  "/statewisetestingdetails/integracionFran": graphintegracionFran,
 		
 
 		  '*': NotFound};
