@@ -22,6 +22,7 @@ const puppeteer = require('puppeteer');
   
   await page.goto('https://sos2021-08.herokuapp.com/');
   console.log("Vuelta a Home");
+  await page.screenshot({ path: 'homeGER.png' });
 
   const [response1] = await Promise.all([
     page.waitForNavigation(),
