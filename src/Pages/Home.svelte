@@ -61,6 +61,9 @@
           <a href="/#/integrations">
             <Button color="primary">Integraciones</Button>
           </a>
+          <a href="/#/aboutus">
+            <Button color="primary">About us</Button>
+          </a>
           <CardHeader>
             <CardTitle><h5>covid19-tracking-germany</h5></CardTitle>
           </CardHeader>
