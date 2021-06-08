@@ -102,7 +102,7 @@
          <br>
           <div class="titulo">
          
-         <a href="https://sos2021-08.herokuapp.com/#/info" class="fakeButton" style="background-color:#80ced6">Vistas de la API personal.</a>
+
          <a href="/#/us_counties_covid19_daily/graphicDonut3D">
           <Button color="primary">Gráfica Donut</Button>
         </a>
@@ -117,6 +117,9 @@
         </a>
         <a href="/#/us_counties_covid19_daily/aleatorio">
           <Button color="primary">API EXTERNA aleatorio</Button>
+        </a>
+        <a href="/#/us_counties_covid19_daily/integracionProxy">
+          <Button color="primary"> Gráfica con proxy(Integracion)</Button>
         </a>
           
           </div>

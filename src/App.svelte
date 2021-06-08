@@ -27,6 +27,7 @@
 	import graphintegracionI2 from "./front/juavegsecAPI/integracionI2.svelte";
 	import graphintegracionFran from "./front/juavegsecAPI/integracionFran.svelte";
 	import us_counties_covid19API  from "./front/antcarbarAPI/us_counties_covid19API.svelte";
+	import  integracionProxy  from "./front/antcarbarAPI/integracionProxy.svelte";
 	
 	import EditUs_counties_covid19 from "./front/antcarbarAPI/EditUs_counties_covid19.svelte";
 	import graphicDonut3D from './front/antcarbarAPI/graphicDonut3D.svelte';
@@ -59,6 +60,7 @@
 		  "/us_counties_covid19_daily/fusionchart1":fusionchart1,
 		  "/us_counties_covid19_daily/highchartBB":highchartBB,
 		  "/us_counties_covid19_daily/aleatorio":aleatorio,
+		  "/us_counties_covid19_daily/integracionProxy":integracionProxy,
 		  "/statewisetestingdetails/graph2": graph2,
 		  "/statewisetestingdetails/amcChart": graphAMC,
 		  "/statewisetestingdetails/integrationAnx": graphintegrationAnx,
