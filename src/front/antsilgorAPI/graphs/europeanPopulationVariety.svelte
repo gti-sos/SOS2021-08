@@ -5,7 +5,7 @@
   var okMsg = "";
   async function getStats() {
     console.log("Fetching data...");
-    const res = await fetch("https://cohesiondata.ec.europa.eu/resource/jeqt-d5ig.json");
+    const res = await (await fetch("/antsilgor/proxyRequest/population"));
     if (res.ok) {
       const json = await res.json();
       capitals = json;

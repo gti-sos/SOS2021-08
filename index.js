@@ -31,16 +31,23 @@ app.use("/juavegsec/proxyRequest/:api", function(req,res){
         }
     }); 
 
-app.use("/antsilgorAPI/proxyRequestExt2/love-calculator/:sname/:fname", function(req, res) {
-    var sname = req.params.sname;
-    var fname = req.params.fname;
-    var url2 = "https://love-calculator.p.rapidapi.com/getPercentage?rapidapi-key=" 
-        + RAPIDAPI_KEY + "&sname="+sname+"&fname=" + fname;
-
-    console.log(req.url);
-    console.log("url" + url2);
-    req.pipe(request(url2)).pipe(res);
-});
+    
+//PROXY ANTSILGOR 
+var antsilgorAPIAllowList ={"population": "https://cohesiondata.ec.europa.eu/resource/jeqt-d5ig.json"};
+app.use("/antsilgor/proxyRequest/:api", function(req,res){
+        let NameApi = req.params.api;
+        if(NameApi in antsilgor1APIAllowList){
+            let url =  antsilgorAPIAllowList[NameApi] + req.url;
+           
+            console.log( antsilgorAPIAllowList[NameApi]);
+            console.log(req.url)
+            console.log(url);
+            req.pipe(request(url)).pipe(res);
+        }
+        else{
+            res.sendStatus(400);
+        }
+    });
 
 
 //PROXY ANTCARBAR 
