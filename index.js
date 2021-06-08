@@ -33,13 +33,13 @@ app.use("/juavegsec/proxyRequest/:api", function(req,res){
 
     
 //PROXY ANTSILGOR 
-var antsilgorAPIAllowList ={"population": "https://cohesiondata.ec.europa.eu/resource/jeqt-d5ig.json"};
+var antsilgor1APIAllowList ={"population": "https://cohesiondata.ec.europa.eu/resource/jeqt-d5ig.json"};
 app.use("/antsilgor/proxyRequest/:api", function(req,res){
         let NameApi = req.params.api;
         if(NameApi in antsilgor1APIAllowList){
-            let url =  antsilgorAPIAllowList[NameApi] + req.url;
+            let url =  antsilgor1APIAllowList[NameApi] + req.url;
            
-            console.log( antsilgorAPIAllowList[NameApi]);
+            console.log( antsilgor1APIAllowList[NameApi]);
             console.log(req.url)
             console.log(url);
             req.pipe(request(url)).pipe(res);
