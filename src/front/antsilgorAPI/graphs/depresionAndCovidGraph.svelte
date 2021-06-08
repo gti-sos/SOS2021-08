@@ -147,6 +147,11 @@
           registradas en un determinado año.
       </p>
   </div>
+  <Nav>
+    <NavItem>
+      <NavLink href="/#/integrations/">volver</NavLink>
+    </NavItem>
+  </Nav>
 </main>
 
 <style>

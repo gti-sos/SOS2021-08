@@ -1,6 +1,6 @@
 <script>
     import {pop} from "svelte-spa-router";
-  
+    import { Nav, NavItem, NavLink } from "sveltestrap";
     import Button from "sveltestrap/src/Button.svelte";
    
     let covid19GermanyData = [];
@@ -90,5 +90,9 @@
     <figure class="highcharts-figure">
         <div id="container"></div>
     </figure>  
-    <Button outline color="secondary" on:click="{pop}">Atrás</Button>
+    <Nav>
+        <NavItem>
+          <NavLink href="/#/integrations/">volver</NavLink>
+        </NavItem>
+      </Nav>
 </main>

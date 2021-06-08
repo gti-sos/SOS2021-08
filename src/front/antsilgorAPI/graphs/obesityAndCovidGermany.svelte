@@ -1,5 +1,5 @@
 <script>
-
+    import { Nav, NavItem, NavLink } from "sveltestrap";
     var BASE_API_PATH_EE = 'https://sos2021-10.herokuapp.com/api/integration/obesity-stats';
         
     
@@ -187,6 +187,12 @@
             <p class="highcharts-description">
             </p>
         </figure>
+
+        <Nav>
+            <NavItem>
+              <NavLink href="/#/integrations/">volver</NavLink>
+            </NavItem>
+        </Nav>
         
     
     </main>

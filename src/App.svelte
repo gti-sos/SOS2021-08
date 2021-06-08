@@ -46,7 +46,7 @@
 		  "/info":Info,
 		  "/integrations":Integration,
 		  "/aboutus":aboutus,
-		  "/integrations/grupal":Grupal,
+		  "/analytics":Grupal,
 		  "/covid19-tracking-germany": covid19TrackingGermanyAPI,
 		  "/covid19-tracking-germany/analytics": graficaCovid19TrackingGermany,
 		  "/integrations/covid19-tracking-germany/depresionAndCovidGraph":graficaDepressionCovid19TrackingGermany,
