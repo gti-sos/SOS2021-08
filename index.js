@@ -30,7 +30,6 @@ app.use("/juavegsec/proxyRequest/:api", function(req,res){
             res.sendStatus(400);
         }
     }); 
-
     
 //PROXY ANTSILGOR 
 var antsilgor1APIAllowList ={"population": "https://cohesiondata.ec.europa.eu/resource/jeqt-d5ig.json"};
