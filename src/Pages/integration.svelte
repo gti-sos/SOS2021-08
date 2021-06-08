@@ -68,6 +68,9 @@
               <Button color="primary">Gráfica Integracion AMC</Button>
             </a>
             <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integrationAnx">
+              <Button color="primary">Gráfica Integracion I1</Button>
+            </a>
+            <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integracionE1">
               <Button color="primary">Gráfica Integracion E1</Button>
             </a>
             <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integracionE2">
@@ -83,7 +86,7 @@
               <Button color="primary">Gráfica Integracion I2 </Button>
             </a>
             <a href="https://sos2021-08.herokuapp.com/#/integrations/statewisetestingdetails/integracionFran">
-              <Button color="primary">Gráfica Externa </Button>
+              <Button color="primary">Gráfica Integración I3 </Button>
             </a>
             
 
