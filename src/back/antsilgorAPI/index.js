@@ -1,8 +1,6 @@
 var DataStore = require("nedb");
 var db = new DataStore({ filename: "./src/back/antsilgorAPI/covid19TrackingGermany.db", autoload: true });
-
-module.exports.register = (app, BASE_API_PATH
-
+console.log("E");module.exports.register = (app, BASE_API_PATH
 ) => {
 
 var covid19_tracking_germanyArray = [];
@@ -265,9 +263,9 @@ app.delete(BASE_API_PATH
 //actualizamos los que coincidan con 'state' y 'county'
 
 
-app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,res) { 
+console.log("G");app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,res) { 
 
-	var data = req.body;
+	console.log("H");	var data = req.body;
 	
 	var esta = false;
 	var bodyok = true;
@@ -278,14 +276,13 @@ app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,r
 			bodyok =false;
 		}
 	
-	db.find({state:String(req.params.state), county:String(req.params.county)}, function(err, record) {
+		console.log("I");db.find({state:String(req.params.state), county:String(req.params.county)}, function(err, record) {
 		
-		//console.log(record);
+			console.log("J");	//console.log(record);
 		if(err!=null){
 				console.error("ERROR deleting DB evictions in DELETE: "+err);
 				res.sendStatus(500);
 		}else{
-			
 			
 			if (record.length==0) {
        	
@@ -295,7 +292,7 @@ app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,r
 			
 				if(!bodyok){
 					
-					 res.sendStatus(400);
+					console.log("K"); res.sendStatus(400);
 					
 				}else{
 					
@@ -317,7 +314,7 @@ app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,r
 						}else{
 							res.sendStatus(200);
 							
-						}
+							console.log("L");}
 								
 					
 					});
@@ -335,11 +332,11 @@ app.put(BASE_API_PATH+"/covid19-tracking-germany/:state/:county", function(req,r
 		}
 		
 		
-		});
+		console.log("l");});
 	
 });
-
-
+console.log("M");
+console.log("N");
 
 //6)POST a un recurso (en concreto), debe de dar un error de método no permitido 
     
@@ -425,3 +422,5 @@ app.delete(BASE_API_PATH
 	 
 	 
  }
+
+ console.log("O");

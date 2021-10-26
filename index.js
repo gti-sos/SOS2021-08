@@ -1,4 +1,5 @@
 //Para desplegar la app
+console.log("A");
 var express = require("express");
 var request = require('request');
 var app = express();
@@ -72,12 +73,12 @@ var BASE_API_PATH = "/api/v1";
 app.get('/index', (request, response) => {
     response.send(express());
     console.log('New request to /index has arrived, succesfuly');
-});
+console.log("B");});
 
 //Mensaje por consola que mostrará el servidor cuando se inicie
-app.listen(port, () => {
+console.log("C");app.listen(port, () => {
 	console.log("Server ready listening in port " + port)
-})
+console.log("D");})
 
 
 
@@ -87,7 +88,7 @@ app.listen(port, () => {
 
 	var juavegsecAPI = require("./src/back/juavegsecAPI");
 	juavegsecAPI.register(app,BASE_API_PATH);
-
+    
 	var antsilgorAPI = require("./src/back/antsilgorAPI");
 	antsilgorAPI.register(app,BASE_API_PATH);
 
